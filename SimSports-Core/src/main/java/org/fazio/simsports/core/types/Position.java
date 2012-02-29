@@ -1,4 +1,4 @@
-package org.fazio.simsports.core;
+package org.fazio.simsports.core.types;
 
 /**
  * @author Michael Fazio

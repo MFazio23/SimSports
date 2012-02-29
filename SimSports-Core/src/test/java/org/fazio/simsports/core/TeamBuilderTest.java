@@ -1,5 +1,8 @@
 package org.fazio.simsports.core;
 
+import org.fazio.simsports.core.builders.TeamBuilder;
+import org.fazio.simsports.core.types.Player;
+import org.fazio.simsports.core.types.Team;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

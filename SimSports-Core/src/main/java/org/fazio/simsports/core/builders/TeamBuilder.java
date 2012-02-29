@@ -1,4 +1,7 @@
-package org.fazio.simsports.core;
+package org.fazio.simsports.core.builders;
+
+import org.fazio.simsports.core.types.Player;
+import org.fazio.simsports.core.types.Team;
 
 import java.util.ArrayList;
 import java.util.Collection;

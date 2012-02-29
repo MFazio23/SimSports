@@ -1,7 +1,7 @@
 package org.fazio.simsports.baseball.types;
 
 
-import org.fazio.simsports.core.Position;
+import org.fazio.simsports.core.types.Position;
 
 /**
  * @author Michael Fazio

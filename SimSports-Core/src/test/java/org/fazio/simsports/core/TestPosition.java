@@ -1,6 +1,6 @@
 package org.fazio.simsports.core;
 
-import org.fazio.simsports.core.Position;
+import org.fazio.simsports.core.types.Position;
 
 /**
  * @author Michael Fazio

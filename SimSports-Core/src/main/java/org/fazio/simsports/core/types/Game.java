@@ -1,4 +1,4 @@
-package org.fazio.simsports.core;
+package org.fazio.simsports.core.types;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
@@ -11,7 +11,6 @@ public class Game {
 	
 	private int homeScore;
 	private int awayScore;
-	
 	
 	public Game(final Team homeTeam, final Team awayTeam) {
 		this.homeTeam = homeTeam;
