@@ -1,5 +1,6 @@
 package org.fazio.simsports.core.builders;
 
+import org.fazio.simsports.core.types.Player;
 import org.fazio.simsports.core.types.Position;
 
 /**
@@ -30,5 +31,12 @@ public class PlayerBuilder {
 	public PlayerBuilder setPosition(final Position position) {
 		this.position = position;
 		return this;
+	}
+
+	//TODO: Finish the rest of the builder
+
+	public Player build() {
+		//TODO: Finish this method
+		return null;
 	}
 }

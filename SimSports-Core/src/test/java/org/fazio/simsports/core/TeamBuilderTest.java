@@ -63,8 +63,8 @@ public class TeamBuilderTest {
 
 	private Set<Player> buildTestRoster() {
 		final Set<Player> testRoster = new HashSet<Player>();
-		
-		testRoster.add(new Player(TestPosition.GENERIC, "Test Player", "Test", "Player"));
+
+		testRoster.add(new Player(null, "Test", "Player", "Testman", null, null, null));
 		
 		return testRoster;
 	}

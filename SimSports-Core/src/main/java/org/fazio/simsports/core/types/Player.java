@@ -9,12 +9,22 @@ public class Player {
 	private final String lastName;
 	private final String nickname;
 	private final Position position;
+	private final Attributes attributes;
+	private final Ratings ratings;
+	private final Statistics statistics;
 
-	public Player(final Position position, final String nickname, final String firstName, final String lastName) {
-		this.position = position;
-		this.nickname = nickname;
+	public Player(Attributes attributes, String firstName, String lastName, String nickname, Position position, Ratings ratings, Statistics statistics) {
+		this.attributes = attributes;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.nickname = nickname;
+		this.position = position;
+		this.ratings = ratings;
+		this.statistics = statistics;
+	}
+
+	public Attributes getAttributes() {
+		return attributes;
 	}
 
 	public String getFirstName() {
@@ -31,5 +41,13 @@ public class Player {
 
 	public Position getPosition() {
 		return position;
+	}
+
+	public Ratings getRatings() {
+		return ratings;
+	}
+
+	public Statistics getStatistics() {
+		return statistics;
 	}
 }

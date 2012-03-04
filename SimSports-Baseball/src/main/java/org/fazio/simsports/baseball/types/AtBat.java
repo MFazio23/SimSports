@@ -2,6 +2,7 @@ package org.fazio.simsports.baseball.types;
 
 import org.fazio.simsports.core.types.Game;
 import org.fazio.simsports.core.types.Play;
+import org.fazio.simsports.core.types.PlayResult;
 import org.fazio.simsports.core.types.Player;
 
 /**
@@ -17,5 +18,9 @@ public class AtBat extends Play {
 		this.pitcher = pitcher;
 		this.batter = batter;
 	}
-	
+
+	@Override
+	public PlayResult getPlayResult() {
+		return null;  //To change body of implemented methods use File | Settings | File Templates.
+	}
 }
