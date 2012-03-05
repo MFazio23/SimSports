@@ -15,12 +15,17 @@ public class TestAtBat {
 
 	private BatterAttributes attrs
 		= new BatterAttributesBuilder()
-			.setBatterAverage(.332)
-			.setBatterDoubleRate(20.32)
-			.setBatterTripleRate(3.21)
-			.setBatterHomeRunRate(17.65)
-			.setBatterStrikeoutPercentage(14.8)
-			.setBatterWalkPercentage(9.2)
+			.setPitchSwing(44.6)
+			.setNoSwingStrike(62.02)
+			.setNoSwingHBP(0.2)
+			.setSwingContact(81)
+			.setContactFoul(47)
+			.setInPlayHit(35)
+			.setHitDouble(20.32)
+			.setHitTriple(3.21)
+			.setHitHomeRun(17.65)
+			.setFlyBallRate(37.4)
+			.setGroundBallRate(41.7)
 			.build();
 
 	Map<String, Integer> counts;
@@ -42,14 +47,14 @@ public class TestAtBat {
 
 		int tests = 0;//563 * testFactor;
 
-		for(int x=0;x<tests;x++) {
+/*		for(int x=0;x<tests;x++) {
 			int rand = (int)(Math.random() * 1001);
 			if(rand <= (attrs.getBatterAverage() * 1000)) {
 				counts.put("Hits", counts.get("Hits") + 1);
 				String hitType = this.getHitTypeBasic(attrs);
 				counts.put(hitType,  counts.get(hitType) + 1);
 			}
-		}
+		}*/
 
 		this.printHitCounts(tests);
 		//this.validateTotals();

@@ -7,83 +7,100 @@ import org.fazio.simsports.baseball.types.BatterAttributes;
  */
 public class BatterAttributesBuilder {
 
-	private double batterPitchStrikeRate;
-	private double batterPitchHBPRate;
-	private double batterPitchSwingRate;
-	//batterPitchStrikeRate is everything else
+	private double pitchSwing;
+	//pitchNoSwing is everything else
 
-	private double batterSwingStrikeRate;
-	private double batterSwingFoulRate;
-	private double batterSwingHitRate;
-	//batterSwingOutRate is everything else
+	private double noSwingStrike;
+	private double noSwingHBP;
+	//noSwingBall is everything else
 
-	private double batterHitDoubleRate;
-	private double batterHitTripleRate;
-	private double batterHitHomeRunRate;
-	//batterHitSingleRate is everything else
+	private double swingContact;
+	//swingStrike is everything else
 
-	private double batterContactFlyBallRate;
-	private double batterContactGroundBallRate;
-	//batterContactLineDriveRate is everything else
-	
-	public BatterAttributesBuilder setBatterPitchStrikeRate(final double batterPitchStrikeRate) {
-		this.batterPitchStrikeRate = batterPitchStrikeRate;
+	private double contactFoul;
+	//contactInPlay is everything else
+
+	private double inPlayHit;
+	//inPlayOut is everything else
+
+	private double hitDouble;
+	private double hitTriple;
+	private double hitHomeRun;
+	//hitSingle is everything else
+
+	private double flyBallRate;
+	private double groundBallRate;
+	//lineDriveRate is everything else
+
+
+	public BatterAttributesBuilder setContactFoul(double contactFoul) {
+		this.contactFoul = contactFoul;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterPitchHBPRate(final double batterPitchHBPRate) {
-		this.batterPitchHBPRate = batterPitchHBPRate;
+
+	public BatterAttributesBuilder setFlyBallRate(double flyBallRate) {
+		this.flyBallRate = flyBallRate;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterPitchSwingRate(final double batterPitchSwingRate) {
-		this.batterPitchSwingRate = batterPitchSwingRate;
+
+	public BatterAttributesBuilder setGroundBallRate(double groundBallRate) {
+		this.groundBallRate = groundBallRate;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterSwingStrikeRate(final double batterSwingStrikeRate) {
-		this.batterSwingStrikeRate = batterSwingStrikeRate;
+
+	public BatterAttributesBuilder setHitDouble(double hitDouble) {
+		this.hitDouble = hitDouble;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterSwingFoulRate(final double batterSwingFoulRate) {
-		this.batterSwingFoulRate = batterSwingFoulRate;
+
+	public BatterAttributesBuilder setHitHomeRun(double hitHomeRun) {
+		this.hitHomeRun = hitHomeRun;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterSwingHitRate(final double batterSwingHitRate) {
-		this.batterSwingHitRate = batterSwingHitRate;
+
+	public BatterAttributesBuilder setHitTriple(double hitTriple) {
+		this.hitTriple = hitTriple;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterHitDoubleRate(final double batterHitDoubleRate) {
-		this.batterHitDoubleRate = batterHitDoubleRate;
+
+	public BatterAttributesBuilder setInPlayHit(double inPlayHit) {
+		this.inPlayHit = inPlayHit;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterHitTripleRate(final double batterHitTripleRate) {
-		this.batterHitTripleRate = batterHitTripleRate;
+
+	public BatterAttributesBuilder setNoSwingHBP(double noSwingHBP) {
+		this.noSwingHBP = noSwingHBP;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterHitHomeRunRate(final double batterHitHomeRunRate) {
-		this.batterHitHomeRunRate = batterHitHomeRunRate;
+
+	public BatterAttributesBuilder setNoSwingStrike(double noSwingStrike) {
+		this.noSwingStrike = noSwingStrike;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterContactFlyBallRate(final double batterContactFlyBallRate) {
-		this.batterContactFlyBallRate = batterContactFlyBallRate;
+
+	public BatterAttributesBuilder setPitchSwing(double pitchSwing) {
+		this.pitchSwing = pitchSwing;
 		return this;
 	}
-	public BatterAttributesBuilder setBatterContactGroundBallRate(final double batterContactGroundBallRate) {
-		this.batterContactGroundBallRate = batterContactGroundBallRate;
+
+	public BatterAttributesBuilder setSwingContact(double swingContact) {
+		this.swingContact = swingContact;
 		return this;
 	}
-	
+
 	public BatterAttributes build() {
 		return new BatterAttributes(
-				this.batterPitchStrikeRate,
-				this.batterPitchHBPRate,
-				this.batterPitchSwingRate,
-				this.batterSwingStrikeRate,
-				this.batterSwingFoulRate,
-				this.batterSwingHitRate,
-				this.batterHitDoubleRate,
-				this.batterHitTripleRate,
-				this.batterHitHomeRunRate,
-				this.batterContactFlyBallRate,
-				this.batterContactGroundBallRate);
+			this.contactFoul,
+			this.flyBallRate,
+			this.groundBallRate,
+			this.hitDouble,
+			this.hitHomeRun,
+			this.hitTriple,
+			this.inPlayHit,
+			this.noSwingHBP,
+			this.noSwingStrike,
+			this.pitchSwing,
+			this.swingContact);
 		}
 	
 }

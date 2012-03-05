@@ -18,13 +18,17 @@ public class TestRanges {
 
 	private BatterAttributes attrs
 		= new BatterAttributesBuilder()
-			.setBatterPitchBallRate(37.98)
-			.setBatterAverage(33.22)
-			.setBatterDoubleRate(20.32)
-			.setBatterTripleRate(3.21)
-			.setBatterHomeRunRate(17.65)
-			.setBatterStrikeoutPercentage(14.8)
-			.setBatterWalkPercentage(9.2)
+			.setPitchSwing(44.6)
+			.setNoSwingStrike(62.02)
+			.setNoSwingHBP(0.2)
+			.setSwingContact(81)
+			.setContactFoul(47)
+			.setInPlayHit(35)
+			.setHitDouble(20.32)
+			.setHitTriple(3.21)
+			.setHitHomeRun(17.65)
+			.setFlyBallRate(37.4)
+			.setGroundBallRate(41.7)
 			.build();
 
 	Map<String, Integer> counts;
@@ -35,14 +39,14 @@ public class TestRanges {
 	@Before
 	public void setUp() throws Exception {
 		this.mainRangeGroup = new RangeGroup();
-		this.mainRangeGroup
+		/*this.mainRangeGroup
 			.addToRangeGroup(
 				new RangeGroup(attrs.getBatterAverage())
 					.addToRangeGroup(new RangeValue(20.32, "Double"))
 					.addToRangeGroup(new RangeValue(3.21, "Triple"))
 					.addToRangeGroup(new RangeValue(17.65, "Home Run"))
 					.setDefaultRange(new RangeValue("Single")))
-			.setDefaultRange(new RangeValue("Out"));
+			.setDefaultRange(new RangeValue("Out"));*/
 
 		this.counts = new LinkedHashMap<String, Integer>();
 		this.counts.put("Out", 0);

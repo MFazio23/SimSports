@@ -5,81 +5,87 @@ package org.fazio.simsports.baseball.types;
  */
 public class BatterAttributes {
 
-	private final double batterPitchStrikeRate;
-	private final double batterPitchHBPRate;
-	//batterPitchBallRate is everything else
-	private final double batterPitchSwingRate;
+	private final double pitchSwing;
+	//pitchNoSwing is everything else
 
-	private final double batterSwingStrikeRate;
-	private final double batterSwingFoulRate;
-	private final double batterSwingHitRate;
-	//batterSwingOutRate is everything else
+	private final double noSwingStrike;
+	private final double noSwingHBP;
+	//noSwingBall is everything else
 
-	private final double batterHitDoubleRate;
-	private final double batterHitTripleRate;
-	private final double batterHitHomeRunRate;
-	//batterHitSingleRate is everything else
+	private final double swingContact;
+	//swingStrike is everything else
 
-	private final double batterContactFlyBallRate;
-	private final double batterContactGroundBallRate;
-	//batterContactLineDriveRate is everything else
+	private final double contactFoul;
+	//contactInPlay is everything else
+
+	private final double inPlayHit;
+	//inPlayOut is everything else
+
+	private final double hitDouble;
+	private final double hitTriple;
+	private final double hitHomeRun;
+	//hitSingle is everything else
+
+	private final double flyBallRate;
+	private final double groundBallRate;
+	//lineDriveRate is everything else
 
 
-	public BatterAttributes(double batterPitchStrikeRate, double batterPitchHBPRate, double batterPitchSwingRate, double batterSwingStrikeRate, double batterSwingFoulRate, double batterSwingHitRate, double batterHitDoubleRate, double batterHitTripleRate, double batterHitHomeRunRate, double batterContactFlyBallRate, double batterContactGroundBallRate) {
-		this.batterPitchStrikeRate = batterPitchStrikeRate;
-		this.batterPitchHBPRate = batterPitchHBPRate;
-		this.batterPitchSwingRate = batterPitchSwingRate;
-		this.batterSwingStrikeRate = batterSwingStrikeRate;
-		this.batterSwingFoulRate = batterSwingFoulRate;
-		this.batterSwingHitRate = batterSwingHitRate;
-		this.batterHitDoubleRate = batterHitDoubleRate;
-		this.batterHitTripleRate = batterHitTripleRate;
-		this.batterHitHomeRunRate = batterHitHomeRunRate;
-		this.batterContactFlyBallRate = batterContactFlyBallRate;
-		this.batterContactGroundBallRate = batterContactGroundBallRate;
+	public BatterAttributes(double contactFoul, double flyBallRate, double groundBallRate, double hitDouble, double hitHomeRun, double hitTriple, double inPlayHit, double noSwingHBP, double noSwingStrike, double pitchSwing, double swingContact) {
+		this.contactFoul = contactFoul;
+		this.flyBallRate = flyBallRate;
+		this.groundBallRate = groundBallRate;
+		this.hitDouble = hitDouble;
+		this.hitHomeRun = hitHomeRun;
+		this.hitTriple = hitTriple;
+		this.inPlayHit = inPlayHit;
+		this.noSwingHBP = noSwingHBP;
+		this.noSwingStrike = noSwingStrike;
+		this.pitchSwing = pitchSwing;
+		this.swingContact = swingContact;
 	}
 
-	public double getBatterPitchStrikeRate() {
-		return batterPitchStrikeRate;
+	public double getContactFoul() {
+		return contactFoul;
 	}
 
-	public double getBatterPitchHBPRate() {
-		return batterPitchHBPRate;
+	public double getFlyBallRate() {
+		return flyBallRate;
 	}
 
-	public double getBatterPitchSwingRate() {
-		return batterPitchSwingRate;
+	public double getGroundBallRate() {
+		return groundBallRate;
 	}
 
-	public double getBatterSwingStrikeRate() {
-		return batterSwingStrikeRate;
+	public double getHitDouble() {
+		return hitDouble;
 	}
 
-	public double getBatterSwingFoulRate() {
-		return batterSwingFoulRate;
+	public double getHitHomeRun() {
+		return hitHomeRun;
 	}
 
-	public double getBatterSwingHitRate() {
-		return batterSwingHitRate;
+	public double getHitTriple() {
+		return hitTriple;
 	}
 
-	public double getBatterHitDoubleRate() {
-		return batterHitDoubleRate;
+	public double getInPlayHit() {
+		return inPlayHit;
 	}
 
-	public double getBatterHitTripleRate() {
-		return batterHitTripleRate;
+	public double getNoSwingHBP() {
+		return noSwingHBP;
 	}
 
-	public double getBatterHitHomeRunRate() {
-		return batterHitHomeRunRate;
+	public double getNoSwingStrike() {
+		return noSwingStrike;
 	}
 
-	public double getBatterContactFlyBallRate() {
-		return batterContactFlyBallRate;
+	public double getPitchSwing() {
+		return pitchSwing;
 	}
 
-	public double getBatterContactGroundBallRate() {
-		return batterContactGroundBallRate;
+	public double getSwingContact() {
+		return swingContact;
 	}
 }
