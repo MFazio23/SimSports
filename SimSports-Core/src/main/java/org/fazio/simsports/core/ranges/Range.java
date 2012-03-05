@@ -1,3 +1,5 @@
+package org.fazio.simsports.core.ranges;
+
 import java.util.StringTokenizer;
 
 /**
@@ -75,6 +77,6 @@ public abstract class Range {
 	}
 	
 	public String toString() {
-		return "Range: " + this.start + " -> " + this.end + " [" + this.rangeSize + "]";
+		return "org.fazio.simsports.core.ranges.Range: " + this.start + " -> " + this.end + " [" + this.rangeSize + "]";
 	}
 }

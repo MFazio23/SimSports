@@ -1,5 +1,7 @@
 import org.fazio.simsports.baseball.builders.BatterAttributesBuilder;
 import org.fazio.simsports.baseball.types.BatterAttributes;
+import org.fazio.simsports.core.ranges.RangeGroup;
+import org.fazio.simsports.core.ranges.RangeValue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.fail;
 
 /**
  * @author Michael Fazio
@@ -19,7 +22,7 @@ public class TestPitchByPitch {
 			.setNoSwingStrike(62.02)
 			.setNoSwingHBP(0.2)
 			.setSwingContact(81)
-			.setContactFoul(47)
+			.setContactFoul(41)
 			.setInPlayHit(35)
 			.setHitDouble(20.32)
 			.setHitTriple(3.21)
@@ -39,27 +42,46 @@ public class TestPitchByPitch {
 	@Before
 	public void setUp() throws Exception {
 		this.counts = new LinkedHashMap<String, Integer>();
-		
-		this.pitchRangeGroup = new RangeGroup()
-			.setDefaultRange(
-				new RangeGroup()
-					.setDefaultRange(new RangeValue("Ball"))
-					.addToRangeGroup(new RangeValue(this.attrs.getNoSwingStrike(), "Strike"))
-					.addToRangeGroup(new RangeValue(this.attrs.getNoSwingHBP(), "HBP")))
-			.addToRangeGroup(new RangeValue(this.attrs.getPitchSwing(), "Swing"));
-		
-		this.hitRangeGroup = new RangeGroup();
-		this.hitRangeGroup
+
+
+		this.hitRangeGroup = new RangeGroup(this.attrs.getInPlayHit())
 			.setDefaultRange(new RangeValue("Single"))
 			.addToRangeGroup(new RangeValue(this.attrs.getHitDouble(), "Double"))
 			.addToRangeGroup(new RangeValue(this.attrs.getHitTriple(), "Triple"))
 			.addToRangeGroup(new RangeValue(this.attrs.getHitHomeRun(), "Home Run"));
+
+		this.contactRangeGroup = new RangeGroup(this.attrs.getSwingContact())
+			.addToRangeGroup(new RangeValue(this.attrs.getContactFoul(), "Foul"))
+			.setDefaultRange(
+				new RangeGroup()
+					.setDefaultRange(new RangeValue("Out"))
+					.addToRangeGroup(this.hitRangeGroup)
+			);
+
+		this.swingRangeGroup = new RangeGroup(this.attrs.getPitchSwing())
+			.setDefaultRange(new RangeValue("Swinging Strike"))
+			.addToRangeGroup(this.contactRangeGroup);
+
+		this.pitchRangeGroup = new RangeGroup()
+			.addToRangeGroup(this.swingRangeGroup)
+			.setDefaultRange(
+				new RangeGroup()
+					.setDefaultRange(new RangeValue("Ball"))
+					.addToRangeGroup(new RangeValue(this.attrs.getNoSwingStrike(), "Strike"))
+					.addToRangeGroup(new RangeValue(this.attrs.getNoSwingHBP(), "HBP"))
+			);
+
 	}
 
 	@Test
 	public void testPitchResult() throws Exception {
 		this.runTests(2488, this.pitchRangeGroup);
-		this.validatePitchTotals();
+	}
+
+	@Test
+	public void testSwingResult() throws Exception {
+		this.runTests(1000, this.swingRangeGroup);
+		this.validateSwingTotals();
 	}
 	
 	@Test
@@ -86,10 +108,10 @@ public class TestPitchByPitch {
 	}
 
 	private void validatePitchTotals() {
-		assertEquals(44.6, Math.round(this.counts.get("Swing") / (testFactor / 10.0)) / 10.0);
-		assertEquals(62.0, Math.round(this.counts.get("Strike") / (testFactor / 10.0)) / 10.0);
-		assertEquals(37.8, Math.round(this.counts.get("Ball") / (testFactor / 10.0)) / 10.0);
-		assertEquals(0.2, Math.round(this.counts.get("HBP") / (testFactor / 10.0)) / 10.0);
+		assertEquals(1110, Math.round(this.counts.get("Swing") / testFactor));
+		assertEquals(855, Math.round(this.counts.get("Strike") / testFactor));
+		assertEquals(520, Math.round(this.counts.get("Ball") / testFactor));
+		assertEquals(3, Math.round(this.counts.get("HBP") / testFactor));
 	}
 	
 	private void validateHitTotals() {
@@ -97,6 +119,10 @@ public class TestPitchByPitch {
 		assertEquals(38, Math.round(this.counts.get("Double").doubleValue() / testFactor));
 		assertEquals(6, Math.round(this.counts.get("Triple").doubleValue() / testFactor));
 		assertEquals(33, Math.round(this.counts.get("Home Run").doubleValue() / testFactor));
+	}
+	
+	private void validateSwingTotals() {
+		fail();
 	}
 
 	private void printCounts(int tests) {

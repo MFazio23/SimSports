@@ -1,13 +1,11 @@
 import org.fazio.simsports.baseball.builders.BatterAttributesBuilder;
 import org.fazio.simsports.baseball.types.BatterAttributes;
+import org.fazio.simsports.core.ranges.RangeGroup;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -41,12 +39,12 @@ public class TestRanges {
 		this.mainRangeGroup = new RangeGroup();
 		/*this.mainRangeGroup
 			.addToRangeGroup(
-				new RangeGroup(attrs.getBatterAverage())
-					.addToRangeGroup(new RangeValue(20.32, "Double"))
-					.addToRangeGroup(new RangeValue(3.21, "Triple"))
-					.addToRangeGroup(new RangeValue(17.65, "Home Run"))
-					.setDefaultRange(new RangeValue("Single")))
-			.setDefaultRange(new RangeValue("Out"));*/
+				new org.fazio.simsports.core.ranges.RangeGroup(attrs.getBatterAverage())
+					.addToRangeGroup(new org.fazio.simsports.core.ranges.RangeValue(20.32, "Double"))
+					.addToRangeGroup(new org.fazio.simsports.core.ranges.RangeValue(3.21, "Triple"))
+					.addToRangeGroup(new org.fazio.simsports.core.ranges.RangeValue(17.65, "Home Run"))
+					.setDefaultRange(new org.fazio.simsports.core.ranges.RangeValue("Single")))
+			.setDefaultRange(new org.fazio.simsports.core.ranges.RangeValue("Out"));*/
 
 		this.counts = new LinkedHashMap<String, Integer>();
 		this.counts.put("Out", 0);

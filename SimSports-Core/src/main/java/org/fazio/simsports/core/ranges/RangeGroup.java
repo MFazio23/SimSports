@@ -1,7 +1,7 @@
+package org.fazio.simsports.core.ranges;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Michael Fazio
@@ -70,7 +70,7 @@ public class RangeGroup extends Range {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("RangeGroup: ");
+		sb.append("org.fazio.simsports.core.ranges.RangeGroup: ");
 		for(Range range : this.rangeList) {
 			sb.append("\t");
 			sb.append(range.toString());

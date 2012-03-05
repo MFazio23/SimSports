@@ -1,3 +1,5 @@
+package org.fazio.simsports.core.ranges;
+
 /**
  * @author Michael Fazio
  */
@@ -26,9 +28,9 @@ public class RangeValue extends Range {
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
 		
-		sb.append("RangeValue: Value = ");
+		sb.append("org.fazio.simsports.core.ranges.RangeValue: Value = ");
 		sb.append(this.value);
-		sb.append(", Range Size = ");
+		sb.append(", org.fazio.simsports.core.ranges.Range Size = ");
 		sb.append(super.rangeSize);
 		sb.append("[");
 		sb.append(super.start);
