@@ -7,65 +7,83 @@ import org.fazio.simsports.baseball.types.BatterAttributes;
  */
 public class BatterAttributesBuilder {
 
-	private double batterPitchBallRate;
-	private double batterInPlayRate;
-	private double batterWalkPercentage;
-	private double batterStrikeoutPercentage;
-	private double batterAverage;
-	private double batterDoubleRate;
-	private double batterTripleRate;
-	private double batterHomeRunRate;
+	private double batterPitchStrikeRate;
+	private double batterPitchHBPRate;
+	private double batterPitchSwingRate;
+	//batterPitchStrikeRate is everything else
+
+	private double batterSwingStrikeRate;
+	private double batterSwingFoulRate;
+	private double batterSwingHitRate;
+	//batterSwingOutRate is everything else
+
+	private double batterHitDoubleRate;
+	private double batterHitTripleRate;
+	private double batterHitHomeRunRate;
+	//batterHitSingleRate is everything else
+
+	private double batterContactFlyBallRate;
+	private double batterContactGroundBallRate;
+	//batterContactLineDriveRate is everything else
 	
-	public BatterAttributesBuilder setBatterPitchBallRate(final double batterPitchBallRate) {
-		this.batterPitchBallRate = batterPitchBallRate;
+	public BatterAttributesBuilder setBatterPitchStrikeRate(final double batterPitchStrikeRate) {
+		this.batterPitchStrikeRate = batterPitchStrikeRate;
 		return this;
 	}
-
-	public BatterAttributesBuilder setBatterInPlayRate(final double batterInPlayRate) {
-		this.batterInPlayRate = batterInPlayRate;
+	public BatterAttributesBuilder setBatterPitchHBPRate(final double batterPitchHBPRate) {
+		this.batterPitchHBPRate = batterPitchHBPRate;
 		return this;
 	}
-
-	public BatterAttributesBuilder setBatterWalkPercentage(final double batterWalkPercentage) {
-		this.batterWalkPercentage = batterWalkPercentage;
+	public BatterAttributesBuilder setBatterPitchSwingRate(final double batterPitchSwingRate) {
+		this.batterPitchSwingRate = batterPitchSwingRate;
 		return this;
 	}
-
-	public BatterAttributesBuilder setBatterStrikeoutPercentage(final double batterStrikeoutPercentage) {
-		this.batterStrikeoutPercentage = batterStrikeoutPercentage;
+	public BatterAttributesBuilder setBatterSwingStrikeRate(final double batterSwingStrikeRate) {
+		this.batterSwingStrikeRate = batterSwingStrikeRate;
 		return this;
 	}
-
-	public BatterAttributesBuilder setBatterAverage(final double batterAverage) {
-		this.batterAverage = batterAverage;
+	public BatterAttributesBuilder setBatterSwingFoulRate(final double batterSwingFoulRate) {
+		this.batterSwingFoulRate = batterSwingFoulRate;
 		return this;
 	}
-
-	public BatterAttributesBuilder setBatterDoubleRate(final double batterDoubleRate) {
-		this.batterDoubleRate = batterDoubleRate;
+	public BatterAttributesBuilder setBatterSwingHitRate(final double batterSwingHitRate) {
+		this.batterSwingHitRate = batterSwingHitRate;
 		return this;
 	}
-
-	public BatterAttributesBuilder setBatterTripleRate(final double batterTripleRate) {
-		this.batterTripleRate = batterTripleRate;
+	public BatterAttributesBuilder setBatterHitDoubleRate(final double batterHitDoubleRate) {
+		this.batterHitDoubleRate = batterHitDoubleRate;
 		return this;
 	}
-
-	public BatterAttributesBuilder setBatterHomeRunRate(final double batterHomeRunRate) {
-		this.batterHomeRunRate = batterHomeRunRate;
+	public BatterAttributesBuilder setBatterHitTripleRate(final double batterHitTripleRate) {
+		this.batterHitTripleRate = batterHitTripleRate;
+		return this;
+	}
+	public BatterAttributesBuilder setBatterHitHomeRunRate(final double batterHitHomeRunRate) {
+		this.batterHitHomeRunRate = batterHitHomeRunRate;
+		return this;
+	}
+	public BatterAttributesBuilder setBatterContactFlyBallRate(final double batterContactFlyBallRate) {
+		this.batterContactFlyBallRate = batterContactFlyBallRate;
+		return this;
+	}
+	public BatterAttributesBuilder setBatterContactGroundBallRate(final double batterContactGroundBallRate) {
+		this.batterContactGroundBallRate = batterContactGroundBallRate;
 		return this;
 	}
 	
 	public BatterAttributes build() {
 		return new BatterAttributes(
-			this.batterPitchBallRate,
-			this.batterInPlayRate,
-			this.batterAverage,
-			this.batterDoubleRate,
-			this.batterHomeRunRate,
-			this.batterStrikeoutPercentage,
-			this.batterTripleRate,
-			this.batterWalkPercentage);
-	}
+				this.batterPitchStrikeRate,
+				this.batterPitchHBPRate,
+				this.batterPitchSwingRate,
+				this.batterSwingStrikeRate,
+				this.batterSwingFoulRate,
+				this.batterSwingHitRate,
+				this.batterHitDoubleRate,
+				this.batterHitTripleRate,
+				this.batterHitHomeRunRate,
+				this.batterContactFlyBallRate,
+				this.batterContactGroundBallRate);
+		}
 	
 }

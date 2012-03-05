@@ -15,14 +15,12 @@ public class TestPitchByPitch {
 
 	private BatterAttributes attrs
 		= new BatterAttributesBuilder()
-			.setBatterPitchBallRate(37.98)
-			.setBatterInPlayRate(32.73)
-			.setBatterAverage(33.22)
-			.setBatterDoubleRate(20.32)
-			.setBatterTripleRate(3.21)
-			.setBatterHomeRunRate(17.65)
-			.setBatterStrikeoutPercentage(14.8)
-			.setBatterWalkPercentage(9.2)
+			.setBatterPitchStrikeRate(62.02)
+			.setBatterPitchHBPRate(0.2)
+			.setBatterPitchSwingRate(44.6)
+			.setBatterSwingFoulRate()
+			.setBatterSwingContactRate()
+			.setBatterSwingStrikeRate()
 			.build();
 
 	Map<String, Integer> counts;
