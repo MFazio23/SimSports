@@ -82,7 +82,7 @@ public class TestAtBat {
 		
 	}
 
-	private void runAtBat() {
+	void runAtBat() {
 		
 		int balls = 0;
 		int strikes = 0;

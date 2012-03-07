@@ -30,6 +30,8 @@ public class BatterAttributes {
 	private final double groundBallRate;
 	//lineDriveRate is everything else
 
+	//TODO: Add a map for each type of count (0-0, 1-0, 3-2, etc)
+
 
 	public BatterAttributes(double contactFoul, double flyBallRate, double groundBallRate, double hitDouble, double hitHomeRun, double hitTriple, double inPlayHit, double noSwingHBP, double noSwingStrike, double pitchSwing, double swingContact) {
 		this.contactFoul = contactFoul;
