@@ -68,14 +68,29 @@ public class RangeGroup extends Range {
 		return this;
 	}
 	
-	public String toString() {
+	public String toString(final int level) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("org.fazio.simsports.core.ranges.RangeGroup: ");
+		for(int x=0;x<level;x++) sb.append("\t");
+		sb.append("Range Group: Size = ");
+		sb.append(super.rangeSize);
+		sb.append("[");
+		sb.append(super.start);
+		sb.append(" -> ");
+		sb.append(super.end);
+		sb.append("]\n");
 		for(Range range : this.rangeList) {
-			sb.append("\t");
-			sb.append(range.toString());
+			//for(int x=0;x<level;x++) sb.append("\t");
+			sb.append(range.toString(level + 1));
+			sb.append('\n');
 		}
+
+		sb.append(this.defaultRange.toString(level + 1));
+		sb.append(" (Default)");
 		
 		return sb.toString();
+	}
+
+	public String toString() {
+		return this.toString(0);
 	}
 }

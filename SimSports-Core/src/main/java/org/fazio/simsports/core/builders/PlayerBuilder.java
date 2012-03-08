@@ -1,7 +1,6 @@
 package org.fazio.simsports.core.builders;
 
-import org.fazio.simsports.core.types.Player;
-import org.fazio.simsports.core.types.Position;
+import org.fazio.simsports.core.types.*;
 
 /**
  * @author Michael Fazio
@@ -12,6 +11,9 @@ public class PlayerBuilder {
 	private String lastName;
 	private String nickname;
 	private Position position;
+	private Attributes attributes;
+	private Ratings ratings;
+	private Statistics statistics;
 	
 	public PlayerBuilder setFirstName(final String firstName) {
 		this.firstName = firstName;
@@ -33,10 +35,29 @@ public class PlayerBuilder {
 		return this;
 	}
 
-	//TODO: Finish the rest of the builder
+	public PlayerBuilder setAttributes(final Attributes attributes) {
+		this.attributes = attributes;
+		return this;
+	}
+
+	public PlayerBuilder setRatings(final Ratings ratings) {
+		this.ratings = ratings;
+		return this;
+	}
+
+	public PlayerBuilder setStatistics(final Statistics statistics) {
+		this.statistics = statistics;
+		return this;
+	}
 
 	public Player build() {
-		//TODO: Finish this method
-		return null;
+		return new Player(
+			this.attributes,
+			this.firstName,
+			this.lastName,
+			this.nickname,
+			this.position,
+			this.ratings,
+			this.statistics);
 	}
 }

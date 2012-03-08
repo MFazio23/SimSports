@@ -27,10 +27,10 @@ public class RangeValue extends Range {
 	
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
-		
-		sb.append("org.fazio.simsports.core.ranges.RangeValue: Value = ");
+
+		sb.append("Range Value: Value = ");
 		sb.append(this.value);
-		sb.append(", org.fazio.simsports.core.ranges.Range Size = ");
+		sb.append(", Size = ");
 		sb.append(super.rangeSize);
 		sb.append("[");
 		sb.append(super.start);

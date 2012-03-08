@@ -1,7 +1,5 @@
 package org.fazio.simsports.core.ranges;
 
-import java.util.StringTokenizer;
-
 /**
  * @author Michael Fazio
  */
@@ -77,6 +75,16 @@ public abstract class Range {
 	}
 	
 	public String toString() {
-		return "org.fazio.simsports.core.ranges.Range: " + this.start + " -> " + this.end + " [" + this.rangeSize + "]";
+		return "Range: " + this.start + " -> " + this.end + " [" + this.rangeSize + "]";
+	}
+
+	public String toString(final int level) {
+		final StringBuilder sb = new StringBuilder();
+		for(int x=0;x<level;x++) {
+			sb.append('\t');
+		}
+		sb.append(this.toString());
+
+		return sb.toString();
 	}
 }
