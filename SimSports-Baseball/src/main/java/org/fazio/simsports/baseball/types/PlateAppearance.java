@@ -8,12 +8,12 @@ import org.fazio.simsports.core.types.Player;
 /**
  * @author Michael Fazio
  */
-public class AtBat extends Play {
+public class PlateAppearance extends Play {
 
 	private final Player pitcher;
 	private final Player batter;
 	
-	public AtBat(final Game game, final Player pitcher, final Player batter) {
+	public PlateAppearance(final Game game, final Player pitcher, final Player batter) {
 		super(game);
 		this.pitcher = pitcher;
 		this.batter = batter;

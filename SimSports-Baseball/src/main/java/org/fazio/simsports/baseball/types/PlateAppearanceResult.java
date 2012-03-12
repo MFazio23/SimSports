@@ -5,7 +5,7 @@ import org.fazio.simsports.core.types.PlayResult;
 /**
  * @author Michael Fazio
  */
-public class AtBatResult implements PlayResult {
+public class PlateAppearanceResult implements PlayResult {
 
 	
 
