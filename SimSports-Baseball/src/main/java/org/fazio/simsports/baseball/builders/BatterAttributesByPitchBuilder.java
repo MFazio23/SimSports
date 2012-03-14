@@ -1,6 +1,6 @@
 package org.fazio.simsports.baseball.builders;
 
-import org.fazio.simsports.baseball.types.BatterAttributesByPitch;
+import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPitch;
 
 /**
  * @author Michael Fazio

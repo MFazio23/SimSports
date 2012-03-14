@@ -79,7 +79,6 @@ public class RangeGroup extends Range {
 		sb.append(super.end);
 		sb.append("]\n");
 		for(Range range : this.rangeList) {
-			//for(int x=0;x<level;x++) sb.append("\t");
 			sb.append(range.toString(level + 1));
 			sb.append('\n');
 		}

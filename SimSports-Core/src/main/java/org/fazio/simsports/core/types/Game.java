@@ -6,11 +6,11 @@ package org.fazio.simsports.core.types;
  */
 public class Game {
 	
-	private final Team homeTeam;
-	private final Team awayTeam;
+	protected final Team homeTeam;
+	protected final Team awayTeam;
 	
-	private int homeScore;
-	private int awayScore;
+	protected int homeScore;
+	protected int awayScore;
 	
 	public Game(final Team homeTeam, final Team awayTeam) {
 		this.homeTeam = homeTeam;

@@ -1,0 +1,37 @@
+<html>
+
+<head>
+	<title>Cobertura Reports - SimSports</title>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+			padding-left: 0px;
+		}
+		ul li {
+			float: left;
+			position: relative;
+			padding: 5px 10px;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function changeIFrameURL(url) {
+			document.getElementById('cobertura-iframe').src = url + '/target/site/cobertura/index.html';
+		}
+	</script>
+</head>
+
+<body>
+	<div>
+		<ul>
+			<li><a href="javascript:changeIFrameURL('SimSports-Baseball')">SimSports - Baseball</a></li>
+			<li><a href="javascript:changeIFrameURL('SimSports-Core')">SimSports - Core</a></li>
+		</ul>
+	</div>
+	<br/>
+	<div>
+		<iframe id="cobertura-iframe" height="90%" width="100%" src="SimSports-Core/target/site/cobertura/index.html">SimSports iFrame</iframe>
+	</div>
+</body>
+
+</html>

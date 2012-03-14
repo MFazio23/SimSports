@@ -1,5 +1,5 @@
 import org.fazio.simsports.baseball.builders.BatterAttributesByPitchBuilder;
-import org.fazio.simsports.baseball.types.BatterAttributesByPitch;
+import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPitch;
 import org.fazio.simsports.core.ranges.RangeGroup;
 import org.junit.Before;
 import org.junit.Test;

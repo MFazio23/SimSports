@@ -1,9 +1,11 @@
-package org.fazio.simsports.baseball.types;
+package org.fazio.simsports.baseball.types.attributes;
+
+import org.fazio.simsports.core.types.Attributes;
 
 /**
  * @author Michael Fazio
  */
-public class BatterAttributesByPitch {
+public class BatterAttributesByPitch implements Attributes {
 
 	private final double pitchSwing;
 	//pitchNoSwing is everything else
