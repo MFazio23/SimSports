@@ -21,6 +21,8 @@ public class PlateAppearance extends Play {
 
 	@Override
 	public PlayResult getPlayResult() {
-		return null;  //To change body of implemented methods use File | Settings | File Templates.
+		BaseballPlayer batter = (BaseballPlayer) this.batter;
+
+		return batter.getPlayResult();
 	}
 }

@@ -34,25 +34,25 @@ public class BatterPlateAppearanceRangeGroup extends Range {
 		this.lineDriveRangeGroup = new RangeGroup(this.battingAttributes.getContactLineDriveChance());
 
 		this.flyBallRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallSingleChance(), "Fly Ball Single"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallDoubleChance(), "Fly Ball Double"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallTripleChance(), "Fly Ball Triple"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallHomeRunChance(), "Fly Ball Home Run"))
-			.setDefaultRange(new RangeValue("Fly Ball Out"));
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallSingleChance(), new PlateAppearanceResult(Results.FlyBall, Results.Single)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallDoubleChance(), new PlateAppearanceResult(Results.FlyBall, Results.Double)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallTripleChance(), new PlateAppearanceResult(Results.FlyBall, Results.Triple)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallHomeRunChance(), new PlateAppearanceResult(Results.FlyBall, Results.HomeRun)))
+			.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.FlyBall, Results.Out)));
 
 		this.groundBallRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallSingleChance(), "Ground Ball Single"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallDoubleChance(), "Ground Ball Double"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallTripleChance(), "Ground Ball Triple"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallHomeRunChance(), "Ground Ball Home Run"))
-			.setDefaultRange(new RangeValue("Ground Ball Out"));
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallSingleChance(), new PlateAppearanceResult(Results.GroundBall, Results.Single)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallDoubleChance(), new PlateAppearanceResult(Results.GroundBall, Results.Double)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallTripleChance(), new PlateAppearanceResult(Results.GroundBall, Results.Triple)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallHomeRunChance(), new PlateAppearanceResult(Results.GroundBall, Results.HomeRun)))
+			.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.GroundBall, Results.Out)));
 
 		this.lineDriveRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveSingleChance(), "Line Drive Single"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveDoubleChance(), "Line Drive Double"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveTripleChance(), "Line Drive Triple"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveHomeRunChance(), "Line Drive Home Run"))
-			.setDefaultRange(new RangeValue("Line Drive Out"));
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveSingleChance(), new PlateAppearanceResult(Results.LineDrive, Results.Single)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveDoubleChance(), new PlateAppearanceResult(Results.LineDrive, Results.Double)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveTripleChance(), new PlateAppearanceResult(Results.LineDrive, Results.Triple)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveHomeRunChance(), new PlateAppearanceResult(Results.LineDrive, Results.HomeRun)))
+			.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.LineDrive, Results.Out)));
 
 		this.contactRangeGroup
 			.addToRangeGroup(this.flyBallRangeGroup)
@@ -60,11 +60,11 @@ public class BatterPlateAppearanceRangeGroup extends Range {
 			.setDefaultRange(this.lineDriveRangeGroup);
 
 		this.plateAppearanceRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getWalkChance(), "Walk"))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getHitByPitchChance(), "HBP"))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getWalkChance(), new PlateAppearanceResult(Results.BB)))
+			.addToRangeGroup(new RangeValue(this.battingAttributes.getHitByPitchChance(), new PlateAppearanceResult(Results.HBP)))
 			.addToRangeGroup(new RangeGroup(this.battingAttributes.getStrikeoutChance())
-				.addToRangeGroup(new RangeValue(this.battingAttributes.getStrikeoutLookingChance(), "Strikeout Looking"))
-				.setDefaultRange(new RangeValue("Strikeout Swinging")))
+				.addToRangeGroup(new RangeValue(this.battingAttributes.getStrikeoutLookingChance(), new PlateAppearanceResult(Results.StrikeoutLooking)))
+				.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.StrikeoutSwinging))))
 			.setDefaultRange(this.contactRangeGroup);
 	}
 

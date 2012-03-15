@@ -7,13 +7,13 @@ import org.fazio.simsports.core.types.*;
  */
 public class PlayerBuilder {
 
-	private String firstName;
-	private String lastName;
-	private String nickname;
-	private Position position;
-	private Attributes attributes;
-	private Ratings ratings;
-	private Statistics statistics;
+	protected String firstName;
+	protected String lastName;
+	protected String nickname;
+	protected Position position;
+	protected Attributes attributes;
+	protected Ratings ratings;
+	protected Statistics statistics;
 	
 	public PlayerBuilder setFirstName(final String firstName) {
 		this.firstName = firstName;

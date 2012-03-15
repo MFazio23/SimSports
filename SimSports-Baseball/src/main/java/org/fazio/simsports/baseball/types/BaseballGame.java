@@ -12,21 +12,52 @@ public class BaseballGame extends Game {
 	private int inning = 1;
 	private boolean topOfInning = true;
 	private int outs = 0;
+
+	private Diamond diamond;
+
+	private enum Event {NoEvent, EndOfHalfInning, EndOfInning, EndOfGame}
 	
 	public BaseballGame(final Team homeTeam, final Team awayTeam) {
 		super(homeTeam, awayTeam);
 	}
 
-	private void checkOuts() {
-		if(this.outs >= 3) {
-			if(this.topOfInning) {
+	private void checkForEvent() {
+		switch (this.findEvent()) {
+			case EndOfHalfInning:
 				this.topOfInning = false;
-			} else {
-				this.inning++;
+				this.outs = 0;
+				break;
+			case EndOfInning:
 				this.topOfInning = true;
-			}
-			this.outs = 0;
+				this.outs = 0;
+				this.inning++;
+				break;
+			case EndOfGame:
+				this.gameOver = true;
+				break;
+			case NoEvent:
+				break;
+			default:
+				break;
 		}
+	}
+	
+	private Event findEvent() {
+		Event event = Event.NoEvent;
+		
+		if(this.outs >= 3) {
+			event = Event.EndOfHalfInning;
+
+			if(!this.topOfInning) {
+				event = Event.EndOfInning;
+				
+				if(this.inning >= 9 && (this.homeScore != this.awayScore)) {
+					event = Event.EndOfGame;
+				}
+			}
+		}
+		
+		return event;
 	}
 	
 	public void addOut() {
@@ -35,7 +66,13 @@ public class BaseballGame extends Game {
 	
 	public void addOuts(final int outs) {
 		this.outs += outs;
-		this.checkOuts();
+		this.checkForEvent();
+	}
+
+	@Override
+	public void addToHomeScore(final int addedPoints) {
+		super.addToHomeScore(addedPoints);
+		this.checkForEvent();
 	}
 
 	public int getInning() {

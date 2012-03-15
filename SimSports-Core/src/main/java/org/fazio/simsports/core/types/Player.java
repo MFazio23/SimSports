@@ -5,13 +5,13 @@ package org.fazio.simsports.core.types;
  */
 public class Player {
 	
-	private final String firstName;
-	private final String lastName;
-	private final String nickname;
-	private final Position position;
-	private final Attributes attributes;
-	private final Ratings ratings;
-	private final Statistics statistics;
+	protected final String firstName;
+	protected final String lastName;
+	protected final String nickname;
+	protected final Position position;
+	protected final Attributes attributes;
+	protected final Ratings ratings;
+	protected final Statistics statistics;
 
 	public Player(Attributes attributes, String firstName, String lastName, String nickname, Position position, Ratings ratings, Statistics statistics) {
 		this.attributes = attributes;
