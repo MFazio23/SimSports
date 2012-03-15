@@ -8,7 +8,7 @@ import org.fazio.simsports.core.types.Player;
  */
 public class Diamond {
 
-	private Player[] bases = new Player[3];
+	private Player[] bases = new Player[4];
 	private PlateAppearance upToBat;
 
 	public int runPlateAppearance() {
@@ -19,33 +19,38 @@ public class Diamond {
 		return 0;
 	}
 
-	public int moveRunners(final Hit hit) {
+	public int moveRunners(final Player batter, final PlateAppearanceResult hit) {
 		int runsScored = 0;
 		
-		for(int x=bases.length - 1 ; x >= 0 ; x--) {
+		for(int x=bases.length - 1 ; x > 0 ; x--) {
 			BaseballPlayer player = (BaseballPlayer) bases[x];
-			int basesMoved = player.moveBases(hit);
-			if(x + basesMoved > 3) {
-				runsScored++;
-			} else {
-				bases[x + basesMoved] = player;
-				bases[x] = null;
+			if(player != null) {
+				int basesMoved = player.moveBases(hit);
+				if(x + basesMoved  > 3) {
+					runsScored++;
+					bases[x] = null;
+				} else {
+					bases[x + basesMoved] = player;
+					bases[x] = null;
+				}
 			}
 		}
+
+		bases[hit.getBases()] = batter;
 		
 		return runsScored;
 	}
 
 	public Player getFirstBase() {
-		return this.bases[0];
+		return this.bases[1];
 	}
 
 	public void setFirstBase(final Player firstBase) {
-		this.bases[0] = firstBase;
+		this.bases[1] = firstBase;
 	}
 
 	public Player getSecondBase() {
-		return this.bases[1];
+		return this.bases[2];
 	}
 
 	public void setSecondBase(final Player secondBase) {
@@ -53,11 +58,11 @@ public class Diamond {
 	}
 
 	public Player getThirdBase() {
-		return this.bases[2];
+		return this.bases[3];
 	}
 
 	public void setThirdBase(final Player thirdBase) {
-		this.bases[2] = thirdBase;
+		this.bases[3] = thirdBase;
 	}
 
 	public PlateAppearance getUpToBat() {

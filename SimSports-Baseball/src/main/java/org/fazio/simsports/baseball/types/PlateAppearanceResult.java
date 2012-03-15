@@ -13,6 +13,9 @@ public class PlateAppearanceResult implements PlayResult {
 	protected final Results contactType;
 	protected final Results hitType;
 	
+	public PlateAppearanceResult(final int bases) {
+		this(bases, null, null, null);
+	}
 	
 	public PlateAppearanceResult(final Results hitType) {
 		this(0, null, null, hitType);
@@ -40,6 +43,10 @@ public class PlateAppearanceResult implements PlayResult {
 		}
 		//TODO: Finish this.
 		return 0;
+	}
+	
+	public int getBases() {
+		return this.bases;
 	}
 
 }

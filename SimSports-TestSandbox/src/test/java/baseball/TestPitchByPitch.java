@@ -1,3 +1,5 @@
+package baseball;
+
 import org.fazio.simsports.baseball.builders.BatterAttributesByPitchBuilder;
 import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPitch;
 import org.fazio.simsports.core.ranges.RangeGroup;

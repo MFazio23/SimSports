@@ -1,3 +1,5 @@
+package baseball;
+
 import org.fazio.simsports.baseball.types.BaseballGame;
 import org.fazio.simsports.core.types.Player;
 import org.fazio.simsports.core.types.Team;

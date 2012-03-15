@@ -14,7 +14,7 @@ public class BaseballPlayer extends Player {
 		super(attributes, firstName, lastName, nickname, position, ratings, statistics);
 	}
 	
-	public int moveBases(final Hit hit) {
+	public int moveBases(final PlateAppearanceResult hit) {
 		//TODO: Actually implement this.
 		return hit.getBases();
 	}

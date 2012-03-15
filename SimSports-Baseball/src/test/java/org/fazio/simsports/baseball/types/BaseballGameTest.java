@@ -11,7 +11,7 @@ import static org.mockito.Mockito.mock;
  * @author Michael Fazio <michael.fazio@kohls.com>
  * @since 3/13/12 3:56 PM
  */
-public class TestBaseballGame {
+public class BaseballGameTest {
 
 	private BaseballGame game;
 	
