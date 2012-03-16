@@ -13,7 +13,7 @@ public class BaseballGame extends Game {
 	private boolean topOfInning = true;
 	private int outs = 0;
 
-	private Diamond diamond;
+	private Bases bases;
 
 	private enum Event {NoEvent, EndOfHalfInning, EndOfInning, EndOfGame}
 	

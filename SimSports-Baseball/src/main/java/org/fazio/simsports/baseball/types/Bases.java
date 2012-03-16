@@ -6,18 +6,9 @@ import org.fazio.simsports.core.types.Player;
  * @author Michael Fazio <michael.fazio@kohls.com>
  * @since 3/14/12 2:43 PM
  */
-public class Diamond {
+public class Bases {
 
 	private Player[] bases = new Player[4];
-	private PlateAppearance upToBat;
-
-	public int runPlateAppearance() {
-		PlateAppearanceResult result = (PlateAppearanceResult) this.upToBat.getPlayResult();
-
-		//TODO: Finish this.
-
-		return 0;
-	}
 
 	public int moveRunners(final Player batter, final PlateAppearanceResult hit) {
 		int runsScored = 0;
@@ -63,13 +54,5 @@ public class Diamond {
 
 	public void setThirdBase(final Player thirdBase) {
 		this.bases[3] = thirdBase;
-	}
-
-	public PlateAppearance getUpToBat() {
-		return upToBat;
-	}
-
-	public void setUpToBat(final PlateAppearance upToBat) {
-		this.upToBat = upToBat;
 	}
 }
