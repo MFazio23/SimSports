@@ -37,14 +37,6 @@ public class TestRanges {
 	@Before
 	public void setUp() throws Exception {
 		this.mainRangeGroup = new RangeGroup();
-		/*this.mainRangeGroup
-			.addToRangeGroup(
-				new org.fazio.simsports.core.ranges.RangeGroup(attrs.getBatterAverage())
-					.addToRangeGroup(new org.fazio.simsports.core.ranges.RangeValue(20.32, "Double"))
-					.addToRangeGroup(new org.fazio.simsports.core.ranges.RangeValue(3.21, "Triple"))
-					.addToRangeGroup(new org.fazio.simsports.core.ranges.RangeValue(17.65, "Home Run"))
-					.setDefaultRange(new org.fazio.simsports.core.ranges.RangeValue("Single")))
-			.setDefaultRange(new org.fazio.simsports.core.ranges.RangeValue("Out"));*/
 
 		this.counts = new LinkedHashMap<String, Integer>();
 		this.counts.put("Out", 0);
