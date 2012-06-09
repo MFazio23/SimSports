@@ -17,12 +17,12 @@ public class PlateAppearanceResult implements PlayResult {
 		this(bases, null, null, null);
 	}
 	
-	public PlateAppearanceResult(final Results hitType) {
-		this(0, null, null, hitType);
+	public PlateAppearanceResult(final Results nonContactResult) {
+		this(0, nonContactResult, null, null);
 	}
 
-	public PlateAppearanceResult(final Results nonContactResult, final Results contactType) {
-		this(0, nonContactResult, contactType, null);
+	public PlateAppearanceResult(final Results contactType, final Results hitType) {
+		this(0, null, contactType, hitType);
 	}
 
 	public PlateAppearanceResult(final Results nonContactResult, final Results contactType, final Results hitType) {
@@ -36,7 +36,11 @@ public class PlateAppearanceResult implements PlayResult {
 
 		this.bases = bases;
 	}
-	
+
+	public Results getSingleResult() {
+		return nonContactResult == null ? hitType : nonContactResult;
+	}
+
 	public int outsMade() {
 		if(this.hitType.equals(Results.Out)) {
 
@@ -49,4 +53,19 @@ public class PlateAppearanceResult implements PlayResult {
 		return this.bases;
 	}
 
+	@Override
+	public String toString() {
+		return new StringBuilder()
+			.append("Play Result: ")
+			.append("[")
+			.append(this.nonContactResult)
+			.append(",")
+			.append(this.contactType)
+			.append(",")
+			.append(this.hitType)
+			.append("]")
+			.append(", Bases: ")
+			.append(this.bases)
+			.toString();
+	}
 }

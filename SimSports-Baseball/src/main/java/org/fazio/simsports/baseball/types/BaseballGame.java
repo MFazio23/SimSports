@@ -14,6 +14,7 @@ public class BaseballGame extends Game {
 	private int outs = 0;
 
 	private Bases bases;
+	private PlateAppearance plateAppearance;
 
 	private enum Event {NoEvent, EndOfHalfInning, EndOfInning, EndOfGame}
 	
@@ -76,14 +77,42 @@ public class BaseballGame extends Game {
 	}
 
 	public int getInning() {
-		return this.inning;
+		return inning;
+	}
+
+	public void setInning(final int inning) {
+		this.inning = inning;
+	}
+
+	public boolean isTopOfInning() {
+		return topOfInning;
+	}
+
+	public void setTopOfInning(final boolean topOfInning) {
+		this.topOfInning = topOfInning;
 	}
 
 	public int getOuts() {
-		return this.outs;
+		return outs;
 	}
-	
-	public boolean isTopOfInning() {
-		return this.topOfInning;
+
+	public void setOuts(final int outs) {
+		this.outs = outs;
+	}
+
+	public Bases getBases() {
+		return bases;
+	}
+
+	public void setBases(final Bases bases) {
+		this.bases = bases;
+	}
+
+	public PlateAppearance getPlateAppearance() {
+		return plateAppearance;
+	}
+
+	public void setPlateAppearance(final PlateAppearance plateAppearance) {
+		this.plateAppearance = plateAppearance;
 	}
 }
