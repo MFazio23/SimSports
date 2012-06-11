@@ -18,7 +18,7 @@ public class BaseballPlayerTest {
 
 	private BaseballPlayer testPlayer;
 	private final int testCount = 629;
-	private static final double testFactor = 25000.0;
+	private final double testFactor = 10000;
 	private Map<Results, Integer> results;
 
 
@@ -32,14 +32,35 @@ public class BaseballPlayerTest {
 	@Test
 	public void testPlateAppearance() throws Exception {
 
+		final int testsToRun = (int)(this.testCount * this.testFactor);
+
+		final int onePercent = testsToRun/100;
+
 		for(int x=0; x<(this.testCount * testFactor); x++) {
-			if(x%100000 == 0) System.out.println(x + " tests completed.");
+			if(x%onePercent == 0) System.out.println(x/onePercent + "% completed.");
 			runPlateAppearance();
 		}
 
 		for(Map.Entry<Results, Integer> entry : this.results.entrySet()) {
-			System.out.println(entry.getKey() + " = " + Math.round((double) entry.getValue() / testFactor));
+			System.out.println(((Results)entry.getKey()).getText() + " = " + Math.round((double) entry.getValue() / testFactor));
 		}
+
+		final Results[] hitTypes = {Results.Single, Results.Double, Results.Triple, Results.HomeRun};
+		final Results[] outTypes = {Results.Out, Results.StrikeoutLooking, Results.StrikeoutSwinging};
+
+		double hits = 0;
+		for(Results hitType : hitTypes) {
+			hits += (double)this.results.get(hitType);
+		}
+
+		double outs = 0;
+		for(Results outType : outTypes) {
+			outs += (double)this.results.get(outType);
+		}
+
+		System.out.println("Hits = " + hits);
+		System.out.println("Outs = " + outs);
+		System.out.println("Batting Average = " + ((hits) / ((hits + outs))));
 
 	}
 

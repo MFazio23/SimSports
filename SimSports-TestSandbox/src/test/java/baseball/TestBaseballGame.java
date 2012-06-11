@@ -39,9 +39,9 @@ public class TestBaseballGame {
 
 	@Test
 	public void testBaseballGame() throws Exception {
-		while(!this.game.isGameOver()) {
+		//while(!this.game.isGameOver()) {
 
-		}
+		//}
 	}
 
 }
