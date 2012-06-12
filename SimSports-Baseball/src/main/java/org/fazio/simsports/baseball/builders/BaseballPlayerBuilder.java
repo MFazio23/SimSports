@@ -2,7 +2,6 @@ package org.fazio.simsports.baseball.builders;
 
 import org.fazio.simsports.baseball.types.BaseballPlayer;
 import org.fazio.simsports.core.builders.PlayerBuilder;
-import org.fazio.simsports.core.types.Player;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
@@ -16,6 +15,7 @@ public class BaseballPlayerBuilder extends PlayerBuilder {
 			this.firstName,
 			this.lastName,
 			this.nickname,
+			this.team,
 			this.position,
 			this.ratings,
 			this.statistics);

@@ -40,4 +40,9 @@ public enum BaseballPosition implements Position {
 	public boolean isPitcher() {
 		return this.isPitcher;
 	}
+
+	@Override
+	public String toString() {
+		return this.getPositionName();
+	}
 }

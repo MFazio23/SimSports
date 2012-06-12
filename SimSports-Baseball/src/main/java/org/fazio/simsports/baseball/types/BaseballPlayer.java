@@ -1,7 +1,7 @@
 package org.fazio.simsports.baseball.types;
 
 import org.fazio.simsports.baseball.types.attributes.BatterAttributes;
-import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPA;
+import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 import org.fazio.simsports.core.types.*;
 
 /**
@@ -10,8 +10,8 @@ import org.fazio.simsports.core.types.*;
  */
 public class BaseballPlayer extends Player {
 
-	public BaseballPlayer(Attributes attributes, String firstName, String lastName, String nickname, Position position, Ratings ratings, Statistics statistics) {
-		super(attributes, firstName, lastName, nickname, position, ratings, statistics);
+	public BaseballPlayer(Attributes attributes, String firstName, String lastName, String nickname, Team team, Position position, Ratings ratings, Statistics statistics) {
+		super(attributes, firstName, lastName, nickname, team, position, ratings, statistics);
 	}
 	
 	public int moveBases(final PlateAppearanceResult hit) {
@@ -19,11 +19,12 @@ public class BaseballPlayer extends Player {
 		return hit.getBases();
 	}
 	
-	public PlayResult getPlayResult() {
-		BatterAttributes attrs = (BatterAttributes) super.attributes;
+	public PlateAppearanceResult getPlayResult() {
+		final BatterAttributes attrs = (BatterAttributes) super.attributes;
 
-		BatterPlateAppearanceRangeGroup group = new BatterPlateAppearanceRangeGroup((BatterAttributesByPA) attrs.getBattingAttributes());
+		final BatterPlateAppearanceRangeGroup group
+			= new BatterPlateAppearanceRangeGroup((BattingAttributesByPA) attrs.getBattingAttributes());
 		
-		return (PlayResult) group.getRangeValue();
+		return (PlateAppearanceResult) group.getRangeValue();
 	}
 }

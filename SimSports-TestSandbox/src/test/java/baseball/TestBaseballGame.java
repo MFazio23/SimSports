@@ -1,13 +1,15 @@
 package baseball;
 
+import org.fazio.simsports.baseball.builders.test.RyanBraunTestPlayerBuilder;
 import org.fazio.simsports.baseball.types.BaseballGame;
+import org.fazio.simsports.baseball.types.BaseballPlayer;
+import org.fazio.simsports.baseball.types.Bases;
+import org.fazio.simsports.baseball.types.PlateAppearanceResult;
 import org.fazio.simsports.core.types.Player;
 import org.fazio.simsports.core.types.Team;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
@@ -39,9 +41,47 @@ public class TestBaseballGame {
 
 	@Test
 	public void testBaseballGame() throws Exception {
-		//while(!this.game.isGameOver()) {
+		final Bases bases = new Bases();
+		int outs = 0;
+		int inning = 1;
+		Teams team = Teams.Away;
+		Map<Teams, Integer> runMap = new HashMap<Teams, Integer>() {
+			{
+				put(Teams.Home, 0);
+				put(Teams.Away, 0);
+			}
+		};
 
-		//}
+		while(inning <= 9) {
+			System.out.println("=== Inning " + inning + " ===");
+			while(outs < 3) {
+				final BaseballPlayer braun = new RyanBraunTestPlayerBuilder().build();
+				final PlateAppearanceResult hit = (PlateAppearanceResult)braun.getPlayResult();
+
+				System.out.println("PA Result = " + hit);
+
+				if(hit.isOut()) outs++;
+
+				runMap.put(team, runMap.get(team) + bases.moveRunners(braun, hit));
+
+				System.out.println("Runs = " + runMap.get(team) + ", Bases = " + bases);
+			}
+
+			outs = 0;
+
+			if(team.equals(Teams.Away)) {
+				team = Teams.Home;
+			} else {
+				team = Teams.Away;
+				System.out.println("Inning Over");
+				inning++;
+			}
+		}
+
+		System.out.println("Away Team = " + runMap.get(Teams.Away));
+		System.out.println("Home Team = " + runMap.get(Teams.Home));
 	}
+
+	public enum Teams {Home, Away};
 
 }

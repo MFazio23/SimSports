@@ -1,11 +1,11 @@
 package org.fazio.simsports.baseball.builders;
 
-import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPA;
+import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 
 /**
  * @author Michael Fazio
  */
-public class BatterAttributesByPABuilder {
+public class BattingAttributesByPABuilder {
 
 	private double hitByPitchChance;
 	private double walkChance;
@@ -37,128 +37,128 @@ public class BatterAttributesByPABuilder {
 	private double flyBallTripleChance;
 	private double flyBallHomeRunChance;
 
-	public BatterAttributesByPABuilder setContactChance(double contactChance) {
+	public BattingAttributesByPABuilder setContactChance(double contactChance) {
 		this.contactChance = contactChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setContactFlyBallChance(double contactFlyBallChance) {
+	public BattingAttributesByPABuilder setContactFlyBallChance(double contactFlyBallChance) {
 		this.contactFlyBallChance = contactFlyBallChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setContactGroundBallChance(double contactGroundBallChance) {
+	public BattingAttributesByPABuilder setContactGroundBallChance(double contactGroundBallChance) {
 		this.contactGroundBallChance = contactGroundBallChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setContactLineDriveChance(double contactLineDriveChance) {
+	public BattingAttributesByPABuilder setContactLineDriveChance(double contactLineDriveChance) {
 		this.contactLineDriveChance = contactLineDriveChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setFlyBallDoubleChance(double flyBallDoubleChance) {
+	public BattingAttributesByPABuilder setFlyBallDoubleChance(double flyBallDoubleChance) {
 		this.flyBallDoubleChance = flyBallDoubleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setFlyBallHomeRunChance(double flyBallHomeRunChance) {
+	public BattingAttributesByPABuilder setFlyBallHomeRunChance(double flyBallHomeRunChance) {
 		this.flyBallHomeRunChance = flyBallHomeRunChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setFlyBallOutChance(double flyBallOutChance) {
+	public BattingAttributesByPABuilder setFlyBallOutChance(double flyBallOutChance) {
 		this.flyBallOutChance = flyBallOutChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setFlyBallSingleChance(double flyBallSingleChance) {
+	public BattingAttributesByPABuilder setFlyBallSingleChance(double flyBallSingleChance) {
 		this.flyBallSingleChance = flyBallSingleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setFlyBallTripleChance(double flyBallTripleChance) {
+	public BattingAttributesByPABuilder setFlyBallTripleChance(double flyBallTripleChance) {
 		this.flyBallTripleChance = flyBallTripleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setGroundBallDoubleChance(double groundBallDoubleChance) {
+	public BattingAttributesByPABuilder setGroundBallDoubleChance(double groundBallDoubleChance) {
 		this.groundBallDoubleChance = groundBallDoubleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setGroundBallHomeRunChance(double groundBallHomeRunChance) {
+	public BattingAttributesByPABuilder setGroundBallHomeRunChance(double groundBallHomeRunChance) {
 		this.groundBallHomeRunChance = groundBallHomeRunChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setGroundBallOutChance(double groundBallOutChance) {
+	public BattingAttributesByPABuilder setGroundBallOutChance(double groundBallOutChance) {
 		this.groundBallOutChance = groundBallOutChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setGroundBallSingleChance(double groundBallSingleChance) {
+	public BattingAttributesByPABuilder setGroundBallSingleChance(double groundBallSingleChance) {
 		this.groundBallSingleChance = groundBallSingleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setGroundBallTripleChance(double groundBallTripleChance) {
+	public BattingAttributesByPABuilder setGroundBallTripleChance(double groundBallTripleChance) {
 		this.groundBallTripleChance = groundBallTripleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setHitByPitchChance(double hitByPitchChance) {
+	public BattingAttributesByPABuilder setHitByPitchChance(double hitByPitchChance) {
 		this.hitByPitchChance = hitByPitchChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setLineDriveDoubleChance(double lineDriveDoubleChance) {
+	public BattingAttributesByPABuilder setLineDriveDoubleChance(double lineDriveDoubleChance) {
 		this.lineDriveDoubleChance = lineDriveDoubleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setLineDriveHomeRunChance(double lineDriveHomeRunChance) {
+	public BattingAttributesByPABuilder setLineDriveHomeRunChance(double lineDriveHomeRunChance) {
 		this.lineDriveHomeRunChance = lineDriveHomeRunChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setLineDriveOutChance(double lineDriveOutChance) {
+	public BattingAttributesByPABuilder setLineDriveOutChance(double lineDriveOutChance) {
 		this.lineDriveOutChance = lineDriveOutChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setLineDriveSingleChance(double lineDriveSingleChance) {
+	public BattingAttributesByPABuilder setLineDriveSingleChance(double lineDriveSingleChance) {
 		this.lineDriveSingleChance = lineDriveSingleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setLineDriveTripleChance(double lineDriveTripleChance) {
+	public BattingAttributesByPABuilder setLineDriveTripleChance(double lineDriveTripleChance) {
 		this.lineDriveTripleChance = lineDriveTripleChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setStrikeoutChance(double strikeoutChance) {
+	public BattingAttributesByPABuilder setStrikeoutChance(double strikeoutChance) {
 		this.strikeoutChance = strikeoutChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setStrikeoutLookingChance(double strikeoutLookingChance) {
+	public BattingAttributesByPABuilder setStrikeoutLookingChance(double strikeoutLookingChance) {
 		this.strikeoutLookingChance = strikeoutLookingChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setStrikeoutSwingingChance(double strikeoutSwingingChance) {
+	public BattingAttributesByPABuilder setStrikeoutSwingingChance(double strikeoutSwingingChance) {
 		this.strikeoutSwingingChance = strikeoutSwingingChance;
 		return this;
 	}
 
-	public BatterAttributesByPABuilder setWalkChance(double walkChance) {
+	public BattingAttributesByPABuilder setWalkChance(double walkChance) {
 		this.walkChance = walkChance;
 		return this;
 	}
 
-	public BatterAttributesByPA build() {
-		return new BatterAttributesByPA(
+	public BattingAttributesByPA build() {
+		return new BattingAttributesByPA(
 			this.contactChance,
 			this.contactFlyBallChance,
 			this.contactGroundBallChance,

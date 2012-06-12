@@ -5,7 +5,7 @@ import org.fazio.simsports.core.types.Attributes;
 /**
  * @author Michael Fazio
  */
-public class BatterAttributesByPA implements Attributes {
+public class BattingAttributesByPA implements Attributes {
 
 	private final double hitByPitchChance;
 	private final double walkChance;
@@ -37,7 +37,7 @@ public class BatterAttributesByPA implements Attributes {
 	private final double flyBallTripleChance;
 	private final double flyBallHomeRunChance;
 
-	public BatterAttributesByPA(
+	public BattingAttributesByPA(
 		double contactChance,
 		double contactFlyBallChance,
 		double contactGroundBallChance,

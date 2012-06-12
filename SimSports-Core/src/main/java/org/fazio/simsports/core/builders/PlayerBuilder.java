@@ -10,6 +10,7 @@ public class PlayerBuilder {
 	protected String firstName;
 	protected String lastName;
 	protected String nickname;
+	protected Team team;
 	protected Position position;
 	protected Attributes attributes;
 	protected Ratings ratings;
@@ -29,7 +30,12 @@ public class PlayerBuilder {
 		this.nickname = nickname;
 		return this;
 	}
-	
+
+	public PlayerBuilder setTeam(final Team team) {
+		this.team = team;
+		return this;
+	}
+
 	public PlayerBuilder setPosition(final Position position) {
 		this.position = position;
 		return this;
@@ -56,6 +62,7 @@ public class PlayerBuilder {
 			this.firstName,
 			this.lastName,
 			this.nickname,
+			this.team,
 			this.position,
 			this.ratings,
 			this.statistics);

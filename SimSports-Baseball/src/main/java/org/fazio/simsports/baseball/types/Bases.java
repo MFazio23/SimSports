@@ -10,24 +10,27 @@ public class Bases {
 
 	private Player[] bases = new Player[4];
 
-	public int moveRunners(final Player batter, final PlateAppearanceResult hit) {
+	public int moveRunners(final BaseballPlayer batter, final PlateAppearanceResult hit) {
+
 		int runsScored = 0;
-		
-		for(int x=bases.length - 1 ; x > 0 ; x--) {
-			BaseballPlayer player = (BaseballPlayer) bases[x];
-			if(player != null) {
-				int basesMoved = player.moveBases(hit);
-				if(x + basesMoved  > 3) {
-					runsScored++;
-					bases[x] = null;
-				} else {
-					bases[x + basesMoved] = player;
-					bases[x] = null;
+
+		if(hit.getBases() > 0) {
+			this.bases[0] = batter;
+
+			for(int x=bases.length - 1 ; x >= 0 ; x--) {
+				BaseballPlayer player = (BaseballPlayer) bases[x];
+				if(player != null) {
+					int basesMoved = player.moveBases(hit);
+					if(x + basesMoved  > 3) {
+						runsScored++;
+						bases[x] = null;
+					} else {
+						bases[x + basesMoved] = player;
+						bases[x] = null;
+					}
 				}
 			}
 		}
-
-		bases[hit.getBases()] = batter;
 		
 		return runsScored;
 	}
@@ -54,5 +57,18 @@ public class Bases {
 
 	public void setThirdBase(final Player thirdBase) {
 		this.bases[3] = thirdBase;
+	}
+
+	@Override
+	public String toString() {
+		return new StringBuilder()
+			.append("First Base = [")
+			.append(this.bases[1])
+			.append("], Second Base = [")
+			.append(this.bases[2])
+			.append("], Third Base = [")
+			.append(this.bases[3])
+			.append("]")
+			.toString();
 	}
 }

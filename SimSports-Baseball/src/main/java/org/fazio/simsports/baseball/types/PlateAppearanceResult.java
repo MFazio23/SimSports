@@ -7,50 +7,55 @@ import org.fazio.simsports.core.types.PlayResult;
  */
 public class PlateAppearanceResult implements PlayResult {
 
-	protected final int bases;
-
 	protected final Results nonContactResult;
 	protected final Results contactType;
 	protected final Results hitType;
 	
-	public PlateAppearanceResult(final int bases) {
-		this(bases, null, null, null);
-	}
-	
 	public PlateAppearanceResult(final Results nonContactResult) {
-		this(0, nonContactResult, null, null);
+		this(nonContactResult, null, null);
 	}
 
 	public PlateAppearanceResult(final Results contactType, final Results hitType) {
-		this(0, null, contactType, hitType);
+		this(null, contactType, hitType);
 	}
 
 	public PlateAppearanceResult(final Results nonContactResult, final Results contactType, final Results hitType) {
-		this(0, nonContactResult, contactType, hitType);
-	}
-
-	public PlateAppearanceResult(final int bases, final Results nonContactResult, final Results contactType, final Results hitType) {
 		this.nonContactResult = nonContactResult;
 		this.contactType = contactType;
 		this.hitType = hitType;
-
-		this.bases = bases;
 	}
 
 	public Results getSingleResult() {
 		return nonContactResult == null ? hitType : nonContactResult;
 	}
-
-	public int outsMade() {
-		if(this.hitType.equals(Results.Out)) {
-
-		}
-		//TODO: Finish this.
-		return 0;
-	}
 	
 	public int getBases() {
-		return this.bases;
+		int bases = 0;
+
+		switch(this.getSingleResult()) {
+			case HBP: bases = 1; break;
+			case BB: bases = 1; break;
+			case Single: bases = 1; break;
+			case Double: bases = 2; break;
+			case Triple: bases = 3; break;
+			case HomeRun: bases = 4; break;
+			default: bases = 0; break;
+		}
+
+		return bases;
+	}
+
+	public boolean isOut() {
+		boolean out = false;
+
+		switch(this.getSingleResult()) {
+			case Out: out = true; break;
+			case StrikeoutLooking: out = true; break;
+			case StrikeoutSwinging: out = true; break;
+			default: out = false; break;
+		}
+
+		return out;
 	}
 
 	@Override
@@ -65,7 +70,7 @@ public class PlateAppearanceResult implements PlayResult {
 			.append(this.hitType)
 			.append("]")
 			.append(", Bases: ")
-			.append(this.bases)
+			.append(this.getBases())
 			.toString();
 	}
 }

@@ -1,6 +1,6 @@
 package org.fazio.simsports.baseball.types;
 
-import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPA;
+import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 import org.fazio.simsports.core.ranges.Range;
 import org.fazio.simsports.core.ranges.RangeGroup;
 import org.fazio.simsports.core.ranges.RangeValue;
@@ -11,7 +11,7 @@ import org.fazio.simsports.core.ranges.RangeValue;
  */
 public class BatterPlateAppearanceRangeGroup extends Range {
 
-	private final BatterAttributesByPA battingAttributes;
+	private final BattingAttributesByPA battingAttributes;
 	
 	private final RangeGroup plateAppearanceRangeGroup;
 	private final RangeGroup contactRangeGroup;
@@ -19,11 +19,11 @@ public class BatterPlateAppearanceRangeGroup extends Range {
 	private final RangeGroup groundBallRangeGroup;
 	private final RangeGroup lineDriveRangeGroup;
 
-	public BatterPlateAppearanceRangeGroup(final BatterAttributesByPA batterAttributesByPA) {
-		this(0, 100, batterAttributesByPA);
+	public BatterPlateAppearanceRangeGroup(final BattingAttributesByPA battingAttributesByPA) {
+		this(0, 100, battingAttributesByPA);
 	}
 
-	public BatterPlateAppearanceRangeGroup(final int start, final int end, final BatterAttributesByPA battingAttributes) {
+	public BatterPlateAppearanceRangeGroup(final int start, final int end, final BattingAttributesByPA battingAttributes) {
 		super(start, end);
 		this.battingAttributes = battingAttributes;
 		
@@ -68,7 +68,7 @@ public class BatterPlateAppearanceRangeGroup extends Range {
 			.setDefaultRange(this.contactRangeGroup);
 	}
 
-	public BatterAttributesByPA getBattingAttributes() {
+	public BattingAttributesByPA getBattingAttributes() {
 		return battingAttributes;
 	}
 

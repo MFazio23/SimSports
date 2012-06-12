@@ -1,5 +1,5 @@
-import org.fazio.simsports.baseball.builders.BatterAttributesByPitchBuilder;
-import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPitch;
+import org.fazio.simsports.baseball.builders.BattingAttributesByPitchBuilder;
+import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPitch;
 import org.fazio.simsports.core.ranges.RangeGroup;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,8 +14,8 @@ import static junit.framework.Assert.assertEquals;
  */
 public class TestRanges {
 
-	private BatterAttributesByPitch attrs
-		= new BatterAttributesByPitchBuilder()
+	private BattingAttributesByPitch attrs
+		= new BattingAttributesByPitchBuilder()
 			.setPitchSwing(44.6)
 			.setNoSwingStrike(62.02)
 			.setNoSwingHBP(0.2)

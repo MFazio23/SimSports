@@ -1,7 +1,7 @@
 package baseball;
 
-import org.fazio.simsports.baseball.builders.BatterAttributesByPABuilder;
-import org.fazio.simsports.baseball.types.attributes.BatterAttributesByPA;
+import org.fazio.simsports.baseball.builders.BattingAttributesByPABuilder;
+import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 import org.fazio.simsports.core.ranges.RangeGroup;
 import org.fazio.simsports.core.ranges.RangeValue;
 import org.junit.Before;
@@ -15,8 +15,8 @@ import java.util.Map;
  */
 public class TestPlateAppearance {
 
-	private BatterAttributesByPA attrs
-		= new BatterAttributesByPABuilder()
+	private BattingAttributesByPA attrs
+		= new BattingAttributesByPABuilder()
 			.setStrikeoutChance(14.8)
 			.setWalkChance(9.2)
 			.setStrikeoutLookingChance(15)

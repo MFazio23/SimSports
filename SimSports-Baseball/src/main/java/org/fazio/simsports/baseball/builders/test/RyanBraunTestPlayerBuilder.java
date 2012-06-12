@@ -1,33 +1,44 @@
-package baseball;
+package org.fazio.simsports.baseball.builders.test;
 
-import org.fazio.simsports.baseball.builders.BatterAttributesByPABuilder;
-import org.fazio.simsports.baseball.types.BaseballPlayer;
+import org.fazio.simsports.baseball.builders.BattingAttributesByPABuilder;
 import org.fazio.simsports.baseball.types.BaseballPosition;
 import org.fazio.simsports.baseball.types.attributes.BatterAttributes;
+import org.fazio.simsports.core.builders.TeamBuilder;
 import org.fazio.simsports.core.types.Attributes;
-import org.fazio.simsports.core.types.Ratings;
-import org.fazio.simsports.core.types.Statistics;
+import org.fazio.simsports.core.types.Team;
 import org.mockito.Mockito;
 
 /**
  * @author Michael Fazio
  */
-public class TestPlayerRyanBraun extends BaseballPlayer {
+public class RyanBraunTestPlayerBuilder extends TestPlayerBuilder {
 
-	public TestPlayerRyanBraun() {
-		super(
-			TestPlayerRyanBraun.setUpAttributes(),
-			"Ryan",
-			"Braun",
-			"Brauny",
-			BaseballPosition.Left_Field,
-			TestPlayerRyanBraun.setUpRatings(),
-			TestPlayerRyanBraun.setUpStatistics());
+	public RyanBraunTestPlayerBuilder() {
+		super();
 	}
 
-	private static Attributes setUpAttributes() {
-		final Attributes battingAttributes
-			= new BatterAttributesByPABuilder()
+	@Override
+	protected void setUpTestPlayer() {
+		super.setUpTestPlayer();
+		this.firstName = "Ryan";
+		this.lastName = "Braun";
+		this.nickname = "Brauny";
+		this.team = this.setUpTeam();
+		this.position = BaseballPosition.Left_Field;
+		this.attributes = this.setUpAttributes();
+	}
+
+	public Team setUpTeam() {
+
+		return new TeamBuilder()
+			.setLocation("Milwaukee")
+			.setNickname("Brewers")
+			.setMainShortName("MIL")
+			.build();
+	}
+
+	public Attributes setUpAttributes() {
+		final Attributes battingAttributes	= new BattingAttributesByPABuilder()
 			.setStrikeoutChance(14.8)
 			.setWalkChance(9.2)
 			.setStrikeoutLookingChance(15)
@@ -51,13 +62,4 @@ public class TestPlayerRyanBraun extends BaseballPlayer {
 
 		return new BatterAttributes(battingAttributes, Mockito.mock(Attributes.class), Mockito.mock(Attributes.class));
 	}
-
-	private static Ratings setUpRatings() {
-		return Mockito.mock(Ratings.class);
-	}
-
-	private static Statistics setUpStatistics() {
-		return Mockito.mock(Statistics.class);
-	}
-
 }

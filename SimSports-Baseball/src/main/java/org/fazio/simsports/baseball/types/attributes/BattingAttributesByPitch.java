@@ -5,7 +5,7 @@ import org.fazio.simsports.core.types.Attributes;
 /**
  * @author Michael Fazio
  */
-public class BatterAttributesByPitch implements Attributes {
+public class BattingAttributesByPitch implements Attributes {
 
 	private final double pitchSwing;
 	//pitchNoSwing is everything else
@@ -33,7 +33,7 @@ public class BatterAttributesByPitch implements Attributes {
 	//lineDriveRate is everything else
 
 
-	public BatterAttributesByPitch(double contactFoul, double flyBallRate, double groundBallRate, double hitDouble, double hitHomeRun, double hitTriple, double inPlayHit, double noSwingHBP, double noSwingStrike, double pitchSwing, double swingContact) {
+	public BattingAttributesByPitch(double contactFoul, double flyBallRate, double groundBallRate, double hitDouble, double hitHomeRun, double hitTriple, double inPlayHit, double noSwingHBP, double noSwingStrike, double pitchSwing, double swingContact) {
 		this.contactFoul = contactFoul;
 		this.flyBallRate = flyBallRate;
 		this.groundBallRate = groundBallRate;
