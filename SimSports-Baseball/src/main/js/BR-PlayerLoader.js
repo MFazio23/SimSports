@@ -77,8 +77,6 @@ function getPlayerInfo() {
     return playerInfo;
 }
 
-var allValues = new Object();
-
 function getTableValues(fields, tablename, year, row) {
     row = typeof row !== 'undefined' ? row : 0;
 
@@ -95,6 +93,28 @@ function getTableValues(fields, tablename, year, row) {
     return values;
 }
 
+function getContactStatRates(stats) {
+
+    var rates = new Object();
+    var atBats = parseInt(stats["AB"]);
+    var hits = parseInt(stats["H"]);
+    var doubles = parseInt(stats["2B"]);
+    var triples = parseInt(stats["3B"]);
+    var homeRuns = parseInt(stats["HR"]);
+    var singles = hits - (doubles + triples + homeRuns);
+    var outs = atBats - hits;
+
+    rates["SingleRate"] = (singles / atBats) * 100;
+    rates["DoubleRate"] = (doubles / atBats) * 100;
+    rates["TripleRate"] = (triples / atBats) * 100;
+    rates["HomeRunRate"] = (homeRuns / atBats) * 100;
+    rates["OutRate"] = (outs / atBats) * 100;
+
+    return rates;
+
+}
+
+var allValues = new Object();
 var fields = [];
 
 allValues["playerInfo"] = getPlayerInfo();
@@ -111,9 +131,13 @@ if(splitsPage) {
         atBats += parseInt(contactStats[stat]["AB"]);
     }
 
-    alert(atBats);
+    allValues["contactStats"] = new Object();
 
-    allValues["Contact Stats"] = contactStats;
+    for(statType in contactStats) {
+        allValues["contactStats"][statType] = getContactStatRates(contactStats[statType]);
+    }
+
+    //allValues["contactStats"] = contactStats;
 } else {
     fields = ["PA", "AB", "H", "2B", "3B", "HR", "BB", "SO", "BA", "HBP"];
     allValues["basicStats"] = getTableValues(fields, "batting_standard", year);
