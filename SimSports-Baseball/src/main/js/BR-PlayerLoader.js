@@ -63,8 +63,8 @@ function getURLParameter(name) {
     );
 }
 
-function cleanUpValue(value) {
-    return value.replace(/[^A-Za-z0-9\.]/g, '');
+function cleanUpNumber(value) {
+    return parseFloat(value.replace(/[^0-9\.]/g, ''));
 }
 
 function getPlayerInfo() {
@@ -87,13 +87,13 @@ function getTableValues(fields, tablename, year, row) {
 
     $.each(fields, function(index, value) {
         var i = $(indexTable + " th:contains('" + value + "')").first().index() + 1;
-        values[value] = cleanUpValue($(statTable + " td:nth-child(" + i + ")")[row].innerHTML);
+        values[value] = cleanUpNumber($(statTable + " td:nth-child(" + i + ")")[row].innerHTML);
     });
 
     return values;
 }
 
-function getContactStatRates(stats) {
+function getContactStatRates(stats, totalAtBats) {
 
     var rates = new Object();
     var atBats = parseInt(stats["AB"]);
@@ -104,11 +104,12 @@ function getContactStatRates(stats) {
     var singles = hits - (doubles + triples + homeRuns);
     var outs = atBats - hits;
 
-    rates["SingleRate"] = (singles / atBats) * 100;
-    rates["DoubleRate"] = (doubles / atBats) * 100;
-    rates["TripleRate"] = (triples / atBats) * 100;
-    rates["HomeRunRate"] = (homeRuns / atBats) * 100;
-    rates["OutRate"] = (outs / atBats) * 100;
+    rates["contactRate"] = (atBats / totalAtBats) * 100;
+    rates["singleRate"] = (singles / atBats) * 100;
+    rates["doubleRate"] = (doubles / atBats) * 100;
+    rates["tripleRate"] = (triples / atBats) * 100;
+    rates["homeRunRate"] = (homeRuns / atBats) * 100;
+    rates["outRate"] = (outs / atBats) * 100;
 
     return rates;
 
@@ -122,19 +123,19 @@ allValues["playerInfo"] = getPlayerInfo();
 if(splitsPage) {
     fields = ["PA", "AB", "H", "2B", "3B", "HR", "BB", "SO", "BA"]
     var contactStats = new Object();
-    contactStats["Ground Balls"] = getTableValues(fields, "traj", null, 0);
-    contactStats["Fly Balls"] = getTableValues(fields, "traj", null, 1);
-    contactStats["Line Drives"] = getTableValues(fields, "traj", null, 2);
+    contactStats["groundBallRates"] = getTableValues(fields, "traj", null, 0);
+    contactStats["flyBallRates"] = getTableValues(fields, "traj", null, 1);
+    contactStats["lineDriveRates"] = getTableValues(fields, "traj", null, 2);
 
     var atBats = 0;
     for(stat in contactStats) {
         atBats += parseInt(contactStats[stat]["AB"]);
     }
 
-    allValues["contactStats"] = new Object();
+    allValues["contactRates"] = new Object();
 
     for(statType in contactStats) {
-        allValues["contactStats"][statType] = getContactStatRates(contactStats[statType]);
+        allValues["contactRates"][statType] = getContactStatRates(contactStats[statType], atBats);
     }
 
     //allValues["contactStats"] = contactStats;
@@ -155,4 +156,10 @@ if(splitsPage) {
     allValues["nonContactRates"]["hbpRate"] = (HBPs / PAs) * 100;
 }
 
-JSON.stringify(allValues)
+
+var output = "";
+if(!splitsPage) output += "{";
+output += (splitsPage ? "\"splits\": " : "\"stats\": ") + JSON.stringify(allValues)
+splitsPage ? output += "}" : output += ",";
+
+output
