@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Cal Ripken",
+    "year":1991
+}, "basicStats":{
+    "PA":717,
+    "AB":650,
+    "H":210,
+    "2B":46,
+    "3B":5,
+    "HR":34,
+    "BB":53,
+    "SO":46,
+    "BA":0.323,
+    "HBP":5
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":43.3389544688027,
+        "singleRate":19.06614785992218,
+        "doubleRate":3.501945525291829,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":77.431906614786
+    },
+    "flyBallRates":{
+        "contactRate":32.04047217537943,
+        "singleRate":3.1578947368421053,
+        "doubleRate":4.2105263157894735,
+        "tripleRate":0.5263157894736842,
+        "homeRunRate":10.526315789473683,
+        "outRate":81.57894736842105
+    },
+    "lineDriveRates":{
+        "contactRate":24.620573355817875,
+        "singleRate":45.20547945205479,
+        "doubleRate":19.863013698630137,
+        "tripleRate":2.73972602739726,
+        "homeRunRate":9.58904109589041,
+        "outRate":22.602739726027394
+    }
+}, "nonContactRates":{
+    "SO%":6.4,
+    "BB%":7.4,
+    "L/SO":26,
+    "hbpRate":0.697350069735007
+}}

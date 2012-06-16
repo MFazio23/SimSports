@@ -28,6 +28,16 @@
                 <artifactId>mockito-all</artifactId>
                 <version>1.8.5</version>
             </dependency>
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20080701</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-math</groupId>
+                <artifactId>commons-math</artifactId>
+                <version>1.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

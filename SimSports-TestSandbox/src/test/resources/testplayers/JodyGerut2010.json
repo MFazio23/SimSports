@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Jody Gerut",
+    "year":2010
+}, "basicStats":{
+    "PA":74,
+    "AB":71,
+    "H":14,
+    "2B":4,
+    "3B":1,
+    "HR":2,
+    "BB":3,
+    "SO":17,
+    "BA":0.197,
+    "HBP":0
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":60.78431372549019,
+        "singleRate":12.903225806451612,
+        "doubleRate":3.225806451612903,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":83.87096774193549
+    },
+    "flyBallRates":{
+        "contactRate":27.450980392156865,
+        "singleRate":0,
+        "doubleRate":14.285714285714285,
+        "tripleRate":0,
+        "homeRunRate":14.285714285714285,
+        "outRate":71.42857142857143
+    },
+    "lineDriveRates":{
+        "contactRate":11.76470588235294,
+        "singleRate":33.33333333333333,
+        "doubleRate":16.666666666666664,
+        "tripleRate":16.666666666666664,
+        "homeRunRate":0,
+        "outRate":33.33333333333333
+    }
+}, "nonContactRates":{
+    "SO%":23,
+    "BB%":4.1,
+    "L/SO":35,
+    "hbpRate":0
+}}

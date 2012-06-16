@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Ryne Sandberg",
+    "year":1990
+}, "basicStats":{
+    "PA":675,
+    "AB":615,
+    "H":188,
+    "2B":30,
+    "3B":3,
+    "HR":40,
+    "BB":50,
+    "SO":84,
+    "BA":0.306,
+    "HBP":1
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":41.209829867674856,
+        "singleRate":26.605504587155966,
+        "doubleRate":1.3761467889908259,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":72.01834862385321
+    },
+    "flyBallRates":{
+        "contactRate":39.50850661625709,
+        "singleRate":4.30622009569378,
+        "doubleRate":4.784688995215311,
+        "tripleRate":0.9569377990430622,
+        "homeRunRate":13.397129186602871,
+        "outRate":76.55502392344498
+    },
+    "lineDriveRates":{
+        "contactRate":19.281663516068054,
+        "singleRate":47.05882352941176,
+        "doubleRate":16.666666666666664,
+        "tripleRate":0.9803921568627451,
+        "homeRunRate":9.803921568627452,
+        "outRate":25.49019607843137
+    }
+}, "nonContactRates":{
+    "SO%":12.4,
+    "BB%":7.4,
+    "L/SO":23,
+    "hbpRate":0.14814814814814814
+}}

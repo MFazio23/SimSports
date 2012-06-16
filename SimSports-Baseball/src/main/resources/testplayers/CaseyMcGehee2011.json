@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Casey McGehee",
+    "year":2011
+}, "basicStats":{
+    "PA":600,
+    "AB":546,
+    "H":122,
+    "2B":24,
+    "3B":2,
+    "HR":13,
+    "BB":45,
+    "SO":104,
+    "BA":0.223,
+    "HBP":1
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":51.58371040723983,
+        "singleRate":19.736842105263158,
+        "doubleRate":1.7543859649122806,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":78.50877192982456
+    },
+    "flyBallRates":{
+        "contactRate":32.126696832579185,
+        "singleRate":2.8169014084507045,
+        "doubleRate":6.338028169014084,
+        "tripleRate":0,
+        "homeRunRate":9.15492957746479,
+        "outRate":81.69014084507043
+    },
+    "lineDriveRates":{
+        "contactRate":16.289592760180994,
+        "singleRate":47.22222222222222,
+        "doubleRate":15.277777777777779,
+        "tripleRate":2.7777777777777777,
+        "homeRunRate":0,
+        "outRate":34.72222222222222
+    }
+}, "nonContactRates":{
+    "SO%":17.3,
+    "BB%":7.5,
+    "L/SO":46,
+    "hbpRate":0.16666666666666669
+}}

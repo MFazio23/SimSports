@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Curtis Granderson",
+    "year":2007
+}, "basicStats":{
+    "PA":676,
+    "AB":612,
+    "H":185,
+    "2B":38,
+    "3B":23,
+    "HR":23,
+    "BB":52,
+    "SO":141,
+    "BA":0.302,
+    "HBP":5
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":35.47008547008547,
+        "singleRate":24.096385542168676,
+        "doubleRate":1.8072289156626504,
+        "tripleRate":1.8072289156626504,
+        "homeRunRate":0,
+        "outRate":72.28915662650603
+    },
+    "flyBallRates":{
+        "contactRate":42.30769230769231,
+        "singleRate":5.05050505050505,
+        "doubleRate":7.575757575757576,
+        "tripleRate":4.040404040404041,
+        "homeRunRate":8.585858585858585,
+        "outRate":74.74747474747475
+    },
+    "lineDriveRates":{
+        "contactRate":22.22222222222222,
+        "singleRate":48.07692307692308,
+        "doubleRate":19.230769230769234,
+        "tripleRate":11.538461538461538,
+        "homeRunRate":5.769230769230769,
+        "outRate":15.384615384615385
+    }
+}, "nonContactRates":{
+    "SO%":20.9,
+    "BB%":7.7,
+    "L/SO":16,
+    "hbpRate":0.7396449704142012
+}}

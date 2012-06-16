@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Carlos Delgado",
+    "year":2000
+}, "basicStats":{
+    "PA":711,
+    "AB":569,
+    "H":196,
+    "2B":57,
+    "3B":1,
+    "HR":41,
+    "BB":123,
+    "SO":104,
+    "BA":0.344,
+    "HBP":15
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":43.46793349168646,
+        "singleRate":13.114754098360656,
+        "doubleRate":1.092896174863388,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":85.79234972677595
+    },
+    "flyBallRates":{
+        "contactRate":22.802850356294538,
+        "singleRate":0,
+        "doubleRate":0,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":100
+    },
+    "lineDriveRates":{
+        "contactRate":33.729216152019006,
+        "singleRate":50.70422535211267,
+        "doubleRate":37.32394366197183,
+        "tripleRate":0.7042253521126761,
+        "homeRunRate":0,
+        "outRate":11.267605633802818
+    }
+}, "nonContactRates":{
+    "SO%":14.6,
+    "BB%":17.3,
+    "L/SO":22,
+    "hbpRate":2.109704641350211
+}}

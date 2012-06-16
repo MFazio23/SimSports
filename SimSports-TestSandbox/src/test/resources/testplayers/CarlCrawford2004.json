@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Carl Crawford",
+    "year":2004
+}, "basicStats":{
+    "PA":672,
+    "AB":626,
+    "H":185,
+    "2B":26,
+    "3B":19,
+    "HR":11,
+    "BB":35,
+    "SO":81,
+    "BA":0.296,
+    "HBP":1
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":48.79406307977737,
+        "singleRate":30.038022813688215,
+        "doubleRate":0.7604562737642585,
+        "tripleRate":0.7604562737642585,
+        "homeRunRate":0,
+        "outRate":68.44106463878326
+    },
+    "flyBallRates":{
+        "contactRate":32.09647495361781,
+        "singleRate":3.4682080924855487,
+        "doubleRate":5.202312138728324,
+        "tripleRate":4.624277456647398,
+        "homeRunRate":5.202312138728324,
+        "outRate":81.5028901734104
+    },
+    "lineDriveRates":{
+        "contactRate":19.109461966604822,
+        "singleRate":41.74757281553398,
+        "doubleRate":14.563106796116504,
+        "tripleRate":8.737864077669903,
+        "homeRunRate":1.9417475728155338,
+        "outRate":33.00970873786408
+    }
+}, "nonContactRates":{
+    "SO%":12.1,
+    "BB%":5.2,
+    "L/SO":12,
+    "hbpRate":0.1488095238095238
+}}

@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"League Totals",
+    "year":2011
+}, "basicStats":{
+    "PA":185245,
+    "AB":165705,
+    "H":42267,
+    "2B":8399,
+    "3B":898,
+    "HR":4552,
+    "BB":15018,
+    "SO":34488,
+    "BA":0.255,
+    "HBP":1554
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":45.40026843980932,
+        "singleRate":21.83124915046894,
+        "doubleRate":1.7653255403017536,
+        "tripleRate":0.09344841647410629,
+        "homeRunRate":0,
+        "outRate":76.3099768927552
+    },
+    "flyBallRates":{
+        "contactRate":35.841342816149584,
+        "singleRate":4.887654958677686,
+        "doubleRate":6.889204545454546,
+        "tripleRate":1.0890151515151516,
+        "homeRunRate":8.897210743801654,
+        "outRate":78.23691460055096
+    },
+    "lineDriveRates":{
+        "contactRate":18.7583887440411,
+        "singleRate":52.17123118677522,
+        "doubleRate":16.99975326918332,
+        "tripleRate":1.381692573402418,
+        "homeRunRate":1.7147791759190723,
+        "outRate":27.73254379471996
+    }
+}, "nonContactRates":{
+    "SO%":18.6,
+    "BB%":8.1,
+    "L/SO":24,
+    "hbpRate":0.838889038840455
+}}

@@ -1,0 +1,55 @@
+{"stats":{
+    "playerInfo":{
+        "name":"Manual Random",
+        "year":2012
+    },
+    "basicStats":{
+        "PA":600,
+        "AB":546,
+        "H":122,
+        "2B":24,
+        "3B":2,
+        "HR":13,
+        "BB":45,
+        "SO":104,
+        "BA":0.223,
+        "HBP":1
+    },
+    "nonContactRates":{
+        "SO%":21.3,
+        "BB%":4.5,
+        "L/SO":35,
+        "hbpRate":0.56666666666666669
+    }
+}, "splits":{
+    "playerInfo":{
+        "name":"Manual Random",
+        "year":2012
+    },
+    "contactRates":{
+        "groundBallRates":{
+            "contactRate":57,
+            "singleRate":14,
+            "doubleRate":1,
+            "tripleRate":0,
+            "homeRunRate":0,
+            "outRate":85
+        },
+        "flyBallRates":{
+            "contactRate":32,
+            "singleRate":2,
+            "doubleRate":6,
+            "tripleRate":0,
+            "homeRunRate":9,
+            "outRate":83
+        },
+        "lineDriveRates":{
+            "contactRate":11,
+            "singleRate":50,
+            "doubleRate":3,
+            "tripleRate":2,
+            "homeRunRate":0,
+            "outRate":45
+        }
+    }
+}}

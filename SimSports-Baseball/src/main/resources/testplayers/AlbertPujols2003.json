@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Albert Pujols",
+    "year":2003
+}, "basicStats":{
+    "PA":685,
+    "AB":591,
+    "H":212,
+    "2B":51,
+    "3B":1,
+    "HR":43,
+    "BB":79,
+    "SO":65,
+    "BA":0.359,
+    "HBP":10
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":43.89312977099237,
+        "singleRate":27.391304347826086,
+        "doubleRate":3.0434782608695654,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":69.56521739130434
+    },
+    "flyBallRates":{
+        "contactRate":36.25954198473282,
+        "singleRate":2.1052631578947367,
+        "doubleRate":6.315789473684211,
+        "tripleRate":0,
+        "homeRunRate":21.052631578947366,
+        "outRate":70.52631578947368
+    },
+    "lineDriveRates":{
+        "contactRate":19.84732824427481,
+        "singleRate":47.11538461538461,
+        "doubleRate":30.76923076923077,
+        "tripleRate":0.9615384615384616,
+        "homeRunRate":2.8846153846153846,
+        "outRate":18.269230769230766
+    }
+}, "nonContactRates":{
+    "SO%":9.5,
+    "BB%":11.5,
+    "L/SO":31,
+    "hbpRate":1.4598540145985401
+}}

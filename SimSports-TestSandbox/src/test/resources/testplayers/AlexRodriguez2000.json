@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Álex Rodríguez",
+    "year":2000
+}, "basicStats":{
+    "PA":672,
+    "AB":554,
+    "H":175,
+    "2B":34,
+    "3B":2,
+    "HR":41,
+    "BB":100,
+    "SO":121,
+    "BA":0.316,
+    "HBP":7
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":42.60204081632653,
+        "singleRate":17.365269461077844,
+        "doubleRate":1.7964071856287425,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":80.83832335329342
+    },
+    "flyBallRates":{
+        "contactRate":27.55102040816326,
+        "singleRate":0,
+        "doubleRate":0,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":100
+    },
+    "lineDriveRates":{
+        "contactRate":29.846938775510207,
+        "singleRate":58.97435897435898,
+        "doubleRate":26.495726495726498,
+        "tripleRate":1.7094017094017095,
+        "homeRunRate":0,
+        "outRate":12.82051282051282
+    }
+}, "nonContactRates":{
+    "SO%":18,
+    "BB%":14.9,
+    "L/SO":21,
+    "hbpRate":1.0416666666666665
+}}

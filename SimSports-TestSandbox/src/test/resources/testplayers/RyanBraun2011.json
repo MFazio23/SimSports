@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Ryan Braun",
+    "year":2011
+}, "basicStats":{
+    "PA":629,
+    "AB":563,
+    "H":187,
+    "2B":38,
+    "3B":6,
+    "HR":33,
+    "BB":58,
+    "SO":93,
+    "BA":0.332,
+    "HBP":5
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":43.0406852248394,
+        "singleRate":26.368159203980102,
+        "doubleRate":1.4925373134328357,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":72.13930348258707
+    },
+    "flyBallRates":{
+        "contactRate":34.68950749464668,
+        "singleRate":3.7037037037037033,
+        "doubleRate":8.024691358024691,
+        "tripleRate":0,
+        "homeRunRate":16.666666666666664,
+        "outRate":71.60493827160494
+    },
+    "lineDriveRates":{
+        "contactRate":22.269807280513916,
+        "singleRate":49.03846153846153,
+        "doubleRate":21.153846153846153,
+        "tripleRate":5.769230769230769,
+        "homeRunRate":5.769230769230769,
+        "outRate":18.269230769230766
+    }
+}, "nonContactRates":{
+    "SO%":14.8,
+    "BB%":9.2,
+    "L/SO":15,
+    "hbpRate":0.7949125596184419
+}}

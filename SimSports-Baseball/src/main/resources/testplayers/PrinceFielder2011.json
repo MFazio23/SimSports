@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Prince Fielder",
+    "year":2011
+}, "basicStats":{
+    "PA":692,
+    "AB":569,
+    "H":170,
+    "2B":36,
+    "3B":1,
+    "HR":38,
+    "BB":107,
+    "SO":106,
+    "BA":0.299,
+    "HBP":10
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":44.9244060475162,
+        "singleRate":20.673076923076923,
+        "doubleRate":1.4423076923076923,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":77.88461538461539
+    },
+    "flyBallRates":{
+        "contactRate":34.77321814254859,
+        "singleRate":4.3478260869565215,
+        "doubleRate":6.211180124223603,
+        "tripleRate":0.6211180124223602,
+        "homeRunRate":19.875776397515526,
+        "outRate":68.94409937888199
+    },
+    "lineDriveRates":{
+        "contactRate":20.302375809935207,
+        "singleRate":47.87234042553192,
+        "doubleRate":24.46808510638298,
+        "tripleRate":0,
+        "homeRunRate":6.382978723404255,
+        "outRate":21.27659574468085
+    }
+}, "nonContactRates":{
+    "SO%":15.3,
+    "BB%":15.5,
+    "L/SO":19,
+    "hbpRate":1.4450867052023122
+}}

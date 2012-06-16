@@ -115,29 +115,6 @@ function getContactStatRates(stats, totalAtBats) {
 
 }
 
-function loadStats(year) {
-    var playerID = $(this).attr("sr_page_id");
-    var divID = "sr_js";
-
-    var moreStatsURL = $(location).attr("href").replace(".shtml", "-bat.shtml");
-    var splitsURL = "/players/split.cgi?id=" + playerID + "&year=" + year + "&t=b"
-    var result;
-
-    if($('#faz').size() === 0) {
-        $("#page_content").append("<div id='faz'></div>"),
-        $.get(moreStatsURL, function(data) {
-            $("#faz").append(data);
-            $.get(splitsURL, function(data) {
-                $("#faz").append(data);
-                console.log('pages loaded');
-                return loadStatsFromPage(year);
-            })
-        });
-    } else {
-        return loadStatsFromPage(year);
-    }
-}
-
 function loadStatsFromPage(year) {
     var allValues = new Object();
     var fields = [];
@@ -179,4 +156,25 @@ function loadStatsFromPage(year) {
     return JSON.stringify(allValues);
 }
 
-console.log(loadStats(2011));
+function loadStats(year) {
+    var playerID = $(this).attr("sr_page_id");
+    var divID = "sr_js";
+
+    var moreStatsURL = $(location).attr("href").replace(".shtml", "-bat.shtml");
+    var splitsURL = "/players/split.cgi?id=" + playerID + "&year=" + year + "&t=b"
+    var result;
+
+    if($('#faz').size() === 0) {
+        $("#page_content").append("<div id='faz'></div>"),
+            $.get(moreStatsURL, function(data) {
+                $("#faz").append(data);
+                $.get(splitsURL, function(data) {
+                    $("#faz").append(data);
+                })
+            });
+    } else {
+        console.log(loadStatsFromPage(year));
+    }
+}
+
+loadStats();

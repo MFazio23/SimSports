@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Barry Bonds",
+    "year":2004
+}, "basicStats":{
+    "PA":617,
+    "AB":373,
+    "H":135,
+    "2B":27,
+    "3B":3,
+    "HR":45,
+    "BB":232,
+    "SO":41,
+    "BA":0.362,
+    "HBP":9
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":36.74698795180723,
+        "singleRate":22.131147540983605,
+        "doubleRate":4.098360655737705,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":73.77049180327869
+    },
+    "flyBallRates":{
+        "contactRate":40.06024096385542,
+        "singleRate":3.7593984962406015,
+        "doubleRate":6.015037593984962,
+        "tripleRate":0.7518796992481203,
+        "homeRunRate":23.308270676691727,
+        "outRate":66.16541353383458
+    },
+    "lineDriveRates":{
+        "contactRate":23.19277108433735,
+        "singleRate":36.36363636363637,
+        "doubleRate":18.181818181818183,
+        "tripleRate":2.5974025974025974,
+        "homeRunRate":18.181818181818183,
+        "outRate":24.675324675324674
+    }
+}, "nonContactRates":{
+    "SO%":6.7,
+    "BB%":37.6,
+    "L/SO":54,
+    "hbpRate":1.4586709886547813
+}}

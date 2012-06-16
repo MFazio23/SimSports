@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Rickie Weeks",
+    "year":2011
+}, "basicStats":{
+    "PA":515,
+    "AB":453,
+    "H":122,
+    "2B":26,
+    "3B":2,
+    "HR":20,
+    "BB":50,
+    "SO":107,
+    "BA":0.269,
+    "HBP":8
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":49.13294797687861,
+        "singleRate":22.35294117647059,
+        "doubleRate":4.117647058823529,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":73.52941176470588
+    },
+    "flyBallRates":{
+        "contactRate":33.23699421965318,
+        "singleRate":7.82608695652174,
+        "doubleRate":4.3478260869565215,
+        "tripleRate":1.7391304347826086,
+        "homeRunRate":14.782608695652174,
+        "outRate":71.30434782608695
+    },
+    "lineDriveRates":{
+        "contactRate":17.63005780346821,
+        "singleRate":44.26229508196721,
+        "doubleRate":22.950819672131146,
+        "tripleRate":0,
+        "homeRunRate":4.918032786885246,
+        "outRate":27.86885245901639
+    }
+}, "nonContactRates":{
+    "SO%":20.8,
+    "BB%":9.7,
+    "L/SO":21,
+    "hbpRate":1.5533980582524272
+}}

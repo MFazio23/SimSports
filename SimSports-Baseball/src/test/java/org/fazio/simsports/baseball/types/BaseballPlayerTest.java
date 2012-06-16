@@ -1,6 +1,6 @@
 package org.fazio.simsports.baseball.types;
 
-import org.fazio.simsports.baseball.builders.test.RyanBraunTestPlayerBuilder;
+import org.fazio.simsports.baseball.builders.test.TestPlayerFromJSON;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,13 +16,13 @@ import static junit.framework.Assert.assertTrue;
 public class BaseballPlayerTest {
 
 	private BaseballPlayer testPlayer;
-	private final int testCount = 629;
+	private final int testCount = 692;
 	private final double testFactor = 10000;
 
 
 	@Before
 	public void setUp() throws Exception {
-		this.testPlayer = new RyanBraunTestPlayerBuilder().build();
+		this.testPlayer = new TestPlayerFromJSON().createPlayer("Prince Fielder", 2011);
 	}
 
 	@Test
@@ -45,8 +45,8 @@ public class BaseballPlayerTest {
 			results.put(result, results.get(result) + 1);
 		}
 
-		this.assertTestResults(results);
 		this.printTestResults(results);
+		this.assertTestResults(results);
 
 	}
 
@@ -89,16 +89,21 @@ public class BaseballPlayerTest {
 
 		double hits = 0;
 		for(Results hitType : hitTypes) {
-			hits += (double)results.get(hitType);
+			Integer hit = results.get(hitType);
+			hits += hit == null ? 0 : hit.doubleValue();
 		}
 
 		double outs = 0;
 		for(Results outType : outTypes) {
-			outs += (double)results.get(outType);
+			Integer out = results.get(outType);
+			outs += out == null ? 0 : out.doubleValue();
 		}
+
+		final Integer strikeouts = (results.get(Results.StrikeoutSwinging) + results.get(Results.StrikeoutLooking));
 
 		System.out.println("Hits = " + hits);
 		System.out.println("Outs = " + outs);
+		System.out.println("Strikeouts = " + (int)(strikeouts/this.testFactor));
 		final double battingAverage = ((hits) / ((hits + outs)));
 		System.out.println("Batting Average = ." + (int)(battingAverage * 1000));
 	}
@@ -116,8 +121,11 @@ public class BaseballPlayerTest {
 
 	private boolean numberIsNear(final long baseNumber, final long valueChecked) {
 		final double rangeFactor = 0.98;
-		final long lowRange = (long)(baseNumber * rangeFactor);
-		final long highRange = (long)(baseNumber / rangeFactor);
+		long lowRange = (long)(baseNumber * rangeFactor);
+		long highRange = (long)(baseNumber / rangeFactor);
+
+		if(lowRange == baseNumber) lowRange = baseNumber - 1;
+		if(highRange == baseNumber) highRange = baseNumber + 1;
 
 		return valueChecked >= lowRange && valueChecked <= highRange;
 

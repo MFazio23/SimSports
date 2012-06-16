@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Todd Helton",
+    "year":2000
+}, "basicStats":{
+    "PA":697,
+    "AB":580,
+    "H":216,
+    "2B":59,
+    "3B":2,
+    "HR":42,
+    "BB":103,
+    "SO":61,
+    "BA":0.372,
+    "HBP":4
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":37.39495798319328,
+        "singleRate":13.48314606741573,
+        "doubleRate":1.1235955056179776,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":85.39325842696628
+    },
+    "flyBallRates":{
+        "contactRate":26.47058823529412,
+        "singleRate":0,
+        "doubleRate":0,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":100
+    },
+    "lineDriveRates":{
+        "contactRate":36.134453781512605,
+        "singleRate":51.162790697674424,
+        "doubleRate":33.13953488372093,
+        "tripleRate":1.1627906976744187,
+        "homeRunRate":0,
+        "outRate":14.534883720930234
+    }
+}, "nonContactRates":{
+    "SO%":8.8,
+    "BB%":14.8,
+    "L/SO":25,
+    "hbpRate":0.5738880918220948
+}}

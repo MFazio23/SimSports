@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Mark Reynolds",
+    "year":2009
+}, "basicStats":{
+    "PA":662,
+    "AB":578,
+    "H":150,
+    "2B":30,
+    "3B":1,
+    "HR":44,
+    "BB":76,
+    "SO":223,
+    "BA":0.26,
+    "HBP":5
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":35.31073446327684,
+        "singleRate":28.000000000000004,
+        "doubleRate":1.6,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":70.39999999999999
+    },
+    "flyBallRates":{
+        "contactRate":44.91525423728814,
+        "singleRate":1.8867924528301887,
+        "doubleRate":7.547169811320755,
+        "tripleRate":0.628930817610063,
+        "homeRunRate":27.67295597484277,
+        "outRate":62.264150943396224
+    },
+    "lineDriveRates":{
+        "contactRate":19.774011299435028,
+        "singleRate":51.42857142857142,
+        "doubleRate":22.857142857142858,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":25.71428571428571
+    }
+}, "nonContactRates":{
+    "SO%":33.7,
+    "BB%":11.5,
+    "L/SO":14,
+    "hbpRate":0.7552870090634441
+}}

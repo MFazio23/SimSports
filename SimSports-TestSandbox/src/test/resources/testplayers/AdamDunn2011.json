@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Adam Dunn",
+    "year":2011
+}, "basicStats":{
+    "PA":496,
+    "AB":415,
+    "H":66,
+    "2B":16,
+    "3B":0,
+    "HR":11,
+    "BB":75,
+    "SO":177,
+    "BA":0.159,
+    "HBP":4
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":32.773109243697476,
+        "singleRate":14.102564102564102,
+        "doubleRate":0,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":85.8974358974359
+    },
+    "flyBallRates":{
+        "contactRate":47.05882352941176,
+        "singleRate":3.571428571428571,
+        "doubleRate":7.142857142857142,
+        "tripleRate":0,
+        "homeRunRate":9.821428571428571,
+        "outRate":79.46428571428571
+    },
+    "lineDriveRates":{
+        "contactRate":20.168067226890756,
+        "singleRate":50,
+        "doubleRate":16.666666666666664,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":33.33333333333333
+    }
+}, "nonContactRates":{
+    "SO%":35.7,
+    "BB%":15.1,
+    "L/SO":27,
+    "hbpRate":0.8064516129032258
+}}

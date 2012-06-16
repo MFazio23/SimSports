@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Craig Biggio",
+    "year":1997
+}, "basicStats":{
+    "PA":744,
+    "AB":619,
+    "H":191,
+    "2B":37,
+    "3B":8,
+    "HR":22,
+    "BB":84,
+    "SO":107,
+    "BA":0.309,
+    "HBP":34
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":47.31610337972167,
+        "singleRate":28.15126050420168,
+        "doubleRate":3.7815126050420167,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":68.0672268907563
+    },
+    "flyBallRates":{
+        "contactRate":29.82107355864811,
+        "singleRate":3.3333333333333335,
+        "doubleRate":4,
+        "tripleRate":0.6666666666666667,
+        "homeRunRate":10,
+        "outRate":82
+    },
+    "lineDriveRates":{
+        "contactRate":22.86282306163022,
+        "singleRate":40.869565217391305,
+        "doubleRate":19.130434782608695,
+        "tripleRate":6.086956521739131,
+        "homeRunRate":6.086956521739131,
+        "outRate":27.82608695652174
+    }
+}, "nonContactRates":{
+    "SO%":14.4,
+    "BB%":11.3,
+    "L/SO":31,
+    "hbpRate":4.56989247311828
+}}
