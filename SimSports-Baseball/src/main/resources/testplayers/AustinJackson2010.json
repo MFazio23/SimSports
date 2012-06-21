@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Austin Jackson",
+    "year":2010
+}, "basicStats":{
+    "PA":675,
+    "AB":618,
+    "H":181,
+    "2B":34,
+    "3B":10,
+    "HR":4,
+    "BB":47,
+    "SO":170,
+    "BA":0.293,
+    "HBP":4
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":49.202733485193626,
+        "singleRate":31.48148148148148,
+        "doubleRate":1.3888888888888888,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":67.12962962962963
+    },
+    "flyBallRates":{
+        "contactRate":24.145785876993166,
+        "singleRate":6.60377358490566,
+        "doubleRate":6.60377358490566,
+        "tripleRate":4.716981132075472,
+        "homeRunRate":3.7735849056603774,
+        "outRate":78.30188679245283
+    },
+    "lineDriveRates":{
+        "contactRate":26.65148063781321,
+        "singleRate":46.15384615384615,
+        "doubleRate":20.51282051282051,
+        "tripleRate":4.273504273504273,
+        "homeRunRate":0,
+        "outRate":29.059829059829063
+    }
+}, "nonContactRates":{
+    "SO%":25.2,
+    "BB%":7,
+    "L/SO":31,
+    "hbpRate":0.5925925925925926
+}}

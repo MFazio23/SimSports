@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Yuniesky Betancourt",
+    "year":2011
+}, "basicStats":{
+    "PA":584,
+    "AB":556,
+    "H":140,
+    "2B":27,
+    "3B":3,
+    "HR":13,
+    "BB":16,
+    "SO":63,
+    "BA":0.252,
+    "HBP":2
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":43.353783231083845,
+        "singleRate":22.641509433962266,
+        "doubleRate":3.30188679245283,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":74.05660377358491
+    },
+    "flyBallRates":{
+        "contactRate":39.059304703476485,
+        "singleRate":2.094240837696335,
+        "doubleRate":4.712041884816754,
+        "tripleRate":1.0471204188481675,
+        "homeRunRate":6.806282722513089,
+        "outRate":85.34031413612566
+    },
+    "lineDriveRates":{
+        "contactRate":17.586912065439673,
+        "singleRate":51.162790697674424,
+        "doubleRate":12.790697674418606,
+        "tripleRate":1.1627906976744187,
+        "homeRunRate":0,
+        "outRate":34.883720930232556
+    }
+}, "nonContactRates":{
+    "SO%":10.8,
+    "BB%":2.7,
+    "L/SO":13,
+    "hbpRate":0.3424657534246575
+}}

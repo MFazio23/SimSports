@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Jonathan Lucroy",
+    "year":2011
+}, "basicStats":{
+    "PA":468,
+    "AB":430,
+    "H":114,
+    "2B":16,
+    "3B":1,
+    "HR":12,
+    "BB":29,
+    "SO":99,
+    "BA":0.265,
+    "HBP":2
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":42.813455657492355,
+        "singleRate":25,
+        "doubleRate":0,
+        "tripleRate":0.7142857142857143,
+        "homeRunRate":0,
+        "outRate":74.28571428571429
+    },
+    "flyBallRates":{
+        "contactRate":34.862385321100916,
+        "singleRate":7.017543859649122,
+        "doubleRate":5.263157894736842,
+        "tripleRate":0,
+        "homeRunRate":8.771929824561402,
+        "outRate":78.94736842105263
+    },
+    "lineDriveRates":{
+        "contactRate":22.32415902140673,
+        "singleRate":54.794520547945204,
+        "doubleRate":13.698630136986301,
+        "tripleRate":0,
+        "homeRunRate":2.73972602739726,
+        "outRate":28.767123287671232
+    }
+}, "nonContactRates":{
+    "SO%":21.2,
+    "BB%":6.2,
+    "L/SO":19,
+    "hbpRate":0.4273504273504274
+}}

@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Carlos Gómez",
+    "year":2011
+}, "basicStats":{
+    "PA":258,
+    "AB":231,
+    "H":52,
+    "2B":11,
+    "3B":3,
+    "HR":8,
+    "BB":15,
+    "SO":64,
+    "BA":0.225,
+    "HBP":2
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":43.67088607594937,
+        "singleRate":24.637681159420293,
+        "doubleRate":4.3478260869565215,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":71.01449275362319
+    },
+    "flyBallRates":{
+        "contactRate":42.405063291139236,
+        "singleRate":1.4925373134328357,
+        "doubleRate":2.9850746268656714,
+        "tripleRate":2.9850746268656714,
+        "homeRunRate":8.955223880597014,
+        "outRate":83.5820895522388
+    },
+    "lineDriveRates":{
+        "contactRate":13.924050632911392,
+        "singleRate":36.36363636363637,
+        "doubleRate":27.27272727272727,
+        "tripleRate":4.545454545454546,
+        "homeRunRate":4.545454545454546,
+        "outRate":27.27272727272727
+    }
+}, "nonContactRates":{
+    "SO%":24.8,
+    "BB%":5.8,
+    "L/SO":13,
+    "hbpRate":0.7751937984496124
+}}

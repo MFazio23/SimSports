@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"All Fly Ball HRs (Base: McGwire '98)",
+    "year":2012
+}, "basicStats":{
+    "PA":681,
+    "AB":509,
+    "H":152,
+    "2B":21,
+    "3B":0,
+    "HR":70,
+    "BB":162,
+    "SO":155,
+    "BA":0.299,
+    "HBP":6
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":26.27118644067797,
+        "singleRate":27.956989247311824,
+        "doubleRate":2.1505376344086025,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":69.89247311827957
+    },
+    "flyBallRates":{
+        "contactRate":48.0225988700565,
+        "singleRate":0.5882352941176471,
+        "doubleRate":1.7647058823529411,
+        "tripleRate":0,
+        "homeRunRate":30,
+        "outRate":67.64705882352942
+    },
+    "lineDriveRates":{
+        "contactRate":25.70621468926554,
+        "singleRate":37.362637362637365,
+        "doubleRate":17.582417582417584,
+        "tripleRate":0,
+        "homeRunRate":2.87912087912088,
+        "outRate":42.175824175824175
+    }
+}, "nonContactRates":{
+    "SO%":22.8,
+    "BB%":23.8,
+    "L/SO":36,
+    "hbpRate":0.881057268722467
+}}

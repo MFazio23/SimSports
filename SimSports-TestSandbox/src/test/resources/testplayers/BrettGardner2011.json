@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Brett Gardner",
+    "year":2011
+}, "basicStats":{
+    "PA":588,
+    "AB":510,
+    "H":132,
+    "2B":19,
+    "3B":8,
+    "HR":7,
+    "BB":60,
+    "SO":93,
+    "BA":0.259,
+    "HBP":8
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":54.33673469387755,
+        "singleRate":28.638497652582164,
+        "doubleRate":0.9389671361502347,
+        "tripleRate":0.9389671361502347,
+        "homeRunRate":0,
+        "outRate":69.48356807511738
+    },
+    "flyBallRates":{
+        "contactRate":29.081632653061224,
+        "singleRate":2.631578947368421,
+        "doubleRate":3.508771929824561,
+        "tripleRate":1.7543859649122806,
+        "homeRunRate":4.385964912280701,
+        "outRate":87.71929824561403
+    },
+    "lineDriveRates":{
+        "contactRate":16.581632653061224,
+        "singleRate":32.30769230769231,
+        "doubleRate":20,
+        "tripleRate":6.153846153846154,
+        "homeRunRate":3.076923076923077,
+        "outRate":38.46153846153847
+    }
+}, "nonContactRates":{
+    "SO%":15.8,
+    "BB%":10.2,
+    "L/SO":44,
+    "hbpRate":1.3605442176870748
+}}

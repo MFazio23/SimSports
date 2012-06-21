@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Nyjer Morgan",
+    "year":2011
+}, "basicStats":{
+    "PA":429,
+    "AB":378,
+    "H":115,
+    "2B":20,
+    "3B":6,
+    "HR":4,
+    "BB":19,
+    "SO":70,
+    "BA":0.304,
+    "HBP":14
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":45.051194539249146,
+        "singleRate":25,
+        "doubleRate":3.0303030303030303,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":71.96969696969697
+    },
+    "flyBallRates":{
+        "contactRate":29.351535836177472,
+        "singleRate":1.1627906976744187,
+        "doubleRate":6.976744186046512,
+        "tripleRate":2.3255813953488373,
+        "homeRunRate":4.651162790697675,
+        "outRate":84.88372093023256
+    },
+    "lineDriveRates":{
+        "contactRate":25.597269624573375,
+        "singleRate":58.666666666666664,
+        "doubleRate":13.333333333333334,
+        "tripleRate":5.333333333333334,
+        "homeRunRate":0,
+        "outRate":22.666666666666664
+    }
+}, "nonContactRates":{
+    "SO%":16.3,
+    "BB%":4.4,
+    "L/SO":23,
+    "hbpRate":3.263403263403263
+}}

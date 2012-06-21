@@ -1,0 +1,45 @@
+{"playerInfo":{
+    "name":"Corey Hart",
+    "year":2011
+}, "basicStats":{
+    "PA":551,
+    "AB":492,
+    "H":140,
+    "2B":25,
+    "3B":4,
+    "HR":26,
+    "BB":51,
+    "SO":114,
+    "BA":0.285,
+    "HBP":4
+}, "contactRates":{
+    "groundBallRates":{
+        "contactRate":45.5026455026455,
+        "singleRate":23.837209302325583,
+        "doubleRate":1.1627906976744187,
+        "tripleRate":0.5813953488372093,
+        "homeRunRate":0,
+        "outRate":74.4186046511628
+    },
+    "flyBallRates":{
+        "contactRate":35.44973544973545,
+        "singleRate":2.2388059701492535,
+        "doubleRate":9.701492537313433,
+        "tripleRate":2.2388059701492535,
+        "homeRunRate":19.402985074626866,
+        "outRate":66.4179104477612
+    },
+    "lineDriveRates":{
+        "contactRate":19.047619047619047,
+        "singleRate":56.94444444444444,
+        "doubleRate":13.88888888888889,
+        "tripleRate":0,
+        "homeRunRate":0,
+        "outRate":29.166666666666668
+    }
+}, "nonContactRates":{
+    "SO%":20.7,
+    "BB%":9.3,
+    "L/SO":22,
+    "hbpRate":0.7259528130671506
+}}
