@@ -60,6 +60,6 @@ public class RyanBraunTestPlayerBuilder extends TestPlayerBuilder {
 			.setLineDriveHomeRunChance(4.81)
 			.build();
 
-		return new BatterAttributes(battingAttributes, Mockito.mock(Attributes.class), Mockito.mock(Attributes.class));
+		return new BatterAttributes(battingAttributes, Mockito.mock(Attributes.class));
 	}
 }

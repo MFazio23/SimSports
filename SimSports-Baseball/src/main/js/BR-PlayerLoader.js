@@ -177,4 +177,4 @@ function loadStats(year) {
     }
 }
 
-loadStats();
+loadStats(2011);

@@ -127,6 +127,6 @@ public class TestPlayerFromJSON {
 			.setLineDriveHomeRunChance(lineDriveRates.getDouble("homeRunRate"))
 			.build();
 
-		return new BatterAttributes(attributesByPA, Mockito.mock(Attributes.class), Mockito.mock(Attributes.class));
+		return new BatterAttributes(attributesByPA, Mockito.mock(Attributes.class));
 	}
 }

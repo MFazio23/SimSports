@@ -7,11 +7,11 @@ import java.util.List;
  */
 public class Team {
 	
-	private final String location;
-	private final String nickname;
-	private final String mainShortName;
-	private final List<String> shortNameList;
-	private final List<Player> roster;
+	protected final String location;
+	protected final String nickname;
+	protected final String mainShortName;
+	protected final List<String> shortNameList;
+	protected final List<Player> roster;
 
 	public Team(final String location, final String mainShortName, final String nickname, final List<Player> roster, final List<String> shortNameList) {
 		this.location = location;
@@ -39,5 +39,9 @@ public class Team {
 
 	public List<String> getShortNameList() {
 		return shortNameList;
+	}
+
+	public String getFullTeamName() {
+		return location + " " + nickname;
 	}
 }

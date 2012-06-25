@@ -37,8 +37,16 @@ public class Player {
 		return lastName;
 	}
 
+	public String getFullName() {
+		return firstName + " " + lastName;
+	}
+
 	public String getNickname() {
 		return nickname;
+	}
+
+	public String getFullNamePlusNickname() {
+		return firstName + " \"" + nickname + "\" " + lastName;
 	}
 
 	public Team getTeam() {

@@ -35,6 +35,14 @@ public class Bases {
 		return runsScored;
 	}
 
+	public boolean resetBases() {
+		for(int x=0;x<this.bases.length;x++) {
+			this.bases[x] = null;
+		}
+
+		return true;
+	}
+
 	public Player getFirstBase() {
 		return this.bases[1];
 	}

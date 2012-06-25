@@ -9,24 +9,17 @@ import org.fazio.simsports.core.types.Attributes;
 public class BatterAttributes implements Attributes {
 	
 	private final Attributes battingAttributes;
-	private final Attributes fieldingAttributes;
 	private final Attributes runningAttributes;
 
 	public BatterAttributes(
 		final Attributes battingAttributes,
-		final Attributes fieldingAttributes,
 		final Attributes runningAttributes) {
 			this.battingAttributes = battingAttributes;
-			this.fieldingAttributes = fieldingAttributes;
 			this.runningAttributes = runningAttributes;
 	}
 
 	public Attributes getBattingAttributes() {
 		return battingAttributes;
-	}
-
-	public Attributes getFieldingAttributes() {
-		return fieldingAttributes;
 	}
 
 	public Attributes getRunningAttributes() {

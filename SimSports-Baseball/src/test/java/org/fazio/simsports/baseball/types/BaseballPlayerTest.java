@@ -16,13 +16,13 @@ import static junit.framework.Assert.assertTrue;
 public class BaseballPlayerTest {
 
 	private BaseballPlayer testPlayer;
-	private final int testCount = 692;
+	private final int testCount = 629;
 	private final double testFactor = 10000;
 
 
 	@Before
 	public void setUp() throws Exception {
-		this.testPlayer = new TestPlayerFromJSON().createPlayer("Prince Fielder", 2011);
+		this.testPlayer = new TestPlayerFromJSON().createPlayer("Ryan Braun", 2011);
 	}
 
 	@Test
@@ -101,11 +101,18 @@ public class BaseballPlayerTest {
 
 		final Integer strikeouts = (results.get(Results.StrikeoutSwinging) + results.get(Results.StrikeoutLooking));
 
+		final int atBats = (int)(hits + outs);
+		System.out.println("At-Bats = " + atBats);
 		System.out.println("Hits = " + hits);
 		System.out.println("Outs = " + outs);
 		System.out.println("Strikeouts = " + (int)(strikeouts/this.testFactor));
-		final double battingAverage = ((hits) / ((hits + outs)));
+		final double battingAverage = (hits / atBats);
+		final double totalBases = results.get(Results.Single) + (2*results.get(Results.Double)) + (3*results.get(Results.Triple)) + (4*results.get(Results.HomeRun));
 		System.out.println("Batting Average = ." + (int)(battingAverage * 1000));
+		System.out.println("On-Base Percentage = ." + (int)((hits + results.get(Results.BB) + results.get(Results.HBP))/this.testCount));
+		System.out.println("Slugging Percentage = " + (double)totalBases/(double)atBats);
+		System.out.println("Total Bases = " + totalBases);
+
 	}
 
 	private Results runPlateAppearance() {
