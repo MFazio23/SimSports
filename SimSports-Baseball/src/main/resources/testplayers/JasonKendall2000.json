@@ -1,0 +1,50 @@
+{
+    "playerInfo": {
+        "name": "Jason Kendall",
+        "year": 2000
+    },
+    "basicStats": {
+        "PA": 678,
+        "AB": 579,
+        "H": 185,
+        "2B": 33,
+        "3B": 6,
+        "HR": 14,
+        "BB": 79,
+        "SO": 79,
+        "BA": 0.32,
+        "HBP": 15
+    },
+    "contactRates": {
+        "groundBallRates": {
+            "contactRate": 43.82716049382716,
+            "singleRate": 20.657276995305164,
+            "doubleRate": 1.8779342723004695,
+            "tripleRate": 0,
+            "homeRunRate": 0,
+            "outRate": 77.46478873239437
+        },
+        "flyBallRates": {
+            "contactRate": 25.925925925925924,
+            "singleRate": 0,
+            "doubleRate": 0,
+            "tripleRate": 0,
+            "homeRunRate": 0,
+            "outRate": 100
+        },
+        "lineDriveRates": {
+            "contactRate": 30.246913580246915,
+            "singleRate": 59.863945578231295,
+            "doubleRate": 19.727891156462583,
+            "tripleRate": 4.081632653061225,
+            "homeRunRate": 0,
+            "outRate": 16.3265306122449
+        }
+    },
+    "nonContactRates": {
+        "SO%": 11.7,
+        "BB%": 11.7,
+        "L/SO": 23,
+        "hbpRate": 2.2123893805309733
+    }
+}

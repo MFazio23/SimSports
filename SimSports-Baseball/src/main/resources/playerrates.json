@@ -1,0 +1,11 @@
+{
+    "average" : {
+        "strikeoutRate" : {"average" : 18.6, "standardDev" : 0, "min" : 0 , "max" : 0}
+    },    "slugger" : {},
+    "speedster" : {},
+    "hitter" : {},
+    "scrub" : {},
+    "allStar" : {},
+    "legend" : {}
+
+}
