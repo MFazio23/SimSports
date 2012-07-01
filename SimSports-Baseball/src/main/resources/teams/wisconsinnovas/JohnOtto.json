@@ -1,0 +1,34 @@
+{"basicInformation":{
+    "firstName":"John",
+    "lastName":"Otto",
+    "nickname":"",
+    "position":["3B"],
+    "number" : 7
+}, "nonContactRates":{
+    "K%":14.2,
+    "BB%":10.2,
+    "HBP%":0.7,
+    "KL%":17
+}, "contactRates":{
+    "flyBallRates":{
+        "contactRate":33.1,
+        "singleRate":3.87,
+        "doubleRate":9.13,
+        "tripleRate":0.96,
+        "homeRunRate":13.02
+    },
+    "lineDriveRates":{
+        "contactRate":23.8,
+        "singleRate":43.7,
+        "doubleRate":24.8,
+        "tripleRate":2.56,
+        "homeRunRate":3.65
+    },
+    "groundBallRates":{
+        "contactRate":43.1,
+        "singleRate":22.4,
+        "doubleRate":1.97,
+        "tripleRate":0.58,
+        "homeRunRate":0
+    }
+}}

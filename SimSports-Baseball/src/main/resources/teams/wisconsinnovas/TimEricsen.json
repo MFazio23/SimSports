@@ -1,0 +1,34 @@
+{"basicInformation":{
+    "firstName":"Tim",
+    "lastName":"Ericsen",
+    "nickname":"The Glass Cannon",
+    "position":["RF"],
+    "number":"4"
+}, "nonContactRates":{
+    "K%":17.3,
+    "BB%":5.2,
+    "HBP%":2.5,
+    "KL%":4
+}, "contactRates":{
+    "flyBallRates":{
+        "contactRate":33.7,
+        "singleRate":4.76,
+        "doubleRate":9.12,
+        "tripleRate":1.28,
+        "homeRunRate":11.32
+    },
+    "lineDriveRates":{
+        "contactRate":23.8,
+        "singleRate":43.7,
+        "doubleRate":23.1,
+        "tripleRate":2.97,
+        "homeRunRate":3.41
+    },
+    "groundBallRates":{
+        "contactRate":42.5,
+        "singleRate":24.5,
+        "doubleRate":2.72,
+        "tripleRate":0.73,
+        "homeRunRate":0
+    }
+}}

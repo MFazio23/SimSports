@@ -15,9 +15,8 @@ public class BaseballPlayerBuilder extends PlayerBuilder {
 			this.firstName,
 			this.lastName,
 			this.nickname,
-			this.team,
-			this.position,
-			this.ratings,
+			this.number,
+			this.positions,
 			this.statistics);
 	}
 

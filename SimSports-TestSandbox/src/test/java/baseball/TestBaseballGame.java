@@ -8,7 +8,11 @@ import org.fazio.simsports.core.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
@@ -28,6 +32,8 @@ public class TestBaseballGame {
 	private String testNicknameB = "Brewers (Fazio)";
 	private List<String> testShortNameListB = new ArrayList<String>();
 
+	private List<Color> testColors = new ArrayList<Color>();
+
 	private final int tests = 50000;
 
 	@Before
@@ -36,8 +42,8 @@ public class TestBaseballGame {
 		final List<Player> testRosterA = this.setUpTeamRosters(this.setUpPlayerListA());
 		final List<Player> testRosterB = this.setUpTeamRosters(this.setUpPlayerListB());
 
-		final Team teamA = new BaseballTeam(this.testLocationA, this.testMainShortNameA, this.testNicknameA, testRosterA, this.testShortNameListA);
-		final Team teamB = new BaseballTeam(this.testLocationB, this.testMainShortNameB, this.testNicknameB, testRosterA, this.testShortNameListB);
+		final Team teamA = new BaseballTeam(this.testLocationA, this.testMainShortNameA, this.testNicknameA, testRosterA, this.testShortNameListA, this.testColors);
+		final Team teamB = new BaseballTeam(this.testLocationB, this.testMainShortNameB, this.testNicknameB, testRosterA, this.testShortNameListB, this.testColors);
 		
 		this.game = new BaseballGame(teamA, teamB);
 	}

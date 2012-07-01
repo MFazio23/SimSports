@@ -1,8 +1,12 @@
 package org.fazio.simsports.baseball.types;
 
+import org.fazio.simsports.baseball.types.attributes.BaseballAttributes;
 import org.fazio.simsports.baseball.types.attributes.BatterAttributes;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
+import org.fazio.simsports.baseball.types.ratings.BaseballRatings;
 import org.fazio.simsports.core.types.*;
+
+import java.util.List;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
@@ -10,10 +14,23 @@ import org.fazio.simsports.core.types.*;
  */
 public class BaseballPlayer extends Player {
 
-	public BaseballPlayer(Attributes attributes, String firstName, String lastName, String nickname, Team team, Position position, Ratings ratings, Statistics statistics) {
-		super(attributes, firstName, lastName, nickname, team, position, ratings, statistics);
+	public BaseballPlayer(
+		final Attributes attributes,
+		final String firstName,
+		final String lastName,
+		final String nickname,
+		final String number,
+		final List<Position> positions,
+		final Statistics statistics) {
+
+			super(attributes, firstName, lastName, nickname, number, positions, statistics);
 	}
-	
+
+	@Override
+	public Ratings calculateRatings() {
+		return new BaseballRatings((BaseballAttributes) this.attributes);
+	}
+
 	public int moveBases(final PlateAppearanceResult hit) {
 		//TODO: Actually implement this.
 		return hit.getBases();
@@ -27,4 +44,6 @@ public class BaseballPlayer extends Player {
 		
 		return (PlateAppearanceResult) group.getRangeValue();
 	}
+
+
 }

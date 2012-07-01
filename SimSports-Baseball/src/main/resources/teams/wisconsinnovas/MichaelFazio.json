@@ -1,0 +1,34 @@
+{"basicInformation":{
+    "firstName":"Michael",
+    "lastName":"Fazio",
+    "nickname":"",
+    "position":["SS"],
+    "number" : "23"
+}, "nonContactRates":{
+    "K%":10.4,
+    "BB%":17.4,
+    "HBP%":1.8,
+    "KL%":23
+}, "contactRates":{
+    "flyBallRates":{
+        "contactRate":37,
+        "singleRate":4.53,
+        "doubleRate":9.21,
+        "tripleRate":1.54,
+        "homeRunRate":17.34
+    },
+    "lineDriveRates":{
+        "contactRate":29.4,
+        "singleRate":41.8,
+        "doubleRate":26.2,
+        "tripleRate":3.87,
+        "homeRunRate":8.76
+    },
+    "groundBallRates":{
+        "contactRate":33.6,
+        "singleRate":24.7,
+        "doubleRate":3.11,
+        "tripleRate":0.87,
+        "homeRunRate":0
+    }
+}}

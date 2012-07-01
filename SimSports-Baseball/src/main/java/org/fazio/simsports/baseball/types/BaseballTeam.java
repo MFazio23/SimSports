@@ -3,6 +3,7 @@ package org.fazio.simsports.baseball.types;
 import org.fazio.simsports.core.types.Player;
 import org.fazio.simsports.core.types.Team;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -13,10 +14,17 @@ public class BaseballTeam extends Team {
 
 	private BaseballPlayer upToBat;
 
-	public BaseballTeam(final String location, final String mainShortName, final String nickname, final List<Player> roster, final List<String> shortNameList) {
-		super(location, mainShortName, nickname, roster, shortNameList);
+	public BaseballTeam(
+		final String location,
+		final String mainShortName,
+		final String nickname,
+		final List<Player> roster,
+		final List<String> shortNameList,
+		final List<Color> teamColors) {
 
-		this.upToBat = (BaseballPlayer) this.roster.get(0);
+			super(location, mainShortName, nickname, roster, shortNameList, teamColors);
+
+			this.upToBat = (BaseballPlayer) this.roster.get(0);
 	}
 
 	public BaseballPlayer nextUpToBat() {

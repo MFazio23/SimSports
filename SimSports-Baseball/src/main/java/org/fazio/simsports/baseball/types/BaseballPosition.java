@@ -16,6 +16,7 @@ public enum BaseballPosition implements Position {
 	Left_Field("LF", false),
 	Center_Field("CF", false),
 	Right_Field("RF", false),
+	Designated_Hitter("DH", false),
 	Starting_Pitcher("SP", true),
 	Relief_Pitcher("RP", true);
 
@@ -25,6 +26,30 @@ public enum BaseballPosition implements Position {
 	private BaseballPosition(final String positionShortName, final boolean isPitcher) {
 		this.positionShortName = positionShortName;
 		this.isPitcher = isPitcher;
+	}
+
+	public static Position getPositionByName(final String name) {
+		Position position = null;
+
+		for(Position tempPosition : BaseballPosition.values()) {
+			if(tempPosition.getPositionName().equals(name)) {
+				position = tempPosition;
+			}
+		}
+
+		return position;
+	}
+
+	public static Position getPositionByShortName(final String shortName) {
+		Position position = null;
+
+		for(Position tempPosition : BaseballPosition.values()) {
+			if(tempPosition.getPositionShortName().equals(shortName)) {
+				position = tempPosition;
+			}
+		}
+
+		return position;
 	}
 	
 	@Override

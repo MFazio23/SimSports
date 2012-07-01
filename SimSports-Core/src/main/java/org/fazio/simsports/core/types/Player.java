@@ -1,28 +1,37 @@
 package org.fazio.simsports.core.types;
 
+import java.util.List;
+
 /**
  * @author Michael Fazio
  */
-public class Player {
+public abstract class Player {
 	
 	protected final String firstName;
 	protected final String lastName;
 	protected final String nickname;
-	protected final Team team;
-	protected final Position position;
+	protected final String number;
+	protected final List<Position> positions;
 	protected final Attributes attributes;
 	protected final Ratings ratings;
 	protected final Statistics statistics;
 
-	public Player(Attributes attributes, String firstName, String lastName, String nickname, Team team, Position position, Ratings ratings, Statistics statistics) {
-		this.attributes = attributes;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.nickname = nickname;
-		this.team = team;
-		this.position = position;
-		this.ratings = ratings;
-		this.statistics = statistics;
+	public Player(
+		final Attributes attributes,
+		final String firstName,
+		final String lastName,
+		final String nickname,
+		final String number,
+		final List<Position> positions,
+		final Statistics statistics) {
+			this.attributes = attributes;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.nickname = nickname;
+			this.number = number;
+			this.positions = positions;
+			this.ratings = this.calculateRatings();
+			this.statistics = statistics;
 	}
 
 	public Attributes getAttributes() {
@@ -49,13 +58,15 @@ public class Player {
 		return firstName + " \"" + nickname + "\" " + lastName;
 	}
 
-	public Team getTeam() {
-		return team;
+	public String getNumber() {
+		return number;
 	}
 
-	public Position getPosition() {
-		return position;
+	public List<Position> getPositions() {
+		return positions;
 	}
+
+	public abstract Ratings calculateRatings();
 
 	public Ratings getRatings() {
 		return ratings;
@@ -72,9 +83,7 @@ public class Player {
 			.append(" ")
 			.append(this.lastName)
 			.append(" (")
-			.append(this.team.getMainShortName())
-			.append(" - ")
-			.append(this.position)
+			.append(this.positions.get(0))
 			.append(")")
 			.toString();
 	}
