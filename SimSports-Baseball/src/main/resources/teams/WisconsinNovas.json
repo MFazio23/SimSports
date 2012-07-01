@@ -1,0 +1,23 @@
+{
+    "location":"Wisconsin",
+    "nickname":"Novas",
+    "mainShortName":"WIS",
+    "shortNameList":["WIS", "WI"],
+    "rosterFolder":"wisconsinnovas",
+    "colors":[
+        [0, 0, 205],
+        [0, 0, 0],
+        [255, 255, 255]
+    ],
+    "roster":[
+        {"lineupSpot" : 1, "playerName" : "Nick Adam", "position" : "2B"},
+        {"lineupSpot" : 2, "playerName" : "John Otto", "position" : "3B"},
+        {"lineupSpot" : 3, "playerName" : "Michael Fazio", "position" : "SS"},
+        {"lineupSpot" : 4, "playerName" : "Scott Johnson", "position" : "1B"},
+        {"lineupSpot" : 5, "playerName" : "Phillip Heiman", "position" : "C"},
+        {"lineupSpot" : 6, "playerName" : "Tim Ericsen", "position" : "RF"},
+        {"lineupSpot" : 7, "playerName" : "David Pietrzykowski", "position" : "LF"},
+        {"lineupSpot" : 8, "playerName" : "Justin Witz", "position" : "CF"},
+        {"lineupSpot" : 9, "playerName" : "James Otto", "position" : "DH"}
+    ]
+}

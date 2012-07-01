@@ -1,0 +1,34 @@
+{"basicInformation":{
+    "firstName":"Justin",
+    "lastName":"Witz",
+    "nickname":"",
+    "position":["CF"],
+    "number" : "1"
+}, "nonContactRates":{
+    "K%":14.4,
+    "BB%":7.9,
+    "HBP%":1.5,
+    "KL%":33
+}, "contactRates":{
+    "flyBallRates":{
+        "contactRate":24.2,
+        "singleRate":5.56,
+        "doubleRate":8.34,
+        "tripleRate":3.65,
+        "homeRunRate":6.52
+    },
+    "lineDriveRates":{
+        "contactRate":18.3,
+        "singleRate":38.6,
+        "doubleRate":20.5,
+        "tripleRate":10.2,
+        "homeRunRate":0.87
+    },
+    "groundBallRates":{
+        "contactRate":57.5,
+        "singleRate":29.7,
+        "doubleRate":5.12,
+        "tripleRate":1.23,
+        "homeRunRate":0
+    }
+}}

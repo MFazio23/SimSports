@@ -2,16 +2,18 @@ package org.fazio.simsports.core.builders;
 
 import org.fazio.simsports.core.types.*;
 
+import java.util.List;
+
 /**
  * @author Michael Fazio
  */
-public class PlayerBuilder {
+public abstract class PlayerBuilder {
 
 	protected String firstName;
 	protected String lastName;
 	protected String nickname;
-	protected Team team;
-	protected Position position;
+	protected String number;
+	protected List<Position> positions;
 	protected Attributes attributes;
 	protected Ratings ratings;
 	protected Statistics statistics;
@@ -31,13 +33,13 @@ public class PlayerBuilder {
 		return this;
 	}
 
-	public PlayerBuilder setTeam(final Team team) {
-		this.team = team;
+	public PlayerBuilder setNumber(final String number) {
+		this.number = number;
 		return this;
 	}
 
-	public PlayerBuilder setPosition(final Position position) {
-		this.position = position;
+	public PlayerBuilder setPositions(final List<Position> positions) {
+		this.positions = positions;
 		return this;
 	}
 
@@ -56,15 +58,5 @@ public class PlayerBuilder {
 		return this;
 	}
 
-	public Player build() {
-		return new Player(
-			this.attributes,
-			this.firstName,
-			this.lastName,
-			this.nickname,
-			this.team,
-			this.position,
-			this.ratings,
-			this.statistics);
-	}
+	public abstract Player build();
 }

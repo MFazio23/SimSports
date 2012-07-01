@@ -1,118 +1,85 @@
 package org.fazio.simsports.baseball.types;
 
 import org.fazio.simsports.core.types.Game;
+import org.fazio.simsports.core.types.PlayResult;
 import org.fazio.simsports.core.types.Team;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
  * @since 3/13/12 3:49 PM
  */
 public class BaseballGame extends Game {
-	
+
+	private final Map<Team, Integer> scoreMap = new HashMap<Team, Integer>();
+	private final Bases bases = new Bases();
+
 	private int inning = 1;
 	private boolean topOfInning = true;
 	private int outs = 0;
 
-	private Bases bases;
-	private PlateAppearance plateAppearance;
-
-	private enum Event {NoEvent, EndOfHalfInning, EndOfInning, EndOfGame}
-	
 	public BaseballGame(final Team homeTeam, final Team awayTeam) {
 		super(homeTeam, awayTeam);
-	}
 
-	private void checkForEvent() {
-		switch (this.findEvent()) {
-			case EndOfHalfInning:
-				this.topOfInning = false;
-				this.outs = 0;
-				break;
-			case EndOfInning:
-				this.topOfInning = true;
-				this.outs = 0;
-				this.inning++;
-				break;
-			case EndOfGame:
-				this.gameOver = true;
-				break;
-			case NoEvent:
-				break;
-			default:
-				break;
-		}
-	}
-	
-	private Event findEvent() {
-		Event event = Event.NoEvent;
-		
-		if(this.outs >= 3) {
-			event = Event.EndOfHalfInning;
-
-			if(!this.topOfInning) {
-				event = Event.EndOfInning;
-				
-				if(this.inning >= 9 && (this.homeScore != this.awayScore)) {
-					event = Event.EndOfGame;
-				}
-			}
-		}
-		
-		return event;
-	}
-	
-	public void addOut() {
-		this.addOuts(1);
-	}
-	
-	public void addOuts(final int outs) {
-		this.outs += outs;
-		this.checkForEvent();
+		scoreMap.put(this.awayTeam, 0);
+		scoreMap.put(this.homeTeam, 0);
 	}
 
 	@Override
-	public void addToHomeScore(final int addedPoints) {
-		super.addToHomeScore(addedPoints);
-		this.checkForEvent();
+	protected PlayResult playNextGameEvent() {
+		PlayResult result = null;
+
+		BaseballTeam teamUpToBat = (BaseballTeam) this.awayTeam;
+		final BaseballPlayer playerUpToBat = teamUpToBat.nextUpToBat();
+		result = playerUpToBat.getPlayResult();
+
+		this.getOuts(result);
+
+
+		return result;
 	}
 
-	public int getInning() {
-		return inning;
-	}
-
-	public void setInning(final int inning) {
-		this.inning = inning;
-	}
-
-	public boolean isTopOfInning() {
-		return topOfInning;
-	}
-
-	public void setTopOfInning(final boolean topOfInning) {
-		this.topOfInning = topOfInning;
-	}
-
-	public int getOuts() {
+	protected int getOuts(final PlayResult result) {
+		//TODO: Actually implement this.
+		int outs = 0;
+		if(((PlateAppearanceResult)result).isOut()) outs = 1;
 		return outs;
 	}
 
-	public void setOuts(final int outs) {
-		this.outs = outs;
+	@Override
+	public boolean isGameOver() {
+		return false;  //To change body of implemented methods use File | Settings | File Templates.
+	}
+
+	public Map<Team, Integer> getScoreMap() {
+		return scoreMap;
+	}
+
+	public int getHomeScore() {
+		return this.scoreMap.get(this.homeTeam);
+	}
+
+	public int getAwayScore() {
+		return this.scoreMap.get(this.awayTeam);
 	}
 
 	public Bases getBases() {
 		return bases;
 	}
 
-	public void setBases(final Bases bases) {
-		this.bases = bases;
+	public int getInning() {
+		return inning;
 	}
 
-	public PlateAppearance getPlateAppearance() {
-		return plateAppearance;
+	public boolean isTopOfInning() {
+		return topOfInning;
 	}
 
-	public void setPlateAppearance(final PlateAppearance plateAppearance) {
-		this.plateAppearance = plateAppearance;
+	public int getOuts() {
+		return outs;
 	}
+
+	private enum HalfOfInning {Top, Bottom};
 }

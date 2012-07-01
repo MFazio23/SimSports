@@ -1,6 +1,6 @@
 package org.fazio.simsports.baseball.types.ratings;
 
-import org.fazio.simsports.core.types.Attributes;
+import org.fazio.simsports.baseball.types.attributes.BaseballAttributes;
 import org.fazio.simsports.core.types.Ratings;
 
 /**
@@ -9,14 +9,14 @@ import org.fazio.simsports.core.types.Ratings;
  */
 public class BaseballRatings implements Ratings {
 
-	private final Ratings offense;
-	private final Ratings defense;
-	private final Ratings pitching;
+	private final OffenseRatings offense;
+	private final DefenseRatings defense;
+	private final PitchingRatings pitching;
 
-	public BaseballRatings(final Attributes offenseAttrs, final Attributes defenseAttrs, final Attributes pitchingAttrs) {
-		this.offense = new OffenseRatings(offenseAttrs);
-		this.defense = new DefenseRatings(defenseAttrs);
-		this.pitching = new PitchingRatings(pitchingAttrs);
+	public BaseballRatings(final BaseballAttributes attrs) {
+		this.offense = new OffenseRatings(attrs.getBatterAttributes());
+		this.defense = new DefenseRatings(attrs.getFielderAttributes());
+		this.pitching = new PitchingRatings(attrs.getPitcherAttributes());
 	}
 
 	public Ratings getOffense() {

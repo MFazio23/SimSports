@@ -1,0 +1,34 @@
+{"basicInformation":{
+    "firstName":"Nick",
+    "lastName":"Adam",
+    "nickname":"",
+    "position":["2B"],
+    "number" : "18"
+}, "nonContactRates":{
+    "K%":12.3,
+    "BB%":15.3,
+    "HBP%":2.1,
+    "KL%":54
+}, "contactRates":{
+    "flyBallRates":{
+        "contactRate":26.7,
+        "singleRate":3.45,
+        "doubleRate":8.47,
+        "tripleRate":1.97,
+        "homeRunRate":9.87
+    },
+    "lineDriveRates":{
+        "contactRate":24.1,
+        "singleRate":40.2,
+        "doubleRate":25.4,
+        "tripleRate":4.21,
+        "homeRunRate":1.24
+    },
+    "groundBallRates":{
+        "contactRate":49.2,
+        "singleRate":27.1,
+        "doubleRate":3.21,
+        "tripleRate":0.74,
+        "homeRunRate":0
+    }
+}}

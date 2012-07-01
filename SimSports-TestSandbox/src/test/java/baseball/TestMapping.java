@@ -1,10 +1,9 @@
 package baseball;
 
-import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.fazio.simsports.baseball.builders.JSONBaseballPlayerCreator;
+import org.fazio.simsports.baseball.types.BaseballPlayer;
 import org.junit.Test;
-
-import java.io.InputStream;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
@@ -14,9 +13,10 @@ public class TestMapping {
 
 	@Test
 	public void testMapping() throws Exception {
-		InputStream stream = this.getClass().getResourceAsStream("/jsonmaptest.json");
-		JsonNode node = new ObjectMapper().readValue(stream, JsonNode.class);
-
-		System.out.println(node);
+		ObjectMapper mapper = new ObjectMapper();
+		//SimpleModule module = new SimpleModule("MyModule", new Version(1, 0, 0, null))
+		//	.addDeserializer(Attributes.class, new AttributesDeserializer());
+		final BaseballPlayer player = new JSONBaseballPlayerCreator().createPlayer("teams/wisconsinnovas/MichaelFazio.json");
+		System.out.println(mapper.writeValueAsString(player));
 	}
 }

@@ -1,0 +1,34 @@
+{"basicInformation":{
+    "firstName":"Phillip",
+    "lastName":"Heiman",
+    "nickname":"Ed",
+    "position":["C"],
+    "number" : "22"
+}, "nonContactRates":{
+    "K%":27.3,
+    "BB%":16.2,
+    "HBP%":4.72,
+    "KL%":22
+}, "contactRates":{
+    "flyBallRates":{
+        "contactRate":48.3,
+        "singleRate":1.82,
+        "doubleRate":6.32,
+        "tripleRate":0.34,
+        "homeRunRate":24.21
+    },
+    "lineDriveRates":{
+        "contactRate":23.2,
+        "singleRate":49.2,
+        "doubleRate":22.3,
+        "tripleRate":0.95,
+        "homeRunRate":16.3
+    },
+    "groundBallRates":{
+        "contactRate":28.5,
+        "singleRate":15.2,
+        "doubleRate":0.68,
+        "tripleRate":0.03,
+        "homeRunRate":0
+    }
+}}

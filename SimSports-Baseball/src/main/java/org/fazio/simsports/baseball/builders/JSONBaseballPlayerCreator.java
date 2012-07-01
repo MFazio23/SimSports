@@ -1,55 +1,35 @@
-package org.fazio.simsports.baseball.builders.test;
+package org.fazio.simsports.baseball.builders;
 
-import org.fazio.simsports.baseball.builders.BaseballPlayerBuilder;
-import org.fazio.simsports.baseball.builders.BattingAttributesByPABuilder;
 import org.fazio.simsports.baseball.types.BaseballPlayer;
+import org.fazio.simsports.baseball.types.BaseballPosition;
 import org.fazio.simsports.baseball.types.attributes.BaseballAttributes;
 import org.fazio.simsports.baseball.types.attributes.BatterAttributes;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
-import org.fazio.simsports.core.types.Attributes;
-import org.fazio.simsports.core.types.Ratings;
-import org.fazio.simsports.core.types.Statistics;
+import org.fazio.simsports.core.types.*;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.mockito.Mockito;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
- * @since 6/13/12 2:59 PM
+ * @since 6/25/12 2:33 PM
  */
-public class TestPlayerFromJSON {
+public class JSONBaseballPlayerCreator {
 
-	public BaseballPlayer createPlayer(final String playerName, final int year) {
+	public BaseballPlayer createPlayer(final String fileName) {
 
-		final String filename = new StringBuilder()
-			.append(playerName.replaceAll(" ", ""))
-			.append(year)
-			.append(".json")
-			.toString();
-
-		final InputStream stream = this.getClass().getClassLoader().getResourceAsStream("testplayers/" + filename);
+		final InputStream stream = this.getClass().getClassLoader().getResourceAsStream(fileName);
 
 		final StringBuilder sb = new StringBuilder();
-		final BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-
-		char[] buf = new char[1024];
-		int numRead = 0;
-		try {
-			while ((numRead = reader.read(buf)) != -1) {
-				final String readData = String.valueOf(buf, 0, numRead);
-				sb.append(readData);
-				buf = new char[1024];
-			}
-
-			reader.close();
-		} catch(IOException e) {
-			e.printStackTrace();
+		final Scanner scanner = new Scanner(stream);
+		while(scanner.hasNext()) {
+			sb.append(scanner.next());
 		}
 
 		return this.convertJSONToBaseballPlayer(sb.toString());
@@ -77,26 +57,26 @@ public class TestPlayerFromJSON {
 
 		try {
 
-			final JSONObject playerInfo = json.getJSONObject("playerInfo");
+			final JSONObject basicInfo = json.getJSONObject("basicInformation");
 			final JSONObject nonContactRates = json.getJSONObject("nonContactRates");
-
 			final JSONObject contactRates = json.getJSONObject("contactRates");
 
 			final JSONObject groundBallRates = contactRates.getJSONObject("groundBallRates");
 			final JSONObject flyBallRates = contactRates.getJSONObject("flyBallRates");
 			final JSONObject lineDriveRates = contactRates.getJSONObject("lineDriveRates");
 
-			final BatterAttributes batterAttributes = this.getBatterAttributes(nonContactRates, groundBallRates, flyBallRates, lineDriveRates);
-			final BaseballAttributes baseballAttributes = new BaseballAttributes(batterAttributes, Mockito.mock(Attributes.class),Mockito.mock(Attributes.class));
-
-			final String[] playerName = playerInfo.getString("name").split(" ");
+			final BatterAttributes batterAttributes
+				= this.getBatterAttributes(nonContactRates, groundBallRates, flyBallRates, lineDriveRates);
+			final BaseballAttributes baseballAttributes
+				= new BaseballAttributes(batterAttributes, Mockito.mock(Attributes.class), Mockito.mock(Attributes.class));
 
 			player = (BaseballPlayer) new BaseballPlayerBuilder()
-				.setFirstName(playerName[0])
-				.setLastName(playerName[1])
-				.setNickname(playerName[1] + "y")
-				.setAttributes(baseballAttributes)
-				.setPositions(Mockito.mock(List.class))
+				.setFirstName(basicInfo.getString("firstName"))
+				.setLastName(basicInfo.getString("lastName"))
+				.setNickname(basicInfo.getString("nickname"))
+				.setNumber(basicInfo.getString("number"))
+				.setPositions(this.findPosition(basicInfo.getJSONArray("position")))
+				.setAttributes(batterAttributes)
 				.setStatistics(Mockito.mock(Statistics.class))
 				.setRatings(Mockito.mock(Ratings.class))
 				.build();
@@ -110,10 +90,10 @@ public class TestPlayerFromJSON {
 
 	private BatterAttributes getBatterAttributes(final JSONObject nonContactRates, final JSONObject groundBallRates, final JSONObject flyBallRates, final JSONObject lineDriveRates) throws JSONException {
 		final BattingAttributesByPA attributesByPA = new BattingAttributesByPABuilder()
-			.setStrikeoutChance(nonContactRates.getDouble("SO%"))
-			.setStrikeoutLookingChance(nonContactRates.getDouble("L/SO"))
+			.setStrikeoutChance(nonContactRates.getDouble("K%"))
+			.setStrikeoutLookingChance(nonContactRates.getDouble("KL%"))
 			.setWalkChance(nonContactRates.getDouble("BB%"))
-			.setHitByPitchChance(nonContactRates.getDouble("hbpRate"))
+			.setHitByPitchChance(nonContactRates.getDouble("HBP%"))
 			.setContactFlyBallChance(flyBallRates.getDouble("contactRate"))
 			.setContactGroundBallChance(groundBallRates.getDouble("contactRate"))
 			.setContactLineDriveChance(lineDriveRates.getDouble("contactRate"))
@@ -132,5 +112,19 @@ public class TestPlayerFromJSON {
 			.build();
 
 		return new BatterAttributes(attributesByPA, Mockito.mock(Attributes.class));
+	}
+
+	private List<Position> findPosition(final JSONArray positionArray) {
+		List<Position> positions = new ArrayList<Position>();
+
+		try {
+			for(int x=0;x<positionArray.length();x++) {
+				positions.add(BaseballPosition.getPositionByShortName(positionArray.getString(x)));
+			}
+		} catch(JSONException e) {
+			e.printStackTrace();
+		}
+
+		return positions;
 	}
 }
