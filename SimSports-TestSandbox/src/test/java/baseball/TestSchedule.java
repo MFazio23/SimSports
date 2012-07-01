@@ -1,12 +1,11 @@
 package baseball;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -32,7 +31,7 @@ public class TestSchedule {
 	@Before
 	public void setUp() throws Exception {
 		for(int x=0;x<teamCount;x++) {
-			final String team = "Team " + (x + 1);
+			final String team = String.valueOf((char)(x + Character.valueOf('A')));
 			teams.add(team);
 			if(x<6) division1.add(team);
 			else division2.add(team);
@@ -83,7 +82,38 @@ public class TestSchedule {
 
 	@Test
 	public void testMatchupTemplates() throws Exception {
+		final String matchupJSON = new StringBuilder()
+			.append("{\"matchups\":[")
+			.append("[").append("[1,2],").append("[3,4],").append("[5,6]").append("],")
+			.append("[").append("[1,3],").append("[2,5],").append("[4,6]").append("],")
+			.append("[").append("[1,4],").append("[2,6],").append("[3,5]").append("],")
+			.append("[").append("[1,5],").append("[2,4],").append("[3,6]").append("],")
+			.append("[").append("[1,6],").append("[2,3],").append("[4,5]").append("]")
+			.append("]}")
+			.toString();
 
+		System.out.println(matchupJSON);
+		JSONArray matchups = new JSONObject(matchupJSON).getJSONArray("matchups");
+		List<JSONArray> matchupList = new LinkedList<JSONArray>();
+		for(int x=0;x<matchups.length();x++) {
+			JSONArray matchup = matchups.getJSONArray(x);
+			matchupList.add(matchup);
+		}
+
+		while(matchupList.size() > 0) {
+			int matchupInd = (int)(Math.random() * matchupList.size());
+			JSONArray selectedMatchup = matchupList.get(matchupInd);
+			System.out.println("Matchup #" + (matchupInd + 1));
+			for(int x=0;x<selectedMatchup.length();x++) {
+				String teamA = division1.get(selectedMatchup.getJSONArray(x).getInt(0) - 1);
+				String teamB = division1.get(selectedMatchup.getJSONArray(x).getInt(1) - 1);
+				int homeAway = (int)(Math.random() * 2);
+				if(homeAway == 0) System.out.print(teamA + "@" + teamB + " ");
+				else System.out.print(teamB + "@" + teamA + " ");
+			}
+			System.out.println();
+			matchupList.remove(matchupInd);
+		}
 	}
 
 	private class Matchup {
@@ -127,6 +157,39 @@ public class TestSchedule {
 		public String toString() {
 			return this.away + "@" + this.home;
 		}
+	}
+
+	@Test
+	public void testScheduleFormat() throws Exception {
+		System.out.println(this.getRandomInDivisionMatchups());
+		System.out.println(this.getRandomInDivisionMatchups());
+		System.out.println(this.getRandomOutOfDivisionMatchups());
+		System.out.println(this.getRandomInDivisionMatchups());
+		System.out.println(this.getRandomInDivisionMatchups());
+
+		System.out.println(this.getRandomInDivisionMatchups());
+		System.out.println(this.getRandomInDivisionMatchups());
+		System.out.println(this.getRandomOutOfDivisionMatchups());
+		System.out.println(this.getRandomInDivisionMatchups());
+		System.out.println(this.getRandomInDivisionMatchups());
+	}
+
+	private String getRandomInDivisionMatchups() {
+		return "D";
+	}
+
+	private String getRandomOutOfDivisionMatchups() {
+		return "I";
+	}
+
+	public class Scheduler {
+
+		private final List<String> teams;
+
+		public Scheduler(final List<String> teams) {
+			this.teams = teams;
+		}
+
 	}
 
 }

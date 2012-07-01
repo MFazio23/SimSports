@@ -76,7 +76,7 @@ public class JSONBaseballPlayerCreator {
 				.setNickname(basicInfo.getString("nickname"))
 				.setNumber(basicInfo.getString("number"))
 				.setPositions(this.findPosition(basicInfo.getJSONArray("position")))
-				.setAttributes(batterAttributes)
+				.setAttributes(baseballAttributes)
 				.setStatistics(Mockito.mock(Statistics.class))
 				.setRatings(Mockito.mock(Ratings.class))
 				.build();

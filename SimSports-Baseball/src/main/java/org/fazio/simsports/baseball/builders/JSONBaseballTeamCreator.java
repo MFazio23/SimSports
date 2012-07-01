@@ -130,7 +130,7 @@ public class JSONBaseballTeamCreator {
 					.append("/")
 					.append(rosterFolder)
 					.append("/")
-					.append(rosterNames.getString(x))
+					.append(this.getPlayerNamePath(rosterNames.getJSONObject(x)))
 					.append(".json");
 				roster.add(playerCreator.createPlayer(fileName.toString()));
 			} catch(JSONException e) {
@@ -139,5 +139,9 @@ public class JSONBaseballTeamCreator {
 		}
 
 		return roster;
+	}
+
+	private String getPlayerNamePath(final JSONObject playerInfo) throws JSONException {
+		return StringUtils.remove(playerInfo.getString("playerName"), "	");
 	}
 }

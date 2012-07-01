@@ -4,6 +4,7 @@ import org.fazio.simsports.baseball.types.attributes.BaseballAttributes;
 import org.fazio.simsports.baseball.types.attributes.BatterAttributes;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 import org.fazio.simsports.baseball.types.ratings.BaseballRatings;
+import org.fazio.simsports.baseball.types.ratings.OffenseRatings;
 import org.fazio.simsports.core.types.*;
 
 import java.util.List;
@@ -45,5 +46,28 @@ public class BaseballPlayer extends Player {
 		return (PlateAppearanceResult) group.getRangeValue();
 	}
 
+	public String getRatingsAndInfo() {
+		final BaseballRatings ratings = (BaseballRatings) this.calculateRatings();
+		final OffenseRatings offenseRatings = (OffenseRatings) ratings.getOffense();
+		final StringBuilder sb = new StringBuilder()
+			.append(this.firstName)
+			.append(" ")
+			.append(this.lastName)
+			.append(" (");
+		for(int x=0;x<this.positions.size();x++) {
+			if(x>0) sb.append("/");
+			sb.append(this.positions.get(x));
+		}
+		sb
+			.append(") - ")
+			.append(offenseRatings.getContact())
+			.append("/")
+			.append(offenseRatings.getEye())
+			.append("/")
+			.append(offenseRatings.getPower());
+
+		return sb.toString();
+
+	}
 
 }
