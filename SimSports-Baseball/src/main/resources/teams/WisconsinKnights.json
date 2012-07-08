@@ -1,14 +1,15 @@
 {
     "location":"Wisconsin",
-    "nickname":"Novas",
+    "nickname":"Knights",
     "mainShortName":"WIS",
     "shortNameList":["WIS", "WI"],
-    "rosterFolder":"wisconsinnovas",
     "colors":[
         [0, 0, 205],
         [0, 0, 0],
         [255, 255, 255]
     ],
+    "randomRoster": false,
+    "rosterFolder":"wisconsinknights",
     "roster":[
         {"lineupSpot" : 1, "playerName" : "Nick Adam", "position" : "2B"},
         {"lineupSpot" : 2, "playerName" : "John Otto", "position" : "3B"},

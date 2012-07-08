@@ -1,0 +1,12 @@
+{
+    "location":"Oklahoma City",
+    "nickname":"Sonics",
+    "mainShortName":"OKC",
+    "shortNameList":["OKC", "OK"],
+    "colors":[
+        [178, 13, 53],
+        [0, 0, 0],
+        [255, 255, 255]
+    ],
+    "randomRoster": true
+}
