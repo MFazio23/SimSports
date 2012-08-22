@@ -16,14 +16,14 @@ public class TestJSONBaseballTeamCreator {
 	public void testTeamCreator() throws Exception {
 		JSONBaseballTeamCreator creator = new JSONBaseballTeamCreator();
 
-		BaseballTeam team = creator.createTeam("Wisconsin Novas");
+		BaseballTeam novas = creator.createTeam("Wisconsin Novas");
+		BaseballTeam sonics = creator.createTeam("Oklahoma City Sonics");
 
-		System.out.println(team);
+		System.out.println(novas);
 
-		for(Player player : team.getRoster()) {
+		for(Player player : novas.getRoster()) {
 			final BaseballPlayer baseballPlayer = (BaseballPlayer) player;
 			System.out.println(baseballPlayer.getRatingsAndInfo());
 		}
 	}
-
 }

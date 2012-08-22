@@ -16,7 +16,7 @@ public class TestMapping {
 		ObjectMapper mapper = new ObjectMapper();
 		//SimpleModule module = new SimpleModule("MyModule", new Version(1, 0, 0, null))
 		//	.addDeserializer(Attributes.class, new AttributesDeserializer());
-		final BaseballPlayer player = new JSONBaseballPlayerCreator().createPlayer("teams/wisconsinnovas/MichaelFazio.json");
+		final BaseballPlayer player = new JSONBaseballPlayerCreator().createPlayer("teams/wisconsinknights/MichaelFazio.json");
 		System.out.println(mapper.writeValueAsString(player));
 	}
 }

@@ -1,0 +1,51 @@
+{
+    "pitchers": [
+        {
+            "chance": 1,
+            "low": 0,
+            "high": 0
+        },
+        {
+            "chance": 4,
+            "low": 1,
+            "high": 9
+        },
+        {
+            "chance": 10,
+            "low": 10,
+            "high": 29
+        },
+        {
+            "chance": 75,
+            "low": 30,
+            "high": 49
+        },
+        {
+            "chance": 10,
+            "low": 50,
+            "high": 99
+        }
+    ],
+    "batters": [
+        {
+            "chance": 1,
+            "low": 0,
+            "high": 0
+        },
+        {
+            "chance": 750,
+            "low": 1,
+            "high": 29
+        },
+        {
+            "chance": 150,
+            "low": 30,
+            "high": 49
+        },
+        {
+            "chance": 99,
+            "low": 50,
+            "high": 99
+        }
+    ]
+}

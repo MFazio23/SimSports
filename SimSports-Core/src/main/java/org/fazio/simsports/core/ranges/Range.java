@@ -32,7 +32,7 @@ public abstract class Range {
 	
 	public Object getRangeValue() {
 
-		return this.getRangeValue(Math.random() * 100);
+		return this.getRangeValue(Math.random() * this.end);
 	}
 	
 	public abstract Object getRangeValue(final double value);

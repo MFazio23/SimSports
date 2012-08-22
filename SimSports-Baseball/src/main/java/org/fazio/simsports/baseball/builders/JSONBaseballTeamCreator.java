@@ -64,15 +64,23 @@ public class JSONBaseballTeamCreator {
 			final String nickname = json.getString("nickname");
 			final String mainShortName = json.getString("mainShortName");
 			final JSONArray shortNameList = json.getJSONArray("shortNameList");
-			final String rosterFolder = json.getString("rosterFolder");
 			final JSONArray colors = json.getJSONArray("colors");
-			final JSONArray rosterNames = json.getJSONArray("roster");
+			final boolean randomRoster = json.getBoolean("randomRoster");
+			List<Player> roster = null;
+			if(randomRoster) {
+				roster = this.getRandomTeamRoster();
+			} else {
+				final String rosterFolder = json.getString("rosterFolder");
+				final JSONArray rosterNames = json.getJSONArray("roster");
+
+				roster = this.getTeamRoster(rosterFolder, rosterNames);
+			}
 
 			team = (BaseballTeam) new BaseballTeamBuilder()
 				.setLocation(location)
 				.setNickname(nickname)
 				.setMainShortName(mainShortName)
-				.addToRoster(this.getTeamRoster(rosterFolder, rosterNames))
+				.addToRoster(roster)
 				.addToShortNameList(this.getShortNameList(mainShortName, shortNameList))
 				.addToTeamColors(this.getTeamColors(colors))
 				.build();
@@ -137,6 +145,14 @@ public class JSONBaseballTeamCreator {
 				e.printStackTrace();
 			}
 		}
+
+		return roster;
+	}
+
+	private List<Player> getRandomTeamRoster() {
+		//TODO: Complete this.
+		final List<Player> roster = new ArrayList<Player>();
+
 
 		return roster;
 	}

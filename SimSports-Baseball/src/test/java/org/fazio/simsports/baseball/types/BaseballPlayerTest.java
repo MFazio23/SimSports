@@ -18,7 +18,7 @@ public class BaseballPlayerTest {
 	private BaseballPlayer testPlayer;
 	private final int testCount = 650;
 	private final double testFactor = 10;
-	private final String testFilePath = "teams/wisconsinnovas/MichaelFazio.json";
+	private final String testFilePath = "teams/wisconsinknights/MichaelFazio.json";
 
 
 	@Before

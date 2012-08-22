@@ -1,6 +1,7 @@
 package org.fazio.simsports.core.ranges;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -15,7 +16,6 @@ public class RangeGroup extends Range {
 
 	public RangeGroup() {
 		super();
-
 	}
 
 	public RangeGroup(final double rangeSize) {
@@ -24,8 +24,14 @@ public class RangeGroup extends Range {
 	}
 
 	@Override
+	public Object getRangeValue() {
+		final double rangeSize = this.rangeList.get(this.rangeList.size() - 1).getEnd();
+		return this.getRangeValue(Math.random() * rangeSize);
+	}
+
+	@Override
 	public Object getRangeValue(final double value) {
-		Object rangeValue = defaultRange.getRangeValue();
+		Object rangeValue = (defaultRange != null) ? defaultRange.getRangeValue() : null;
 		
 		for(Range checkRange : this.rangeList) {
 			if(checkRange.isInRange(value)) {
@@ -42,10 +48,10 @@ public class RangeGroup extends Range {
 			lastEndRange = range.setRange(lastEndRange);
 		}
 
-		if(this.defaultRange == null) {
+		/*if(this.defaultRange == null) {
 			this.defaultRange = new RangeValue(DEFAULT_RANGE_VALUE);
 		}
-		this.defaultRange.setRange(lastEndRange, 100.0);
+		this.defaultRange.setRange(lastEndRange, 100.0);*/
 	}
 	
 	public RangeGroup addToRangeGroup(final Range range) {
@@ -82,9 +88,10 @@ public class RangeGroup extends Range {
 			sb.append(range.toString(level + 1));
 			sb.append('\n');
 		}
-
-		sb.append(this.defaultRange.toString(level + 1));
-		sb.append(" (Default)");
+		if(this.defaultRange != null) {
+			sb.append(this.defaultRange.toString(level + 1));
+			sb.append(" (Default)");
+		}
 		
 		return sb.toString();
 	}

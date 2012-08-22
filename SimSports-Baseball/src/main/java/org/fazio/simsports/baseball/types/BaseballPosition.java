@@ -3,6 +3,9 @@ package org.fazio.simsports.baseball.types;
 
 import org.fazio.simsports.core.types.Position;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Michael Fazio
  */
@@ -50,6 +53,26 @@ public enum BaseballPosition implements Position {
 		}
 
 		return position;
+	}
+
+	public static List<Position> getPositionListByNameList(final List<String> nameList) {
+		final List<Position> positionList = new ArrayList<Position>();
+
+		for(String name : nameList) {
+			positionList.add(BaseballPosition.getPositionByName(name));
+		}
+
+		return positionList;
+	}
+
+	public static List<Position> getPositionListByShortNameList(final List<String> nameList) {
+		final List<Position> positionList = new ArrayList<Position>();
+
+		for(String name : nameList) {
+			positionList.add(BaseballPosition.getPositionByShortName(name));
+		}
+
+		return positionList;
 	}
 	
 	@Override
