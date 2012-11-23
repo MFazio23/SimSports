@@ -1,9 +1,9 @@
 package org.fazio.simsports.baseball.types;
 
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
-import org.fazio.simsports.core.ranges.Range;
-import org.fazio.simsports.core.ranges.RangeGroup;
-import org.fazio.simsports.core.ranges.RangeValue;
+import org.fazio.utils.range.Range;
+import org.fazio.utils.range.RangeGroup;
+import org.fazio.utils.range.RangeValue;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>

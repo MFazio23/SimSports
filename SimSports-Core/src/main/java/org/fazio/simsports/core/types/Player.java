@@ -11,6 +11,7 @@ public abstract class Player {
 	protected final String lastName;
 	protected final String nickname;
 	protected final String number;
+	protected final Position primaryPosition;
 	protected final List<Position> positions;
 	protected final Attributes attributes;
 	protected final Ratings ratings;
@@ -22,6 +23,7 @@ public abstract class Player {
 		final String lastName,
 		final String nickname,
 		final String number,
+		final Position primaryPosition,
 		final List<Position> positions,
 		final Statistics statistics) {
 			this.attributes = attributes;
@@ -29,9 +31,12 @@ public abstract class Player {
 			this.lastName = lastName;
 			this.nickname = nickname;
 			this.number = number;
+			this.primaryPosition = primaryPosition;
 			this.positions = positions;
 			this.ratings = this.calculateRatings();
 			this.statistics = statistics;
+
+			this.positions.add(primaryPosition);
 	}
 
 	public Attributes getAttributes() {
@@ -62,6 +67,10 @@ public abstract class Player {
 		return number;
 	}
 
+	public Position getPrimaryPosition() {
+		return primaryPosition;
+	}
+
 	public List<Position> getPositions() {
 		return positions;
 	}
@@ -83,7 +92,7 @@ public abstract class Player {
 			.append(" ")
 			.append(this.lastName)
 			.append(" (")
-			.append(this.positions.get(0))
+			.append(this.primaryPosition)
 			.append(")")
 			.toString();
 	}

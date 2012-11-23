@@ -1,7 +1,7 @@
 package org.fazio.simsports.core;
 
-import org.fazio.simsports.core.ranges.RangeGroup;
-import org.fazio.simsports.core.ranges.RangeValue;
+import org.fazio.utils.range.RangeGroup;
+import org.fazio.utils.range.RangeValue;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -13,10 +13,16 @@
     	<module>SimSports-Core</module>
     	<module>SimSports-Baseball</module>
     	<module>SimSports-TestSandbox</module>
+        <module>SimSports-Basketball</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.fazio.utils</groupId>
+                <artifactId>FazioUtils</artifactId>
+                <version>0.1.1</version>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>

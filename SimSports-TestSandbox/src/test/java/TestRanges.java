@@ -1,6 +1,6 @@
 import org.fazio.simsports.baseball.builders.BattingAttributesByPitchBuilder;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPitch;
-import org.fazio.simsports.core.ranges.RangeGroup;
+import org.fazio.utils.range.RangeGroup;
 import org.junit.Before;
 import org.junit.Test;
 
