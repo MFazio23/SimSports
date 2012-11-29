@@ -3,7 +3,6 @@ package baseball;
 import org.fazio.simsports.baseball.builders.BattingAttributesByPitchBuilder;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPitch;
 import org.fazio.utils.range.RangeGroup;
-import org.fazio.utils.range.RangeValue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -45,10 +44,10 @@ public class TestPitchByPitch {
 	public void setUp() throws Exception {
 		this.counts = new LinkedHashMap<String, Integer>();
 
-
+/*
 		this.hitRangeGroup = new RangeGroup(this.attrs.getInPlayHit())
 			.setDefaultRange(new RangeValue("Single"))
-			.addToRangeGroup(new RangeValue(this.attrs.getHitDouble(), "Double"))
+			.addToRangeGroup(new RangeValue("Double")this.attrs.getHitDouble())
 			.addToRangeGroup(new RangeValue(this.attrs.getHitTriple(), "Triple"))
 			.addToRangeGroup(new RangeValue(this.attrs.getHitHomeRun(), "Home Run"));
 
@@ -72,7 +71,7 @@ public class TestPitchByPitch {
 					.addToRangeGroup(new RangeValue(this.attrs.getNoSwingStrike(), "Strike"))
 					.addToRangeGroup(new RangeValue(this.attrs.getNoSwingHBP(), "HBP"))
 			);
-
+*/
 	}
 
 	@Test

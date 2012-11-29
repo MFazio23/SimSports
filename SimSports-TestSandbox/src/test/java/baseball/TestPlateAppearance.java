@@ -3,11 +3,9 @@ package baseball;
 import org.fazio.simsports.baseball.builders.BattingAttributesByPABuilder;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 import org.fazio.utils.range.RangeGroup;
-import org.fazio.utils.range.RangeValue;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -50,7 +48,7 @@ public class TestPlateAppearance {
 	
 	@Before
 	public void setUp() throws Exception {
-
+/*
 		this.results = new HashMap<String, Integer>();
 
 		this.flyBallRangeGroup
@@ -85,7 +83,7 @@ public class TestPlateAppearance {
 			.addToRangeGroup(new RangeGroup(attrs.getStrikeoutChance())
 				.addToRangeGroup(new RangeValue(attrs.getStrikeoutLookingChance(), "Strikeout Looking"))
 				.setDefaultRange(new RangeValue("Strikeout Swinging")))
-			.setDefaultRange(this.contactRangeGroup);
+			.setDefaultRange(this.contactRangeGroup);*/
 	}
 
 	@Test
