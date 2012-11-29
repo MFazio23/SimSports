@@ -2,6 +2,7 @@ package org.fazio.simsports.core.builders;
 
 import org.fazio.simsports.core.types.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ public abstract class PlayerBuilder {
 	protected String lastName;
 	protected String nickname;
 	protected String number;
+	protected Position primaryPosition;
 	protected List<Position> positions;
 	protected Attributes attributes;
 	protected Ratings ratings;
@@ -38,8 +40,21 @@ public abstract class PlayerBuilder {
 		return this;
 	}
 
+	public PlayerBuilder setPrimaryPosition(final Position primaryPosition) {
+		this.primaryPosition = primaryPosition;
+		if(this.positions == null) this.positions = new ArrayList<Position>();
+		this.positions.add(primaryPosition);
+		return this;
+	}
+
 	public PlayerBuilder setPositions(final List<Position> positions) {
 		this.positions = positions;
+		return this;
+	}
+
+	public PlayerBuilder addPosition(final Position positions) {
+		if(this.positions == null) this.positions = new ArrayList<Position>();
+		this.positions.add(positions);
 		return this;
 	}
 
