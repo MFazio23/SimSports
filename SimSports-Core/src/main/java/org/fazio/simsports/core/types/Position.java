@@ -1,5 +1,7 @@
 package org.fazio.simsports.core.types;
 
+import java.util.List;
+
 /**
  * @author Michael Fazio
  */

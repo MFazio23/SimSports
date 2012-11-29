@@ -1,0 +1,85 @@
+{
+    "C": {
+        "chance": 2,
+        "alternates": {
+            "1B": 10,
+            "3B": 1,
+            "RF": 1
+        }
+    },
+    "1B": {
+        "chance": 12,
+        "alternates": {
+            "C": 1,
+            "3B": 6,
+            "LF": 2,
+            "RF": 4
+        }
+    },
+    "2B": {
+        "chance": 7,
+        "alternates": {
+            "1B": 10,
+            "3B": 15,
+            "SS": 25,
+            "LF": 1,
+            "CF": 2,
+            "RF": 1
+        }
+    },
+    "3B": {
+        "chance": 9,
+        "alternates": {
+            "1B": 20,
+            "2B": 2,
+            "SS": 2,
+            "LF": 1,
+            "CF": 1,
+            "RF": 2
+        }
+    },
+    "SS": {
+        "chance": 2,
+        "alternates": {
+            "1B": 20,
+            "2B": 3,
+            "SS": 5,
+            "LF": 1,
+            "CF": 2,
+            "RF": 1
+        }
+    },
+    "LF": {
+        "chance": 8,
+        "alternates": {
+            "1B": 5,
+            "3B": 1,
+            "CF": 10,
+            "RF": 35
+        }
+    },
+    "CF": {
+        "chance": 4,
+        "alternates": {
+            "LF": 45,
+            "RF": 35
+        }
+    },
+    "RF": {
+        "chance": 10,
+        "alternates": {
+            "1B": 20,
+            "3B": 3,
+            "LF": 25,
+            "CF": 7
+        }
+    },
+    "SP": {
+        "chance": 22,
+        "alternates": {}
+    },
+    "RP": {
+        "chance": 24,
+        "alternates": {}
+    }
+}
