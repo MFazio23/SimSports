@@ -3,7 +3,6 @@ package org.fazio.simsports.baseball.types;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 import org.fazio.utils.range.Range;
 import org.fazio.utils.range.RangeGroup;
-import org.fazio.utils.range.RangeValue;
 
 /**
  * @author Michael Fazio <michael.fazio@kohls.com>
@@ -13,11 +12,11 @@ public class BatterPlateAppearanceRangeGroup extends Range {
 
 	private final BattingAttributesByPA battingAttributes;
 	
-	private final RangeGroup plateAppearanceRangeGroup;
-	private final RangeGroup contactRangeGroup;
-	private final RangeGroup flyBallRangeGroup;
-	private final RangeGroup groundBallRangeGroup;
-	private final RangeGroup lineDriveRangeGroup;
+	private final RangeGroup<PlateAppearanceResult> plateAppearanceRangeGroup;
+	private final RangeGroup<PlateAppearanceResult> contactRangeGroup;
+	private final RangeGroup<PlateAppearanceResult> flyBallRangeGroup;
+	private final RangeGroup<PlateAppearanceResult> groundBallRangeGroup;
+	private final RangeGroup<PlateAppearanceResult> lineDriveRangeGroup;
 
 	public BatterPlateAppearanceRangeGroup(final BattingAttributesByPA battingAttributesByPA) {
 		this(0, 100, battingAttributesByPA);
@@ -27,32 +26,32 @@ public class BatterPlateAppearanceRangeGroup extends Range {
 		super(start, end);
 		this.battingAttributes = battingAttributes;
 		
-		this.plateAppearanceRangeGroup = new RangeGroup();
-		this.contactRangeGroup = new RangeGroup();
-		this.flyBallRangeGroup = new RangeGroup(this.battingAttributes.getContactFlyBallChance());
-		this.groundBallRangeGroup = new RangeGroup(this.battingAttributes.getContactGroundBallChance());
-		this.lineDriveRangeGroup = new RangeGroup(this.battingAttributes.getContactLineDriveChance());
+		this.plateAppearanceRangeGroup = new RangeGroup<PlateAppearanceResult>();
+		this.contactRangeGroup = new RangeGroup<PlateAppearanceResult>();
+		this.flyBallRangeGroup = new RangeGroup<PlateAppearanceResult>(this.battingAttributes.getContactFlyBallChance());
+		this.groundBallRangeGroup = new RangeGroup<PlateAppearanceResult>(this.battingAttributes.getContactGroundBallChance());
+		this.lineDriveRangeGroup = new RangeGroup<PlateAppearanceResult>(this.battingAttributes.getContactLineDriveChance());
 
 		this.flyBallRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallSingleChance(), new PlateAppearanceResult(Results.FlyBall, Results.Single)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallDoubleChance(), new PlateAppearanceResult(Results.FlyBall, Results.Double)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallTripleChance(), new PlateAppearanceResult(Results.FlyBall, Results.Triple)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getFlyBallHomeRunChance(), new PlateAppearanceResult(Results.FlyBall, Results.HomeRun)))
-			.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.FlyBall, Results.Out)));
+			.addRangeValue(new PlateAppearanceResult(Results.FlyBall, Results.Single), this.battingAttributes.getFlyBallSingleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.FlyBall, Results.Double), this.battingAttributes.getFlyBallDoubleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.FlyBall, Results.Triple), this.battingAttributes.getFlyBallTripleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.FlyBall, Results.HomeRun), this.battingAttributes.getFlyBallHomeRunChance())
+			.setDefaultRangeValue(new PlateAppearanceResult(Results.FlyBall, Results.Out));
 
 		this.groundBallRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallSingleChance(), new PlateAppearanceResult(Results.GroundBall, Results.Single)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallDoubleChance(), new PlateAppearanceResult(Results.GroundBall, Results.Double)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallTripleChance(), new PlateAppearanceResult(Results.GroundBall, Results.Triple)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getGroundBallHomeRunChance(), new PlateAppearanceResult(Results.GroundBall, Results.HomeRun)))
-			.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.GroundBall, Results.Out)));
+			.addRangeValue(new PlateAppearanceResult(Results.GroundBall, Results.Single), this.battingAttributes.getGroundBallSingleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.GroundBall, Results.Double), this.battingAttributes.getGroundBallDoubleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.GroundBall, Results.Triple), this.battingAttributes.getGroundBallTripleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.GroundBall, Results.HomeRun), this.battingAttributes.getGroundBallHomeRunChance())
+			.setDefaultRangeValue(new PlateAppearanceResult(Results.GroundBall, Results.Out));
 
 		this.lineDriveRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveSingleChance(), new PlateAppearanceResult(Results.LineDrive, Results.Single)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveDoubleChance(), new PlateAppearanceResult(Results.LineDrive, Results.Double)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveTripleChance(), new PlateAppearanceResult(Results.LineDrive, Results.Triple)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getLineDriveHomeRunChance(), new PlateAppearanceResult(Results.LineDrive, Results.HomeRun)))
-			.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.LineDrive, Results.Out)));
+			.addRangeValue(new PlateAppearanceResult(Results.LineDrive, Results.Single), this.battingAttributes.getLineDriveSingleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.LineDrive, Results.Double), this.battingAttributes.getLineDriveDoubleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.LineDrive, Results.Triple), this.battingAttributes.getLineDriveTripleChance())
+			.addRangeValue(new PlateAppearanceResult(Results.LineDrive, Results.HomeRun), this.battingAttributes.getLineDriveHomeRunChance())
+			.setDefaultRangeValue(new PlateAppearanceResult(Results.LineDrive, Results.Out));
 
 		this.contactRangeGroup
 			.addToRangeGroup(this.flyBallRangeGroup)
@@ -60,11 +59,12 @@ public class BatterPlateAppearanceRangeGroup extends Range {
 			.setDefaultRange(this.lineDriveRangeGroup);
 
 		this.plateAppearanceRangeGroup
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getWalkChance(), new PlateAppearanceResult(Results.BB)))
-			.addToRangeGroup(new RangeValue(this.battingAttributes.getHitByPitchChance(), new PlateAppearanceResult(Results.HBP)))
-			.addToRangeGroup(new RangeGroup(this.battingAttributes.getStrikeoutChance())
-				.addToRangeGroup(new RangeValue(this.battingAttributes.getStrikeoutLookingChance(), new PlateAppearanceResult(Results.StrikeoutLooking)))
-				.setDefaultRange(new RangeValue(new PlateAppearanceResult(Results.StrikeoutSwinging))))
+			.addRangeValue(new PlateAppearanceResult(Results.BB), this.battingAttributes.getWalkChance())
+			.addRangeValue(new PlateAppearanceResult(Results.HBP), this.battingAttributes.getHitByPitchChance())
+			.addToRangeGroup(
+				new RangeGroup<PlateAppearanceResult>(this.battingAttributes.getStrikeoutChance())
+				.addRangeValue(new PlateAppearanceResult(Results.StrikeoutLooking), this.battingAttributes.getStrikeoutLookingChance())
+				.setDefaultRangeValue(new PlateAppearanceResult(Results.StrikeoutSwinging)))
 			.setDefaultRange(this.contactRangeGroup);
 	}
 
