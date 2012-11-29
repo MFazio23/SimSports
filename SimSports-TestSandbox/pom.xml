@@ -7,12 +7,12 @@
     <parent>
         <groupId>org.fazio</groupId>
         <artifactId>SimSports</artifactId>
-        <version>1.0</version>
+        <version>0.1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>org.fazio</groupId>
     <artifactId>SimSports-TestSandbox</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>{parent.version}</version>
 
     <dependencies>
         <dependency>
@@ -52,6 +52,21 @@
         <dependency>
             <groupId>commons-math</groupId>
             <artifactId>commons-math</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>2.6.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.morphia</groupId>
+            <artifactId>morphia</artifactId>
+            <version>0.99</version>
         </dependency>
     </dependencies>
 
