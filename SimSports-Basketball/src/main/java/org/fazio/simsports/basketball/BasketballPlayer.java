@@ -16,10 +16,11 @@ public class BasketballPlayer extends Player {
 		final String lastName,
 		final String nickname,
 		final String number,
+		final Position primaryPosition,
 		final List<Position> positions,
 		final Statistics statistics) {
 
-		super(attributes, firstName, lastName, nickname, number, positions, statistics);
+		super(attributes, firstName, lastName, nickname, number, primaryPosition, positions, statistics);
 	}
 
 	@Override

@@ -8,10 +8,12 @@ import org.fazio.simsports.core.types.Position;
  */
 public enum BasketballPosition implements Position {
 
-	PointGuard("PG"),
-	ShootingGuard("SG"),
-	SmallForward("SF"),
-	PowerForward("PF"),
+	Guard("G"),
+	Forward("F"),
+	Point_Guard("PG"),
+	Shooting_Guard("SG"),
+	Small_Forward("SF"),
+	Power_Forward("PF"),
 	Center("C");
 
 	private final String positionShortName;
@@ -20,13 +22,42 @@ public enum BasketballPosition implements Position {
 		this.positionShortName = positionShortName;
 	}
 
+	public static Position getPositionByName(final String name) {
+		Position position = null;
+
+		for(Position tempPosition : BasketballPosition.values()) {
+			if(tempPosition.getPositionName().equals(name)) {
+				position = tempPosition;
+			}
+		}
+
+		return position;
+	}
+
+	public static Position getPositionByShortName(final String shortName) {
+		Position position = null;
+
+		for(Position tempPosition : BasketballPosition.values()) {
+			if(tempPosition.getPositionShortName().equals(shortName)) {
+				position = tempPosition;
+			}
+		}
+
+		return position;
+	}
+
 	@Override
 	public String getPositionName() {
-		return null;  //To change body of implemented methods use File | Settings | File Templates.
+		return this.name().replaceAll("_", " ");
 	}
 
 	@Override
 	public String getPositionShortName() {
-		return null;  //To change body of implemented methods use File | Settings | File Templates.
+		return this.positionShortName;
+	}
+
+	@Override
+	public String toString() {
+		return this.getPositionName();
 	}
 }
