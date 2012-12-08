@@ -24,7 +24,7 @@ public class BaseballTeam extends Team {
 
 			super(location, mainShortName, nickname, roster, shortNameList, teamColors);
 
-			this.upToBat = (BaseballPlayer) this.roster.get(0);
+			this.upToBat = this.roster.size() > 0 ? (BaseballPlayer) this.roster.get(0) : null;
 	}
 
 	public BaseballPlayer nextUpToBat() {

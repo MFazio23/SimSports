@@ -16,7 +16,7 @@ public class TestJSONBaseballTeamCreator {
 	public void testTeamCreator() throws Exception {
 		JSONBaseballTeamCreator creator = new JSONBaseballTeamCreator();
 
-		BaseballTeam novas = creator.createTeam("Wisconsin Novas");
+		BaseballTeam novas = creator.createTeam("Wisconsin Knights");
 		BaseballTeam sonics = creator.createTeam("Oklahoma City Sonics");
 
 		System.out.println(novas);

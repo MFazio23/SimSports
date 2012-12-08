@@ -4,7 +4,7 @@ import org.fazio.simsports.baseball.builders.test.TestPlayerFromJSON;
 import org.fazio.simsports.baseball.types.BaseballPlayer;
 import org.fazio.simsports.baseball.types.attributes.BatterAttributes;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
-import org.fazio.simsports.core.util.Pair;
+import org.fazio.utils.pair.Pair;
 import org.junit.Test;
 
 import java.util.ArrayList;

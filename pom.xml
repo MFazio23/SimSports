@@ -18,6 +18,11 @@
 
     <repositories>
         <repository>
+            <id>fazio-releases</id>
+            <releases><enabled>true</enabled></releases>
+            <url>https://github.com/MFazio23/fazio-mvn-repo/raw/master/releases</url>
+        </repository>
+        <repository>
             <id>morphia</id>
             <url>http://morphia.googlecode.com/svn/mavenrepo/</url>
         </repository>
@@ -28,7 +33,7 @@
             <dependency>
                 <groupId>org.fazio.utils</groupId>
                 <artifactId>FazioUtils</artifactId>
-                <version>0.1.2</version>
+                <version>0.1.3</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>

@@ -12,7 +12,7 @@
 
     <groupId>org.fazio</groupId>
     <artifactId>SimSports-TestSandbox</artifactId>
-    <version>{parent.version}</version>
+    <version>${parent.version}</version>
 
     <dependencies>
         <dependency>
@@ -22,13 +22,13 @@
         <dependency>
             <groupId>org.fazio</groupId>
             <artifactId>SimSports-Core</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.fazio</groupId>
             <artifactId>SimSports-Baseball</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

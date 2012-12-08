@@ -4,7 +4,7 @@ import org.fazio.simsports.baseball.builders.test.TestPlayerFromJSON;
 import org.fazio.simsports.baseball.types.*;
 import org.fazio.simsports.core.types.Player;
 import org.fazio.simsports.core.types.Team;
-import org.fazio.simsports.core.util.Pair;
+import org.fazio.utils.pair.Pair;
 import org.junit.Before;
 import org.junit.Test;
 

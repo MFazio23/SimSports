@@ -1,7 +1,6 @@
 package org.fazio.simsports.baseball.types;
 
 import org.fazio.simsports.baseball.types.attributes.BaseballAttributes;
-import org.fazio.simsports.baseball.types.attributes.BatterAttributes;
 import org.fazio.simsports.baseball.types.attributes.BattingAttributesByPA;
 import org.fazio.simsports.baseball.types.ratings.BaseballRatings;
 import org.fazio.simsports.baseball.types.ratings.OffenseRatings;
@@ -39,10 +38,10 @@ public class BaseballPlayer extends Player {
 	}
 	
 	public PlateAppearanceResult getPlayResult() {
-		final BatterAttributes attrs = (BatterAttributes) super.attributes;
+		final BaseballAttributes attrs = (BaseballAttributes) super.attributes;
 
 		final BatterPlateAppearanceRangeGroup group
-			= new BatterPlateAppearanceRangeGroup((BattingAttributesByPA) attrs.getBattingAttributes());
+			= new BatterPlateAppearanceRangeGroup((BattingAttributesByPA) attrs.getBatterAttributes().getBattingAttributes());
 		
 		return (PlateAppearanceResult) group.getRangeValue();
 	}

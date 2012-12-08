@@ -12,7 +12,7 @@
 
     <groupId>org.fazio</groupId>
     <artifactId>SimSports-Core</artifactId>
-    <version>{parent.version}</version>
+    <version>${parent.version}</version>
 
     <dependencies>
         <dependency>

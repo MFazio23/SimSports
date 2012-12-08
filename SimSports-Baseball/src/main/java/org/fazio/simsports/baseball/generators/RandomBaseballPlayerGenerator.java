@@ -1,14 +1,11 @@
 package org.fazio.simsports.baseball.generators;
 
-import org.fazio.simsports.baseball.types.BaseballPlayer;
 import org.fazio.simsports.baseball.types.BaseballPosition;
 import org.fazio.simsports.core.RandomPlayerGenerator;
-import org.fazio.simsports.core.ranges.RangeGroup;
-import org.fazio.simsports.core.ranges.RangeValue;
 import org.fazio.simsports.core.types.Player;
-import org.fazio.simsports.core.types.Position;
 import org.fazio.simsports.core.util.JSONLoader;
-import org.fazio.simsports.core.util.Pair;
+import org.fazio.utils.pair.Pair;
+import org.fazio.utils.range.RangeGroup;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,10 +43,10 @@ public class RandomBaseballPlayerGenerator implements RandomPlayerGenerator {
 
 	protected String[] getRandomName() {
 		final String[] randomName = new String[2];
-		final RangeGroup nameTypes = new RangeGroup()
-			.addToRangeGroup(new RangeValue(25, NameType.Hispanic))
-			.addToRangeGroup(new RangeValue(5, NameType.Japanese))
-			.setDefaultRange(new RangeValue(NameType.American));
+		final RangeGroup<NameType> nameTypes = new RangeGroup<NameType>()
+			.addRangeValue(NameType.Hispanic, 25)
+			.addRangeValue(NameType.Japanese, 5)
+			.setDefaultRangeValue(NameType.American);
 
 		final NameType nameType = (NameType) nameTypes.getRangeValue();
 
@@ -73,19 +70,19 @@ public class RandomBaseballPlayerGenerator implements RandomPlayerGenerator {
 
 			final String positionType = isPitcher ? "pitchers" : "batters";
 			final JSONArray numberArray = numberJSON.getJSONArray(positionType);
-			final RangeGroup numberGroup = new RangeGroup();
+			final RangeGroup<Integer> numberGroup = new RangeGroup<Integer>();
 			for(int x=0;x<numberArray.length();x++) {
 				final JSONObject jsonRange = numberArray.getJSONObject(x);
-				final RangeGroup rangeGroup = new RangeGroup(jsonRange.getInt("chance"));
+				final RangeGroup<Integer> rangeGroup = new RangeGroup<Integer>(jsonRange.getInt("chance"));
 
 				final int low = jsonRange.getInt("low");
 				final int high = jsonRange.getInt("high");
 
 				if(low == high) {
-					rangeGroup.addToRangeGroup(new RangeValue(100, low));
+					rangeGroup.addRangeValue(low, 100);
 				} else {
 					for(int v=low;v<=high;v++) {
-						rangeGroup.addToRangeGroup(new RangeValue((100/(high - low)), v));
+						rangeGroup.addRangeValue(v, (100 / (high - low)));
 					}
 				}
 
@@ -119,7 +116,7 @@ public class RandomBaseballPlayerGenerator implements RandomPlayerGenerator {
 
 	protected List<BaseballPosition> getRandomPositions() {
 		final List<BaseballPosition> positionList = new ArrayList<BaseballPosition>();
-		final RangeGroup positionsRangeGroup = new RangeGroup();
+		final RangeGroup<Pair<String, JSONObject>> positionsRangeGroup = new RangeGroup<Pair<String, JSONObject>>();
 		try {
 			final JSONObject positionJSON = new JSONLoader().loadJSONObjectFromFile(RANDOM_POSITION_FILE);
 
@@ -128,15 +125,14 @@ public class RandomBaseballPlayerGenerator implements RandomPlayerGenerator {
 				final String positionString = (String) positionIterator.next();
 				final JSONObject positionInfoJSON = positionJSON.getJSONObject(positionString);
 				final int chance = positionInfoJSON.getInt("chance");
-				positionsRangeGroup.addToRangeGroup(
-					new RangeValue(
-						chance,
-						new Pair<String, JSONObject>(positionString, positionInfoJSON.getJSONObject("alternates"))
-					)
+				positionsRangeGroup.addRangeValue(
+					new Pair<String, JSONObject>(positionString, positionInfoJSON.getJSONObject("alternates")),
+					chance
 				);
 			}
 
-			System.out.println(positionsRangeGroup);
+			//TODO: Add an actual list of positions.  Give chances for 1 -> x number of positions then pick that many.
+			positionList.add((BaseballPosition)BaseballPosition.getPositionByShortName(positionsRangeGroup.getRangeValue().getLeft()));
 		} catch(JSONException e) {
 			e.printStackTrace();
 		}

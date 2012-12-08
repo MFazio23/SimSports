@@ -1,11 +1,8 @@
 package baseball;
 
-import org.fazio.simsports.core.ranges.Range;
-import org.fazio.simsports.core.ranges.RangeGroup;
-import org.fazio.simsports.core.ranges.RangeValue;
+import org.fazio.utils.range.RangeGroup;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.*;
 
@@ -18,14 +15,14 @@ public class TestRandomNameGenerator {
 	//This was just the easiest way to get some random players into the game, and is
 	//not any kind of racial statement.  Lazy coding?  Sure!  But no intentional
 	//racial undertones.
-	private enum Race {American, Hispanic, Japanese};
+	private enum Race {American, Hispanic, Japanese}
 
 	@Test
 	public void testRandomRace() throws Exception {
-		RangeGroup races = new RangeGroup()
-			.addToRangeGroup(new RangeValue(25, Race.Hispanic))
-			.addToRangeGroup(new RangeValue(5, Race.Japanese))
-			.setDefaultRange(new RangeValue(Race.American));
+		RangeGroup<Race> races = new RangeGroup<Race>()
+			.addRangeValue(Race.Hispanic, 25)
+			.addRangeValue(Race.Japanese, 5)
+			.setDefaultRangeValue(Race.American);
 
 		Map<Race, Integer> raceMap = new HashMap<Race, Integer>(){{
 			put(Race.American, 0);
