@@ -19,7 +19,6 @@
     <repositories>
         <repository>
             <id>fazio-releases</id>
-            <releases><enabled>true</enabled></releases>
             <url>https://github.com/MFazio23/fazio-mvn-repo/raw/master/releases</url>
         </repository>
         <repository>
